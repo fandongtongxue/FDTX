@@ -7,4 +7,5 @@ target 'FDTX' do
 
   # Pods for FDTX
   pod 'Alamofire'
+
 end
