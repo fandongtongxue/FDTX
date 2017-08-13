@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5F2A2A23B9CA885D42119FEC /* Pods_FDTX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222061FFF99EC331450FC66 /* Pods_FDTX.framework */; };
+		CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E11F40376D00F2F7BA /* BaseViewController.swift */; };
+		CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */; };
+		CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E51F40376D00F2F7BA /* HomeViewController.swift */; };
+		CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */; };
+		CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */; };
+		CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
 		CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */; };
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
@@ -19,6 +25,12 @@
 		1222061FFF99EC331450FC66 /* Pods_FDTX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDTX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
 		3346974645089DE4EEF0FAE6 /* Pods-FDTX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.debug.xcconfig"; sourceTree = "<group>"; };
+		CB7320E11F40376D00F2F7BA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		CB7320E51F40376D00F2F7BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +60,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB7320DE1F40376D00F2F7BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CB7320DF1F40376D00F2F7BA /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CB7320E01F40376D00F2F7BA /* Base */,
+				CB7320E21F40376D00F2F7BA /* Container */,
+				CB7320E41F40376D00F2F7BA /* Home */,
+				CB7320E61F40376D00F2F7BA /* Root */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		CB7320E01F40376D00F2F7BA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CB7320E11F40376D00F2F7BA /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CB7320E21F40376D00F2F7BA /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		CB7320E41F40376D00F2F7BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CB7320E51F40376D00F2F7BA /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CB7320E61F40376D00F2F7BA /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */,
+				CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		CBE54D2D1F33700B00FF4CA0 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */,
+				CB7320DF1F40376D00F2F7BA /* Module */,
+				CB7320DE1F40376D00F2F7BA /* Network */,
 				CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */,
 				CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */,
 				CBE54D401F33700B00FF4CA0 /* Assets.xcassets */,
@@ -210,8 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */,
+				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
+				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
+				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
+				CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */,
+				CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
