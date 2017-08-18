@@ -10,5 +10,16 @@ import Foundation
 import Alamofire
 
 class BaseNetworking: NSObject {
-    
+    func get(url:String) {
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
+            switch response.result{
+            case .success:
+                if let result = response.result.value{
+                    print(result)
+                }
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
 }

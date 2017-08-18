@@ -7,5 +7,6 @@ target 'FDTX' do
 
   # Pods for FDTX
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end
