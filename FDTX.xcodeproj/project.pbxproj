@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5F2A2A23B9CA885D42119FEC /* Pods_FDTX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222061FFF99EC331450FC66 /* Pods_FDTX.framework */; };
+		CB1EDA151F47C89300821092 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EDA111F47C89300821092 /* Config.swift */; };
+		CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EDA191F47C8C300821092 /* GuideViewController.swift */; };
 		CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A711F47169C00BCB90F /* UnsplashPictureModel.swift */; };
 		CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */; };
 		CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */; };
@@ -29,6 +31,8 @@
 		1222061FFF99EC331450FC66 /* Pods_FDTX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDTX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
 		3346974645089DE4EEF0FAE6 /* Pods-FDTX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.debug.xcconfig"; sourceTree = "<group>"; };
+		CB1EDA111F47C89300821092 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CB1EDA191F47C8C300821092 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		CB542A711F47169C00BCB90F /* UnsplashPictureModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashPictureModel.swift; sourceTree = "<group>"; };
 		CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUrlModel.swift; sourceTree = "<group>"; };
 		CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserModel.swift; sourceTree = "<group>"; };
@@ -66,6 +70,22 @@
 				1222061FFF99EC331450FC66 /* Pods_FDTX.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB1EDA101F47C89300821092 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CB1EDA111F47C89300821092 /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		CB1EDA181F47C8C300821092 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				CB1EDA191F47C8C300821092 /* GuideViewController.swift */,
+			);
+			path = Guide;
 			sourceTree = "<group>";
 		};
 		CB542A6F1F47166F00BCB90F /* Picture */ = {
@@ -114,6 +134,7 @@
 		CB7320DF1F40376D00F2F7BA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CB1EDA181F47C8C300821092 /* Guide */,
 				CB542A6F1F47166F00BCB90F /* Picture */,
 				CB7320E01F40376D00F2F7BA /* Base */,
 				CB7320E21F40376D00F2F7BA /* Container */,
@@ -178,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */,
+				CB1EDA101F47C89300821092 /* Config */,
 				CB7320DF1F40376D00F2F7BA /* Module */,
 				CB7320DE1F40376D00F2F7BA /* Network */,
 				CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */,
@@ -323,9 +345,11 @@
 				CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */,
 				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
 				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
+				CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
+				CB1EDA151F47C89300821092 /* Config.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,
 				CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */,
