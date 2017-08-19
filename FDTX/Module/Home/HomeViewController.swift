@@ -22,9 +22,9 @@ class HomeViewController: UIViewController{
     }
     
     func showPictureVC() {
-        let pictureVC = PictureViewController.init(nibName: nil, bundle: nil)
-        pictureVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(pictureVC, animated: true)
+        let unsplashVC = UnsplashViewController.init(nibName: nil, bundle: nil)
+        unsplashVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(unsplashVC, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
