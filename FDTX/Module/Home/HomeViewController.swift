@@ -16,6 +16,17 @@ class HomeViewController: UIViewController{
         self.title = "首页"
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.showPictureVC()
+    }
+    
+    func showPictureVC() {
+        let pictureVC = PictureViewController.init(nibName: nil, bundle: nil)
+        pictureVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(pictureVC, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
