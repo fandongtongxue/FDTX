@@ -11,7 +11,7 @@ import UIKit
 
 let cellId = "UnsplashViewControllerCellId"
 
-class UnsplashViewController: BaseViewController {
+class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
     var page : NSInteger = 1
     var refreshControl : UIRefreshControl!
@@ -20,6 +20,20 @@ class UnsplashViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "Unsplash精选"
+        self.view.addSubview(self.tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! UnsplashViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return SCREEN_HEIGHT - STATUSBAR_HEIGHT
     }
     
     lazy var dataArray : NSMutableArray = {
@@ -31,6 +45,7 @@ class UnsplashViewController: BaseViewController {
         let tableView : UITableView = UITableView.init(frame: self.view.bounds, style: .plain)
         tableView.delegate = self as? UITableViewDelegate
         tableView.dataSource = self as? UITableViewDataSource
+        tableView.register(UnsplashViewCell.superclass(), forCellReuseIdentifier: cellId)
         return tableView
     }()
     

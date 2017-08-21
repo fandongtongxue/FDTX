@@ -13,7 +13,7 @@ class RootNavigationController: UINavigationController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationBar.isTranslucent = false
-        self.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 15),NSForegroundColorAttributeName:UIColor.black]
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 18),NSForegroundColorAttributeName:UIColor.black]
     }
     
     override func didReceiveMemoryWarning() {
