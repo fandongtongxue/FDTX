@@ -9,10 +9,8 @@
 import Foundation
 import UIKit
 
-let cellId = "UnsplashViewControllerCellId"
-
-class UnsplashViewController: BaseViewController {
-    
+class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+    let cellId = "UnsplashViewControllerCellId"
     var page : NSInteger = 1
     var refreshControl : UIRefreshControl!
     
@@ -22,6 +20,16 @@ class UnsplashViewController: BaseViewController {
         self.title = "Unsplash精选"
     }
     
+    //UITableView协议方法
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    //懒加载
     lazy var dataArray : NSMutableArray = {
         let dataArray = NSMutableArray.init()
         return dataArray
