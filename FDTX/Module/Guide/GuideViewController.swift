@@ -16,4 +16,7 @@ class GuideViewController: UIViewController {
     func initSubviews() {
         
     }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
