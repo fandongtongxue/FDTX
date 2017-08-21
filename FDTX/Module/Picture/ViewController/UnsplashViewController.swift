@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
-    let cellId = "UnsplashViewControllerCellId"
-let cellId = "UnsplashViewControllerCellId"
-
 class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
     var page : NSInteger = 1
