@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
+let UnsplashViewControllerCellId = "UnsplashViewControllerCellId"
+
 class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
-    let cellId = "UnsplashViewControllerCellId"
     var page : NSInteger = 1
     var refreshControl : UIRefreshControl!
     
@@ -27,12 +28,12 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! UnsplashViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: UnsplashViewControllerCellId) as! UnsplashViewCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SCREEN_HEIGHT - STATUSBAR_HEIGHT
+        return SCREEN_HEIGHT
     }
     
     //懒加载
@@ -43,9 +44,9 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: self.view.bounds, style: .plain)
-        tableView.delegate = self as? UITableViewDelegate
-        tableView.dataSource = self as? UITableViewDataSource
-        tableView.register(UnsplashViewCell.superclass(), forCellReuseIdentifier: cellId)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UnsplashViewCell.superclass(), forCellReuseIdentifier: UnsplashViewControllerCellId)
         return tableView
     }()
     
