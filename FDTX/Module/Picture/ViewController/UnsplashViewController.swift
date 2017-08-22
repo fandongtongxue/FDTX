@@ -11,6 +11,7 @@ import UIKit
 
 class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
+    let cellId = "UnsplashViewControllerCellId"
     var page : NSInteger = 1
     var refreshControl : UIRefreshControl!
     
@@ -32,15 +33,6 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SCREEN_HEIGHT - STATUSBAR_HEIGHT
-    }
-    
-    //UITableView协议方法
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataArray.count;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
     }
     
     //懒加载
