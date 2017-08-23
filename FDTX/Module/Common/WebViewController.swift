@@ -19,7 +19,7 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
         self.view.backgroundColor = UIColor.white
         self.title = "浏览器"
         self.view.addSubview(self.webView)
-        self.webView.load(URLRequest.init(url: URL.init(string:"http://baidu.com")!))
+        self.webView.load(NSURLRequest.init(url: URL.init(string: markdownURL)!) as URLRequest)
     }
     //Lazy Load
     lazy var webView : WKWebView = {
