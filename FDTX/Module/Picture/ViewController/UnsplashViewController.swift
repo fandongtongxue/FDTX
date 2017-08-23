@@ -8,19 +8,27 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 let UnsplashViewControllerCellId = "UnsplashViewControllerCellId"
+let UnsplashUrl = "https://api.unsplash.com/photos/?client_id=522f34661134a2300e6d94d344a7ab6424e028a51b31353363b7a8cce11d73b6&per_page=30&page="
 
 class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
     var page : NSInteger = 1
-    var refreshControl : UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "Unsplash精选"
         self.view.addSubview(self.tableView)
+        self.tableView.addSubview(self.refreshControl)
+    }
+    
+    func requestFirstPageData(){
+        page = 1
+        let firstUrl = UnsplashUrl + String.init(format: "%d", page)
+        BaseNetworking.init().get(url: firstUrl)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +55,15 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UnsplashViewCell.superclass(), forCellReuseIdentifier: UnsplashViewControllerCellId)
+        tableView.alwaysBounceVertical = true
+        tableView.separatorStyle = .none
         return tableView
+    }()
+    lazy var refreshControl : UIRefreshControl = {
+        let refreshControl = UIRefreshControl.init()
+        refreshControl.tintColor = UIColor.black
+        refreshControl.addTarget(self, action: #selector(requestFirstPageData), for: UIControlEvents.valueChanged)
+        return refreshControl
     }()
     
     override func didReceiveMemoryWarning() {

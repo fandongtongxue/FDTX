@@ -21,7 +21,12 @@ class RootTabBarController: UITabBarController{
         let homeNav = RootNavigationController.init(rootViewController: homeVC)
         let homeItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
         homeNav.tabBarItem = homeItem
-        self.viewControllers = [homeNav]
+        
+        let userVC = UserViewController.init(nibName: nil, bundle: nil)
+        let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 1)
+        userVC.tabBarItem = userItem
+        
+        self.viewControllers = [homeNav,userVC]
     }
     
     override func didReceiveMemoryWarning() {
