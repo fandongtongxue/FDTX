@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import HandyJSON
 
-class UnsplashUserModel: NSObject {
+class UnsplashUserModel: HandyJSON {
     var id:String!
     var username:String!
     var name:String!
@@ -33,4 +34,8 @@ class UnsplashUserModel: NSObject {
 //    "total_likes": 292,
 //    "total_photos": 157,
 //    "total_collections": 2,
+    
+    required init() {
+        
+    }
 }

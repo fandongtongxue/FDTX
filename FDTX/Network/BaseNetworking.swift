@@ -14,8 +14,9 @@ class BaseNetworking: NSObject {
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
             switch response.result{
             case .success:
-                if let result = response.result.value{
-                    print(result)
+                if response.result.value != nil{
+//                    print(result)
+                    
                 }
             case.failure(let error):
                 print(error)

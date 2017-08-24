@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyJSON
+import HandyJSON
 
 class BaseViewController: UIViewController{
     
