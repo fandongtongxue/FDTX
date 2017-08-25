@@ -32,9 +32,4 @@ class HomeViewController: UIViewController{
         webVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(webVC, animated: true)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }

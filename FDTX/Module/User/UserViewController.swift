@@ -15,7 +15,4 @@ class UserViewController: BaseViewController {
         self.view.backgroundColor = UIColor.purple
         self.title = "我的"
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
