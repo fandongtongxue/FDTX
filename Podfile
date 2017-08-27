@@ -7,6 +7,6 @@ target 'FDTX' do
 
   # Pods for FDTX
   pod 'Alamofire'
-  pod 'SwiftyJSON'
+  pod 'HandyJSON', '~> 1.7.2'
   
 end

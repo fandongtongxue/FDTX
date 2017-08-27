@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import HandyJSON
 
-class UnsplashPictureModel: NSObject {
+class UnsplashPictureModel: HandyJSON {
     var id:String!
     var created_at:String!
     var width:String!
@@ -27,4 +28,7 @@ class UnsplashPictureModel: NSObject {
 //    "likes": 36,
 //    "liked_by_user": false,
 
+    required init() {
+        
+    }
 }
