@@ -19,10 +19,11 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.black
         self.title = "Unsplash精选"
         self.view.addSubview(self.tableView)
         self.tableView.addSubview(self.refreshControl)
+        self.refreshControl.beginRefreshing()
         self.requestFirstPageData()
     }
     
@@ -68,6 +69,11 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         return CGFloat((model.height as NSString).floatValue * screenWidth / (model.width as NSString).floatValue)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.dataArray.object(at: indexPath.row) as! UnsplashPictureModel
+        log.info(model.urls.regular)
+    }
+    
     //懒加载
     lazy var dataArray : NSMutableArray = {
         let dataArray = NSMutableArray.init()
@@ -76,6 +82,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: self.view.bounds, style: .plain)
+        tableView.backgroundColor = UIColor.black
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UnsplashViewCell.classForCoder(), forCellReuseIdentifier: UnsplashViewControllerCellId)
@@ -85,7 +92,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     }()
     lazy var refreshControl : UIRefreshControl = {
         let refreshControl = UIRefreshControl.init()
-        refreshControl.tintColor = UIColor.black
+        refreshControl.tintColor = UIColor.white
         refreshControl.addTarget(self, action: #selector(requestFirstPageData), for: UIControlEvents.valueChanged)
         return refreshControl
     }()

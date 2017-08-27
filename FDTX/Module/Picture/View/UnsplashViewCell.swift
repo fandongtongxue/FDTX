@@ -24,7 +24,7 @@ class UnsplashViewCell: UITableViewCell {
     }
     
     func setModel(model:UnsplashPictureModel) {
-        self.pictureImageView.kf.setImage(with: URL.init(string: model.urls.thumb))
+        self.pictureImageView.kf.setImage(with: URL.init(string: model.urls.regular))
         let screenWidth = Float(SCREEN_WIDTH)
         self.pictureImageView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: CGFloat((model.height as NSString).floatValue * screenWidth / (model.width as NSString).floatValue))
     }
@@ -38,5 +38,12 @@ class UnsplashViewCell: UITableViewCell {
         pictureImageView.contentMode = .scaleAspectFit
         pictureImageView.clipsToBounds = true
         return pictureImageView
+    }()
+    
+    lazy var iconImageView : UIImageView = {
+        let iconImageView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        iconImageView.contentMode = .scaleAspectFit
+        iconImageView.clipsToBounds = true
+        return iconImageView
     }()
 }
