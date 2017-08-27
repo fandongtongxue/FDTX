@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 import WebKit
 
-let markdownURL = "http://ov2uvg3mg.bkt.clouddn.com/2017-08-21-iOS-Interview.markdown"
-
 class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
+    
+    var url = "http://ov2uvg3mg.bkt.clouddn.com/2017-08-21-iOS-Interview.markdown"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "浏览器"
         self.view.addSubview(self.webView)
-        self.webView.load(NSURLRequest.init(url: URL.init(string: markdownURL)!) as URLRequest)
+        self.webView.load(NSURLRequest.init(url: URL.init(string: self.url)!) as URLRequest)
     }
     //Lazy Load
     lazy var webView : WKWebView = {
