@@ -8,6 +8,7 @@
 
 import UIKit
 import HandyJSON
+import Kingfisher
 
 class BaseViewController: UIViewController{
     

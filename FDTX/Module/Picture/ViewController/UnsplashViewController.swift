@@ -23,12 +23,32 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         self.title = "Unsplash精选"
         self.view.addSubview(self.tableView)
         self.tableView.addSubview(self.refreshControl)
+        self.requestFirstPageData()
     }
     
     func requestFirstPageData(){
         page = 1
         let firstUrl = UnsplashUrl + String.init(format: "%d", page)
-        BaseNetworking.init().get(url: firstUrl)
+        Alamofire.request(firstUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
+            switch response.result{
+            case .success:
+                self.dataArray.removeAllObjects()
+                if let result = response.result.value{
+                    let array = result as! NSArray
+//                    let model = UnsplashPictureModel.mj_objectArray(withKeyValuesArray: array) as [AnyObject]
+                    self.dataArray.removeAllObjects()
+                    for dict in array{
+                        let model = UnsplashPictureModel.deserialize(from: dict as? NSDictionary)
+                        self.dataArray.add(model!)
+                    }
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                }
+            case.failure(let error):
+                log.error(error)
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,11 +57,15 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UnsplashViewControllerCellId) as! UnsplashViewCell
+        let model = self.dataArray.object(at: indexPath.row) as! UnsplashPictureModel
+        cell.setModel(model: model);
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SCREEN_HEIGHT
+        let model = self.dataArray.object(at: indexPath.row) as! UnsplashPictureModel
+        let screenWidth = Float(SCREEN_WIDTH)
+        return CGFloat((model.height as NSString).floatValue * screenWidth / (model.width as NSString).floatValue)
     }
     
     //懒加载
@@ -54,7 +78,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         let tableView : UITableView = UITableView.init(frame: self.view.bounds, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UnsplashViewCell.superclass(), forCellReuseIdentifier: UnsplashViewControllerCellId)
+        tableView.register(UnsplashViewCell.classForCoder(), forCellReuseIdentifier: UnsplashViewControllerCellId)
         tableView.alwaysBounceVertical = true
         tableView.separatorStyle = .none
         return tableView

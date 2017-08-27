@@ -12,7 +12,7 @@ import WebKit
 
 class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
     
-    var url = "http://ov2uvg3mg.bkt.clouddn.com/2017-08-21-iOS-Interview.markdown"
+    var url = "http://fandong.me"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,11 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("网页加载失败")
     }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

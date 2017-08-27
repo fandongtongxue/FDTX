@@ -11,13 +11,22 @@ import UIKit
 
 class UnsplashViewCell: UITableViewCell {
     
+    var model : UnsplashPictureModel! = nil
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
         self.initSubview()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setModel(model:UnsplashPictureModel) {
+        self.pictureImageView.kf.setImage(with: URL.init(string: model.urls.thumb))
+        let screenWidth = Float(SCREEN_WIDTH)
+        self.pictureImageView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: CGFloat((model.height as NSString).floatValue * screenWidth / (model.width as NSString).floatValue))
     }
     
     func initSubview() {
@@ -26,6 +35,8 @@ class UnsplashViewCell: UITableViewCell {
     
     lazy var pictureImageView : UIImageView = {
         let pictureImageView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        pictureImageView.contentMode = .scaleAspectFit
+        pictureImageView.clipsToBounds = true
         return pictureImageView
     }()
 }

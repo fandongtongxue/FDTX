@@ -8,5 +8,7 @@ target 'FDTX' do
   # Pods for FDTX
   pod 'Alamofire'
   pod 'HandyJSON', '~> 1.7.2'
+  pod 'Kingfisher', '~> 3.0'
+  pod 'XCGLogger', '~> 4.0.0'
   
 end
