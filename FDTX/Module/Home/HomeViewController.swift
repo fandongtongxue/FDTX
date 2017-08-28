@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import PandoraPlayer
+import MediaPlayer
 
-class HomeViewController: UIViewController{
+class HomeViewController: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,5 +34,12 @@ class HomeViewController: UIViewController{
         let webVC = WebViewController.init(nibName: nil, bundle: nil)
         webVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(webVC, animated: true)
+    }
+    
+    func showMusicPlayerVC() {
+        let item = MPMediaItem.init()
+        item. = URL.init(string: "http://oht4nlntk.bkt.clouddn.com/Music_iP_2017_TopOne.mp3")
+        let playerVC = PandoraPlayer.configure(withMPMediaItems: [item])
+        navigationController?.present(playerVC, animated: true, completion: nil)
     }
 }

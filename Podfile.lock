@@ -1,7 +1,10 @@
 PODS:
   - Alamofire (4.5.0)
+  - AudioKit (3.7)
   - HandyJSON (1.7.2)
   - Kingfisher (3.11.0)
+  - PandoraPlayer (1.0):
+    - AudioKit (= 3.7)
   - VHUD (1.1.1)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -11,16 +14,19 @@ DEPENDENCIES:
   - Alamofire
   - HandyJSON (~> 1.7.2)
   - Kingfisher (~> 3.0)
+  - PandoraPlayer
   - VHUD
   - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AudioKit: 73c43705575e483623bf3cf306f823a8677aebdd
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
+  PandoraPlayer: 4663b7247210c1cda2a1e34b8af888ef22be1024
   VHUD: b6b61b6a2aa3825af0f47d956194a210c5e68633
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 33e19383d6fe69e33b8d611e239bfa77f302675c
+PODFILE CHECKSUM: 415f4536ce7c0b68f1c1810a37d51dcdf4dcbb42
 
 COCOAPODS: 1.2.1
