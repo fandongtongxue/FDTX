@@ -29,6 +29,10 @@
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
 		CBE54D411F33700B00FF4CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D401F33700B00FF4CA0 /* Assets.xcassets */; };
 		CBE54D441F33700B00FF4CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D421F33700B00FF4CA0 /* LaunchScreen.storyboard */; };
+		CBEB87891F546016003C50AC /* Music_iP_2017_TopOne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBEB87851F546016003C50AC /* Music_iP_2017_TopOne.mp3 */; };
+		CBEB878A1F546016003C50AC /* Music_iP_inspiring_by_redlionproduction_preview.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBEB87861F546016003C50AC /* Music_iP_inspiring_by_redlionproduction_preview.mp3 */; };
+		CBEB878B1F546016003C50AC /* Music_iP_The Greatest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBEB87871F546016003C50AC /* Music_iP_The Greatest.mp3 */; };
+		CBEB878C1F546016003C50AC /* Music_iPhone_8k.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBEB87881F546016003C50AC /* Music_iPhone_8k.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		CBE54D401F33700B00FF4CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE54D431F33700B00FF4CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBE54D451F33700B00FF4CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBEB87851F546016003C50AC /* Music_iP_2017_TopOne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Music_iP_2017_TopOne.mp3; sourceTree = "<group>"; };
+		CBEB87861F546016003C50AC /* Music_iP_inspiring_by_redlionproduction_preview.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Music_iP_inspiring_by_redlionproduction_preview.mp3; sourceTree = "<group>"; };
+		CBEB87871F546016003C50AC /* Music_iP_The Greatest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Music_iP_The Greatest.mp3"; sourceTree = "<group>"; };
+		CBEB87881F546016003C50AC /* Music_iPhone_8k.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Music_iPhone_8k.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +240,7 @@
 				CB1EDA101F47C89300821092 /* Config */,
 				CB7320DF1F40376D00F2F7BA /* Module */,
 				CB7320DE1F40376D00F2F7BA /* Network */,
+				CBEB87831F546016003C50AC /* Resource */,
 				CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */,
 				CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */,
 				CBE54D401F33700B00FF4CA0 /* Assets.xcassets */,
@@ -239,6 +248,25 @@
 				CBE54D451F33700B00FF4CA0 /* Info.plist */,
 			);
 			path = FDTX;
+			sourceTree = "<group>";
+		};
+		CBEB87831F546016003C50AC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CBEB87841F546016003C50AC /* Music */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CBEB87841F546016003C50AC /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				CBEB87851F546016003C50AC /* Music_iP_2017_TopOne.mp3 */,
+				CBEB87861F546016003C50AC /* Music_iP_inspiring_by_redlionproduction_preview.mp3 */,
+				CBEB87871F546016003C50AC /* Music_iP_The Greatest.mp3 */,
+				CBEB87881F546016003C50AC /* Music_iPhone_8k.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		E3A1FDB5F10135F83BA9A631 /* Pods */ = {
@@ -311,9 +339,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBEB87891F546016003C50AC /* Music_iP_2017_TopOne.mp3 in Resources */,
+				CBEB878A1F546016003C50AC /* Music_iP_inspiring_by_redlionproduction_preview.mp3 in Resources */,
 				CBE54D441F33700B00FF4CA0 /* LaunchScreen.storyboard in Resources */,
+				CBEB878B1F546016003C50AC /* Music_iP_The Greatest.mp3 in Resources */,
 				CBE54D411F33700B00FF4CA0 /* Assets.xcassets in Resources */,
 				CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */,
+				CBEB878C1F546016003C50AC /* Music_iPhone_8k.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

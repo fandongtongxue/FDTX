@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import PandoraPlayer
 import MediaPlayer
+import PandoraPlayer
 
 class HomeViewController: BaseViewController{
     override func viewDidLoad() {
@@ -21,7 +21,8 @@ class HomeViewController: BaseViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 //        self.showWebVC()
-        self.showPictureVC()
+//        self.showPictureVC()
+        self.showMusicPlayerVC()
     }
     
     func showPictureVC() {
@@ -37,9 +38,8 @@ class HomeViewController: BaseViewController{
     }
     
     func showMusicPlayerVC() {
-        let item = MPMediaItem.init()
-        item. = URL.init(string: "http://oht4nlntk.bkt.clouddn.com/Music_iP_2017_TopOne.mp3")
-        let playerVC = PandoraPlayer.configure(withMPMediaItems: [item])
+        let path = Bundle.main.path(forResource: "Music_iP_The Greatest", ofType: "mp3")
+        let playerVC = PandoraPlayer.configure(withPath:path!)
         navigationController?.present(playerVC, animated: true, completion: nil)
     }
 }
