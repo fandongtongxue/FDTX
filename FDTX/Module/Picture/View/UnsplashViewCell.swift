@@ -25,7 +25,7 @@ class UnsplashViewCell: UITableViewCell {
     }
     
     func setModel(model:UnsplashPictureModel) {
-        self.pictureImageView.kf.setImage(with: URL.init(string: model.urls.regular))
+        self.pictureImageView.kf.setImage(with: URL.init(string: model.urls.thumb))
         let screenWidth = Float(SCREEN_WIDTH)
         self.pictureImageView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: CGFloat((model.height as NSString).floatValue * screenWidth / (model.width as NSString).floatValue))
     }

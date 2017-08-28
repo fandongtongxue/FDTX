@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 import Alamofire
+import VHUD
 
 let UnsplashViewControllerCellId = "UnsplashViewControllerCellId"
-let UnsplashUrl = "https://api.unsplash.com/photos/?client_id=522f34661134a2300e6d94d344a7ab6424e028a51b31353363b7a8cce11d73b6&per_page=30&page="
+let UnsplashUrl = "https://api.unsplash.com/photos/?client_id=522f34661134a2300e6d94d344a7ab6424e028a51b31353363b7a8cce11d73b6&per_page=20&page="
 
 class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
@@ -23,14 +24,25 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         self.title = "Unsplash精选"
         self.view.addSubview(self.tableView)
         self.tableView.addSubview(self.refreshControl)
-        self.refreshControl.beginRefreshing()
         self.requestFirstPageData()
     }
     
     func requestFirstPageData(){
+        
+        if !self.refreshControl.isRefreshing {
+            var content = VHUDContent(.loop(3.0))
+            content.shape = .circle
+            content.style = .light
+            content.background = .blur(.dark)
+            VHUD.show(content)
+        }
+        
         page = 1
         let firstUrl = UnsplashUrl + String.init(format: "%d", page)
         Alamofire.request(firstUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
+            
+            VHUD.dismiss(1.0)
+            
             switch response.result{
             case .success:
                 self.dataArray.removeAllObjects()
