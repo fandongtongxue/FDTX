@@ -8,7 +8,6 @@
 
 import UIKit
 import MediaPlayer
-import PandoraPlayer
 
 class HomeViewController: BaseViewController{
     override func viewDidLoad() {
@@ -38,8 +37,6 @@ class HomeViewController: BaseViewController{
     }
     
     func showMusicPlayerVC() {
-        let path = Bundle.main.path(forResource: "Music_iP_The Greatest", ofType: "mp3")
-        let playerVC = PandoraPlayer.configure(withPath:path!)
-        navigationController?.present(playerVC, animated: true, completion: nil)
+        
     }
 }
