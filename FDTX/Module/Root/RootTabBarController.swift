@@ -13,6 +13,7 @@ class RootTabBarController: UITabBarController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.white
+        self.tabBar.barTintColor = UIColor.black
         self.initViewControllers()
     }
     

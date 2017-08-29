@@ -20,8 +20,8 @@ class HomeViewController: BaseViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 //        self.showWebVC()
-//        self.showPictureVC()
-        self.showMusicPlayerVC()
+        self.showPictureVC()
+//        self.showMusicPlayerVC()
     }
     
     func showPictureVC() {
