@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import MobilePlayer
 
 class HomeViewController: BaseViewController{
     override func viewDidLoad() {
@@ -20,8 +21,9 @@ class HomeViewController: BaseViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 //        self.showWebVC()
-        self.showPictureVC()
+//        self.showPictureVC()
 //        self.showMusicPlayerVC()
+        self.showVideoPlayerVC()
     }
     
     func showPictureVC() {
@@ -38,5 +40,10 @@ class HomeViewController: BaseViewController{
     
     func showMusicPlayerVC() {
         
+    }
+    
+    func showVideoPlayerVC() {
+        let playerVC = MobilePlayerViewController(contentURL: URL.init(string: "http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4")!)
+        presentMoviePlayerViewControllerAnimated(playerVC)
     }
 }

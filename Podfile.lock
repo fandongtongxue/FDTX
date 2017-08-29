@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.5.0)
   - HandyJSON (1.7.2)
   - Kingfisher (3.11.0)
+  - MobilePlayer (1.2.0)
   - VHUD (1.1.1)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - Alamofire
   - HandyJSON (~> 1.7.2)
   - Kingfisher (~> 3.0)
+  - MobilePlayer
   - VHUD
   - XCGLogger (~> 4.0.0)
 
@@ -18,9 +20,10 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
+  MobilePlayer: 069b13482499f14c25b6ce53f63a91e17975b073
   VHUD: b6b61b6a2aa3825af0f47d956194a210c5e68633
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 509613490a924834f665604c36546ebd66f52a0e
+PODFILE CHECKSUM: 1118b519881212175a07b9762050c927b785b5b3
 
 COCOAPODS: 1.2.1

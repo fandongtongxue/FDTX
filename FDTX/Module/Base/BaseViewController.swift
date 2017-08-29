@@ -21,6 +21,10 @@ class BaseViewController: UIViewController{
         return UIStatusBarStyle.lightContent
     }
     
+    override var prefersStatusBarHidden: Bool{
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
