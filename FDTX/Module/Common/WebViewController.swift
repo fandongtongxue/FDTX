@@ -42,10 +42,6 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
         print("网页加载失败")
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        decisionHandler(.allow)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
