@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import MediaPlayer
-import MobilePlayer
+//import MediaPlayer
+//import MobilePlayer
 
 let HomeViewControllerCellId = "HomeViewControllerCellId"
 let array = ["网页","Unsplash","音乐播放器","视频播放器"]
@@ -39,8 +39,8 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     }
     
     func showVideoPlayerVC() {
-        let playerVC = MobilePlayerViewController(contentURL: URL.init(string: "http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4")!)
-        present(playerVC, animated: true, completion: nil)
+//        let playerVC = MobilePlayerViewController(contentURL: URL.init(string: "http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4")!)
+//        present(playerVC, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
