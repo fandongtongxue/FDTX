@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Alamofire
-import VHUD
 
 let UnsplashViewControllerCellId = "UnsplashViewControllerCellId"
 let UnsplashUrl = "https://api.unsplash.com/photos/?client_id=522f34661134a2300e6d94d344a7ab6424e028a51b31353363b7a8cce11d73b6&per_page=20&page="
@@ -21,7 +20,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        self.title = "Unsplash精选"
+        self.title = "Unsplash"
         self.view.addSubview(self.tableView)
         self.tableView.addSubview(self.refreshControl)
         self.requestFirstPageData()
@@ -30,25 +29,19 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     func requestFirstPageData(){
         
         if !self.refreshControl.isRefreshing {
-            var content = VHUDContent(.loop(3.0))
-            content.shape = .circle
-            content.style = .light
-            content.background = .blur(.dark)
-            VHUD.show(content)
+            let size = CGSize.init(width: 30, height: 30)
+            startAnimating(size, message: "Loading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         }
         
         page = 1
         let firstUrl = UnsplashUrl + String.init(format: "%d", page)
         Alamofire.request(firstUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
-            
-            VHUD.dismiss(1.0)
-            
+            self.stopAnimating()
             switch response.result{
             case .success:
                 self.dataArray.removeAllObjects()
                 if let result = response.result.value{
                     let array = result as! NSArray
-//                    let model = UnsplashPictureModel.mj_objectArray(withKeyValuesArray: array) as [AnyObject]
                     self.dataArray.removeAllObjects()
                     for dict in array{
                         let model = UnsplashPictureModel.deserialize(from: dict as? NSDictionary)

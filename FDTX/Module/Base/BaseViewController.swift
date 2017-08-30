@@ -9,8 +9,9 @@
 import UIKit
 import HandyJSON
 import Kingfisher
+import NVActivityIndicatorView
 
-class BaseViewController: UIViewController{
+class BaseViewController: UIViewController,NVActivityIndicatorViewable{
     
     override func viewDidLoad() {
         super.viewDidLoad()

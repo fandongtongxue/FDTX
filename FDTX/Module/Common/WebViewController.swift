@@ -17,7 +17,7 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        self.title = "通用浏览器"
+        self.title = "WebView"
         self.view.addSubview(self.webView)
         self.webView.load(NSURLRequest.init(url: URL.init(string: self.url)!) as URLRequest)
     }

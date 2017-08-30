@@ -10,5 +10,5 @@ target 'FDTX' do
   pod 'HandyJSON', '~> 1.7.2'
   pod 'Kingfisher', '~> 3.0'
   pod 'XCGLogger', '~> 4.0.0'
-  pod 'VHUD'  
+  pod 'NVActivityIndicatorView'
 end

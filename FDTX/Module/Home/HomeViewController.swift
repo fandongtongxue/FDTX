@@ -11,14 +11,14 @@ import UIKit
 //import MobilePlayer
 
 let HomeViewControllerCellId = "HomeViewControllerCellId"
-let array = ["网页","Unsplash","音乐播放器","视频播放器"]
+let array = ["WebView","Unsplash","Music","Video"]
 
 class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.black
-        self.title = "首页"
+        self.title = "Home"
         self.view.addSubview(self.tableView)
     }
     
