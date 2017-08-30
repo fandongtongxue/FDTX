@@ -26,6 +26,7 @@
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
 		CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */; };
 		CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */; };
+		CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
 		CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */; };
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
 		CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewController.swift; sourceTree = "<group>"; };
 		CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewNavigationToolbar.swift; sourceTree = "<group>"; };
+		CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		CB7320DF1F40376D00F2F7BA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CBC6AE771F56FC58004455A6 /* Video */,
 				CB1F58941F4A82190096CDC5 /* Common */,
 				CB1EDA181F47C8C300821092 /* Guide */,
 				CB542A6F1F47166F00BCB90F /* Picture */,
@@ -230,6 +233,14 @@
 				CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */,
 			);
 			path = GDWebViewController;
+			sourceTree = "<group>";
+		};
+		CBC6AE771F56FC58004455A6 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		CBE54D2D1F33700B00FF4CA0 = {
@@ -426,6 +437,7 @@
 				CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
+				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
 				CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */,

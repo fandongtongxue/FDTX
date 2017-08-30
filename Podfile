@@ -11,4 +11,6 @@ target 'FDTX' do
   pod 'Kingfisher', '~> 3.0'
   pod 'XCGLogger', '~> 4.0.0'
   pod 'NVActivityIndicatorView'
+  pod 'BMPlayer'
+  pod 'SnapKit', '~> 3.2.0'
 end

@@ -10,6 +10,7 @@ import UIKit
 import HandyJSON
 import Kingfisher
 import NVActivityIndicatorView
+import SnapKit
 
 class BaseViewController: UIViewController,NVActivityIndicatorViewable{
     

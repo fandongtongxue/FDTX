@@ -1,28 +1,40 @@
 PODS:
   - Alamofire (4.5.0)
+  - BMPlayer (0.8.7):
+    - BMPlayer/Full (= 0.8.7)
+  - BMPlayer/Core (0.8.7)
+  - BMPlayer/Full (0.8.7):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 3.5)
+    - SnapKit (~> 3.2)
   - HandyJSON (1.7.2)
   - Kingfisher (3.11.0)
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
+  - SnapKit (3.2.0)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - BMPlayer
   - HandyJSON (~> 1.7.2)
   - Kingfisher (~> 3.0)
   - NVActivityIndicatorView
+  - SnapKit (~> 3.2.0)
   - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  BMPlayer: 5ba9e3f3d61ccc5a24ebd9cdc24901dcf28c98bc
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 7177f7252470dcbf74a745d8312dd1352c22bd39
+PODFILE CHECKSUM: 95448d7532f229e22f9e880fa44e758436afe378
 
 COCOAPODS: 1.2.1

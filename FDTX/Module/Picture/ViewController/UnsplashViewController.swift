@@ -22,6 +22,9 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         self.view.backgroundColor = UIColor.black
         self.title = "Unsplash"
         self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         self.tableView.addSubview(self.refreshControl)
         self.requestFirstPageData()
     }

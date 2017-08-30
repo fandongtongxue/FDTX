@@ -7,8 +7,6 @@
 //
 
 import UIKit
-//import MediaPlayer
-//import MobilePlayer
 import WebKit
 
 let gHost = "blog.fandong.me"
@@ -27,6 +25,14 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
         self.view.backgroundColor = UIColor.black
         self.title = "Home"
         self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func showPictureVC() {
@@ -85,8 +91,10 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     }
     
     func showVideoPlayerVC() {
-//        let playerVC = MobilePlayerViewController(contentURL: URL.init(string: "http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4")!)
-//        present(playerVC, animated: true, completion: nil)
+        let videoVC = VideoViewController()
+        videoVC.setVideoUrl(videoUrl: URL.init(string: "http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4")!)
+        videoVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(videoVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
