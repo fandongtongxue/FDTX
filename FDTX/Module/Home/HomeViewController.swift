@@ -9,11 +9,18 @@
 import UIKit
 //import MediaPlayer
 //import MobilePlayer
+import WebKit
+
+let gHost = "blog.fandong.me"
+let gShowAlertOnDidFinishLoading = false
 
 let HomeViewControllerCellId = "HomeViewControllerCellId"
 let array = ["WebView","Unsplash","Music","Video"]
 
-class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
+class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,WKNavigationDelegate,WKUIDelegate,GDWebViewControllerDelegate{
+    
+    var webVC = GDWebViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,9 +36,48 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     }
     
     func showWebVC() {
-        let webVC = WebViewController.init(nibName: nil, bundle: nil)
+//        let webVC = WebViewController.init(nibName: nil, bundle: nil)
+//        webVC.hidesBottomBarWhenPushed = true
+//        self.navigationController?.pushViewController(webVC, animated: true)
+        webVC.delegate = self
+        webVC.loadURLWithString(gHost)
+        webVC.toolbar.toolbarTintColor = UIColor.darkGray
+        webVC.toolbar.toolbarBackgroundColor = UIColor.white
+        webVC.toolbar.toolbarTranslucent = false
+        webVC.allowsBackForwardNavigationGestures = true
         webVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(webVC, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+            self.webVC.showToolbar(true, animated: true)
+        })
+        self.navigationController?.pushViewController(self.webVC, animated: true)
+    }
+    
+    func webViewController(_ webViewController: GDWebViewController, didChangeTitle newTitle: NSString?) {
+        self.webVC.navigationController?.navigationBar.topItem?.title = newTitle as String?
+    }
+    
+    func webViewController(_ webViewController: GDWebViewController, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        if let URL = navigationAction.request.url as URL?,
+        let host = URL.host as NSString?
+        {
+            decisionHandler(.allow)
+            return
+//            let testSubdomain = "." + gHost
+//            if host as String == gHost || host.range(of: testSubdomain, options: .caseInsensitive).location != NSNotFound {
+//                decisionHandler(.allow)
+//                return
+//            }
+        }
+        
+        print(navigationAction.request.url?.host as Any)
+        decisionHandler(.cancel)
+    }
+    
+    func webViewController(_ webViewController: GDWebViewController, didFinishLoading loadedURL: URL?) {
+        if gShowAlertOnDidFinishLoading {
+            webViewController.evaluateJavaScript("alert('Loaded!')", completionHandler: nil)
+        }
     }
     
     func showMusicPlayerVC() {

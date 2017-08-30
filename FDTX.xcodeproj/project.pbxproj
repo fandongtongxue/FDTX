@@ -24,6 +24,8 @@
 		CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */; };
 		CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */; };
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
+		CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */; };
+		CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
 		CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */; };
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
+		CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewController.swift; sourceTree = "<group>"; };
+		CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewNavigationToolbar.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +215,23 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		CBC6AE711F56EDAB004455A6 /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				CBC6AE721F56EDAB004455A6 /* GDWebViewController */,
+			);
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		CBC6AE721F56EDAB004455A6 /* GDWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */,
+				CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */,
+			);
+			path = GDWebViewController;
+			sourceTree = "<group>";
+		};
 		CBE54D2D1F33700B00FF4CA0 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +258,7 @@
 				CB7320DF1F40376D00F2F7BA /* Module */,
 				CB7320DE1F40376D00F2F7BA /* Network */,
 				CBEB87831F546016003C50AC /* Resource */,
+				CBC6AE711F56EDAB004455A6 /* ThirdPart */,
 				CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */,
 				CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */,
 				CBE54D401F33700B00FF4CA0 /* Assets.xcassets */,
@@ -404,7 +426,9 @@
 				CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
+				CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
+				CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */,
 				CB1EDA151F47C89300821092 /* Config.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
