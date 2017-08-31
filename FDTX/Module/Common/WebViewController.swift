@@ -19,12 +19,15 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
         self.view.backgroundColor = UIColor.white
         self.title = "WebView"
         self.view.addSubview(self.webView)
+        self.webView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         self.webView.load(NSURLRequest.init(url: URL.init(string: self.url)!) as URLRequest)
     }
     //Lazy Load
     lazy var webView : WKWebView = {
         let configuration = WKWebViewConfiguration.init()
-        let webView : WKWebView = WKWebView.init(frame: self.view.bounds, configuration: configuration)
+        let webView : WKWebView = WKWebView.init(frame: CGRect.zero, configuration: configuration)
         webView.uiDelegate = self
         webView.navigationDelegate = self
         return webView

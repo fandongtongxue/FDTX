@@ -13,6 +13,5 @@ class UserViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        self.title = "我的"
     }
 }

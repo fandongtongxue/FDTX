@@ -89,7 +89,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     }()
     
     lazy var tableView : UITableView = {
-        let tableView : UITableView = UITableView.init(frame: self.view.bounds, style: .plain)
+        let tableView : UITableView = UITableView.init(frame: CGRect.zero, style: .plain)
         tableView.backgroundColor = UIColor.black
         tableView.delegate = self
         tableView.dataSource = self

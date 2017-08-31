@@ -29,12 +29,6 @@ class UnsplashViewCell: UITableViewCell {
         self.iconImageView.kf.setImage(with: URL.init(string: model.user.profile_image.large))
         self.nameLabel.text = model.user.name
         self.introduceLabel.text = model.user.bio
-        let screenWidth = Float(SCREEN_WIDTH)
-        let pictureHeight = CGFloat((model.height as NSString).floatValue * screenWidth / (model.width as NSString).floatValue)
-        self.pictureImageView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: pictureHeight)
-        self.iconImageView.frame = CGRect.init(x: 10, y: pictureHeight - 50 - 10, width: 50, height: 50)
-        self.nameLabel.frame = CGRect.init(x: self.iconImageView.frame.origin.x + self.iconImageView.frame.size.width + 10, y: pictureHeight - 50 - 5, width: SCREEN_WIDTH - 3*10 - 50, height: 20)
-        self.introduceLabel.frame = CGRect.init(x: self.iconImageView.frame.origin.x + self.iconImageView.frame.size.width + 10, y: self.nameLabel.frame.origin.y + self.nameLabel.frame.size.height + 5, width: SCREEN_WIDTH - 3*10 - 50, height: 15)
     }
     
     func initSubview() {
@@ -42,17 +36,35 @@ class UnsplashViewCell: UITableViewCell {
         self.contentView.addSubview(self.iconImageView)
         self.contentView.addSubview(self.nameLabel)
         self.contentView.addSubview(self.introduceLabel)
+        
+        self.pictureImageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        self.iconImageView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-10)
+            make.size.equalTo(CGSize.init(width: 50, height: 50))
+        }
+        self.nameLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.iconImageView.snp.right).offset(10)
+            make.top.equalTo(self.iconImageView.snp.top).offset(5)
+        }
+        self.introduceLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.iconImageView.snp.right).offset(10)
+            make.top.equalTo(self.nameLabel.snp.bottom).offset(5)
+            make.right.equalToSuperview().offset(-10)
+        }
     }
     
     lazy var pictureImageView : UIImageView = {
-        let pictureImageView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        let pictureImageView = UIImageView.init(frame: CGRect.zero)
         pictureImageView.contentMode = .scaleAspectFit
         pictureImageView.clipsToBounds = true
         return pictureImageView
     }()
     
     lazy var iconImageView : UIImageView = {
-        let iconImageView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
+        let iconImageView = UIImageView.init(frame: CGRect.zero)
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.layer.cornerRadius = 25
         iconImageView.clipsToBounds = true
@@ -60,14 +72,14 @@ class UnsplashViewCell: UITableViewCell {
     }()
     
     lazy var nameLabel : UILabel = {
-        let nameLabel = UILabel.init(frame: CGRect.init(x: self.iconImageView.frame.origin.x + self.iconImageView.frame.size.width + 10, y: 0, width: SCREEN_WIDTH - 3*10 - 50, height: 20))
+        let nameLabel = UILabel.init(frame: CGRect.zero)
         nameLabel.font = UIFont.systemFont(ofSize: 15)
         nameLabel.textColor = UIColor.white
         return nameLabel
     }()
     
     lazy var introduceLabel : UILabel = {
-        let introduceLabel = UILabel.init(frame: CGRect.init(x: self.iconImageView.frame.origin.x + self.iconImageView.frame.size.width + 10, y: 0, width: SCREEN_WIDTH - 3*10 - 50, height: 15))
+        let introduceLabel = UILabel.init(frame: CGRect.zero)
         introduceLabel.font = UIFont.systemFont(ofSize: 13)
         introduceLabel.textColor = UIColor.white
         return introduceLabel
