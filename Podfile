@@ -14,4 +14,5 @@ target 'FDTX' do
   pod 'BMPlayer'
   pod 'SnapKit', '~> 3.2.0'
   pod 'ReachabilitySwift'
+  
 end
