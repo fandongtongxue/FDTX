@@ -32,8 +32,6 @@
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
 		CBE54D411F33700B00FF4CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D401F33700B00FF4CA0 /* Assets.xcassets */; };
 		CBE54D441F33700B00FF4CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D421F33700B00FF4CA0 /* LaunchScreen.storyboard */; };
-		CBEB878B1F546016003C50AC /* The Greatest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBEB87871F546016003C50AC /* The Greatest.mp3 */; };
-		CBEB878C1F546016003C50AC /* One in a Million.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBEB87881F546016003C50AC /* One in a Million.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +66,6 @@
 		CBE54D401F33700B00FF4CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE54D431F33700B00FF4CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBE54D451F33700B00FF4CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBEB87871F546016003C50AC /* The Greatest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Greatest.mp3"; sourceTree = "<group>"; };
-		CBEB87881F546016003C50AC /* One in a Million.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "One in a Million.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,18 +278,8 @@
 		CBEB87831F546016003C50AC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				CBEB87841F546016003C50AC /* Music */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		CBEB87841F546016003C50AC /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				CBEB87871F546016003C50AC /* The Greatest.mp3 */,
-				CBEB87881F546016003C50AC /* One in a Million.mp3 */,
-			);
-			path = Music;
 			sourceTree = "<group>";
 		};
 		E3A1FDB5F10135F83BA9A631 /* Pods */ = {
@@ -367,10 +353,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBE54D441F33700B00FF4CA0 /* LaunchScreen.storyboard in Resources */,
-				CBEB878B1F546016003C50AC /* The Greatest.mp3 in Resources */,
 				CBE54D411F33700B00FF4CA0 /* Assets.xcassets in Resources */,
 				CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */,
-				CBEB878C1F546016003C50AC /* One in a Million.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
