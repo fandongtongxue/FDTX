@@ -12,6 +12,7 @@ PODS:
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
+  - ReachabilitySwift (3)
   - SnapKit (3.2.0)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - HandyJSON (~> 1.7.2)
   - Kingfisher (~> 3.0)
   - NVActivityIndicatorView
+  - ReachabilitySwift
   - SnapKit (~> 3.2.0)
   - XCGLogger (~> 4.0.0)
 
@@ -32,9 +34,10 @@ SPEC CHECKSUMS:
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 95448d7532f229e22f9e880fa44e758436afe378
+PODFILE CHECKSUM: 88309b45b2703ebd7a4824ba8a5732640272868e
 
 COCOAPODS: 1.2.1

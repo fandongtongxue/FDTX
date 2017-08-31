@@ -8,6 +8,7 @@
 
 import UIKit
 import XCGLogger
+import ReachabilitySwift
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -93,6 +94,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         log.info("沙盒路径"+NSHomeDirectory())
+        //Listen Network Status
+        let reachability = Reachability()!
+        
+        reachability.whenReachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                if reachability.isReachableViaWiFi {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+            }
+        }
+        reachability.whenUnreachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                print("Not reachable")
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
         let containerVC = ContainViewController.init(nibName: nil, bundle: nil)
         self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         self.window?.rootViewController = containerVC
