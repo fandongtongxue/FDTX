@@ -74,7 +74,12 @@ class LoginViewController: BaseViewController {
         startAnimating(size, message: "Logining", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         
         BaseNetwoking.manager.GET(url: "userLogin", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
-            self.stopAnimating()
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+//                NVActivityIndicatorPresenter.setMessage(result["msg"])
+//            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+                self.stopAnimating()
+            }
             log.info(result)
         }) { (error) in
             //do nothing
@@ -89,7 +94,12 @@ class LoginViewController: BaseViewController {
         startAnimating(size, message: "Registering", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         
         BaseNetwoking.manager.GET(url: "userRegister", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
-            self.stopAnimating()
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+//                NVActivityIndicatorPresenter.setMessage(result["msg"])
+//            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+                self.stopAnimating()
+            }
             log.info(result)
         }) { (error) in
             //do nothing
