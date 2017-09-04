@@ -69,12 +69,6 @@ class LoginViewController: BaseViewController {
     
     //Action
     func login() {
-        if self.userNameTextField.text == "" {
-            return
-        }
-        if self.passWordTextField.text == "" {
-            return
-        }
         //Loading
         let size = CGSize.init(width: 30, height: 30)
         startAnimating(size, message: "Logining", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
@@ -90,12 +84,6 @@ class LoginViewController: BaseViewController {
     }
     
     func register() {
-        if self.userNameTextField.text == "" {
-            return
-        }
-        if self.passWordTextField.text == "" {
-            return
-        }
         //Loading
         let size = CGSize.init(width: 30, height: 30)
         startAnimating(size, message: "Registering", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
