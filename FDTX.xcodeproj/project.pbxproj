@@ -23,6 +23,8 @@
 		CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */; };
 		CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */; };
 		CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */; };
+		CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */; };
+		CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */; };
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
 		CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */; };
 		CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */; };
@@ -55,6 +57,8 @@
 		CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
+		CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
 		CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewController.swift; sourceTree = "<group>"; };
 		CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewNavigationToolbar.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 		CB2C22F91F4D774300820C48 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */,
+				CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */,
 				CB2C22FA1F4D775B00820C48 /* UserViewController.swift */,
 			);
 			path = User;
@@ -423,9 +429,11 @@
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
 				CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */,
+				CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */,
 				CB1EDA151F47C89300821092 /* Config.swift in Sources */,
+				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,

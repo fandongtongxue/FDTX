@@ -14,4 +14,17 @@ class UserViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.perform(#selector(toLoginVC), with: nil, afterDelay: 1, inModes: [.defaultRunLoopMode])
+    }
+    
+    func toLoginVC() {
+        let loginVC = LoginViewController()
+        loginVC.hidesBottomBarWhenPushed = true
+        let loginNav = RootNavigationController.init(rootViewController: loginVC)
+        let rootVC = UIApplication.shared.keyWindow?.rootViewController
+        rootVC?.present(loginNav, animated: true, completion: nil)
+    }
 }
