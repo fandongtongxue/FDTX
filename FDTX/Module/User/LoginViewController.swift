@@ -41,39 +41,73 @@ class LoginViewController: BaseViewController {
         self.userNameTextField.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.bottom.equalTo(self.passWordTextField.snp.top).offset(-20)
+            make.top.equalToSuperview().offset(20)
             make.height.equalTo(44)
         }
         
         self.passWordTextField.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.bottom.equalTo(self.loginBtn.snp.top).offset(-20)
+            make.top.equalTo(self.userNameTextField.snp.bottom).offset(20)
             make.height.equalTo(44)
         }
         
         self.loginBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.bottom.equalTo(self.registerBtn.snp.top).offset(-20)
+            make.top.equalTo(self.passWordTextField.snp.bottom).offset(20)
             make.height.equalTo(44)
         }
         
         self.registerBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview().offset(-20)
+            make.top.equalTo(self.loginBtn.snp.bottom).offset(20)
             make.height.equalTo(44)
         }
     }
     
     //Action
     func login() {
-        log.info("点击登录按钮")
+        if self.userNameTextField.text == "" {
+            return
+        }
+        if self.passWordTextField.text == "" {
+            return
+        }
+        //Loading
+        let size = CGSize.init(width: 30, height: 30)
+        startAnimating(size, message: "Logining", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
+        
+        BaseNetwoking.manager.GET(url: "userLogin", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
+            self.stopAnimating()
+            log.info(result)
+        }) { (error) in
+            //do nothing
+            self.stopAnimating()
+            log.error(error)
+        }
     }
     
     func register() {
-        log.info("点击注册按钮")
+        if self.userNameTextField.text == "" {
+            return
+        }
+        if self.passWordTextField.text == "" {
+            return
+        }
+        //Loading
+        let size = CGSize.init(width: 30, height: 30)
+        startAnimating(size, message: "Registering", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
+        
+        BaseNetwoking.manager.GET(url: "userRegister", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
+            self.stopAnimating()
+            log.info(result)
+        }) { (error) in
+            //do nothing
+            self.stopAnimating()
+            log.error(error)
+        }
     }
     //Lazy Load
     lazy var backView : UIImageView = {
