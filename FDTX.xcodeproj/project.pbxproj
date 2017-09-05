@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F2A2A23B9CA885D42119FEC /* Pods_FDTX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222061FFF99EC331450FC66 /* Pods_FDTX.framework */; };
+		CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */; };
 		CB1EDA151F47C89300821092 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EDA111F47C89300821092 /* Config.swift */; };
 		CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EDA191F47C8C300821092 /* GuideViewController.swift */; };
 		CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */; };
@@ -40,6 +41,7 @@
 		1222061FFF99EC331450FC66 /* Pods_FDTX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDTX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
 		3346974645089DE4EEF0FAE6 /* Pods-FDTX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.debug.xcconfig"; sourceTree = "<group>"; };
+		CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		CB1EDA111F47C89300821092 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CB1EDA191F47C8C300821092 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB03C2BF1F5ED44E0013049D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CB1EDA101F47C89300821092 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		CB2C22F91F4D774300820C48 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				CB03C2BF1F5ED44E0013049D /* View */,
 				CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */,
 				CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */,
 				CB2C22FA1F4D775B00820C48 /* UserViewController.swift */,
@@ -429,6 +440,7 @@
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
 				CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */,
+				CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */,
 				CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */,
