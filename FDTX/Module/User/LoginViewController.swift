@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PKHUD
 
 class LoginViewController: BaseViewController {
     //Life Cycle
@@ -75,17 +76,14 @@ class LoginViewController: BaseViewController {
         startAnimating(size, message: "Sign Ining", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         
         BaseNetwoking.manager.GET(url: "userLogin", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
-//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
-//                NVActivityIndicatorPresenter.setMessage(result["msg"])
-//            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-                self.stopAnimating()
+            self.stopAnimating()
+            HUD.flash(.label("Sign In Success"), delay: HUD_DELAY_TIME)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_DELAY_TIME) {
                 self.dismiss(animated: true, completion: nil)
             }
-            log.info(result)
         }) { (error) in
-            //do nothing
             self.stopAnimating()
+            HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
         }
     }
     
@@ -106,14 +104,14 @@ class LoginViewController: BaseViewController {
         let userNameTextField = UITextField()
         userNameTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
         userNameTextField.textColor = .white
-        userNameTextField.keyboardType = .alphabet
+        userNameTextField.keyboardType = .default
         userNameTextField.placeholder = "UserName"
         return userNameTextField
     }()
     
     lazy var passWordTextField : UITextField = {
         let passWordTextField = UITextField()
-        passWordTextField.keyboardType = .alphabet
+        passWordTextField.keyboardType = .default
         passWordTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
         passWordTextField.textColor = .white
         passWordTextField.placeholder = "PassWord"
@@ -138,5 +136,5 @@ class LoginViewController: BaseViewController {
         registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
         return registerBtn
     }()
-    
+
 }

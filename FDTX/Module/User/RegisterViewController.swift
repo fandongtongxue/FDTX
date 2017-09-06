@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PKHUD
 
 class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
@@ -66,17 +67,14 @@ class RegisterViewController: BaseViewController {
         startAnimating(size, message: "Sign Uping", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         
         BaseNetwoking.manager.GET(url: "userRegister", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
-//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
-//                NVActivityIndicatorPresenter.setMessage(result["msg"])
-//            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-                self.stopAnimating()
+            self.stopAnimating()
+            HUD.flash(.label("Sign Up Success"), delay: HUD_DELAY_TIME)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_DELAY_TIME) {
                 self.dismiss(animated: true, completion: nil)
             }
-            log.info(result)
         }) { (error) in
-            //do nothing
             self.stopAnimating()
+            HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
         }
     }
     
