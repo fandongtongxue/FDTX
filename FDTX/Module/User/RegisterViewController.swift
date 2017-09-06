@@ -12,5 +12,108 @@ import UIKit
 class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
+        self.title = "Sign up"
+        self.initSubviews()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    //Touch
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    //UI
+    func initSubviews() {
+        self.view.addSubview(self.backView)
+        self.view.addSubview(self.userNameTextField)
+        self.view.addSubview(self.passWordTextField)
+        self.view.addSubview(self.registerBtn)
+        
+        self.backView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        self.userNameTextField.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
+            make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
+            make.top.equalToSuperview().offset(STATUSBAR_HEIGHT)
+            make.height.equalTo(NAVIGATIONBAR_HEIGHT)
+        }
+        
+        self.passWordTextField.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
+            make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
+            make.top.equalTo(self.userNameTextField.snp.bottom).offset(STATUSBAR_HEIGHT)
+            make.height.equalTo(NAVIGATIONBAR_HEIGHT)
+        }
+        
+        self.registerBtn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
+            make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
+            make.top.equalTo(self.passWordTextField.snp.bottom).offset(STATUSBAR_HEIGHT)
+            make.height.equalTo(NAVIGATIONBAR_HEIGHT)
+        }
+    }
+    
+    func register() {
+        self.view.endEditing(true)
+        //Loading
+        let size = CGSize.init(width: 30, height: 30)
+        startAnimating(size, message: "Sign Uping", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
+        
+        BaseNetwoking.manager.GET(url: "userRegister", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+//                NVActivityIndicatorPresenter.setMessage(result["msg"])
+//            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+                self.stopAnimating()
+                self.dismiss(animated: true, completion: nil)
+            }
+            log.info(result)
+        }) { (error) in
+            //do nothing
+            self.stopAnimating()
+        }
+    }
+    
+    //Lazy Load
+    lazy var backView : UIImageView = {
+        let backImageView = UIImageView.init(frame: .zero)
+        //       backImageView.image = UIImage.init(named: "")
+        backImageView.backgroundColor = .black
+        return backImageView
+    }()
+    
+    lazy var userNameTextField : UITextField = {
+        let userNameTextField = UITextField()
+        userNameTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
+        userNameTextField.textColor = .white
+        userNameTextField.keyboardType = .alphabet
+        userNameTextField.placeholder = "UserName"
+        return userNameTextField
+    }()
+    
+    lazy var passWordTextField : UITextField = {
+        let passWordTextField = UITextField()
+        passWordTextField.keyboardType = .alphabet
+        passWordTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
+        passWordTextField.textColor = .white
+        passWordTextField.placeholder = "PassWord"
+        return passWordTextField
+    }()
+    
+    lazy var registerBtn : UIButton = {
+        let registerBtn = UIButton.init(frame: .zero)
+        registerBtn.setTitle("Sign Up", for: .normal)
+        registerBtn.setTitleColor(.black, for: .normal)
+        registerBtn.backgroundColor = .white
+        registerBtn.layer.cornerRadius = CGFloat(NAVIGATIONBAR_HEIGHT / 2)
+        registerBtn.clipsToBounds = true
+        registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
+        return registerBtn
+    }()
 }

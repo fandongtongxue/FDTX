@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        log.info("沙盒路径"+NSHomeDirectory())
+        log.info("沙盒路径:\n"+NSHomeDirectory())
         //Listen Network Status
         let reachability = Reachability()!
         

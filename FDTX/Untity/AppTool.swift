@@ -19,6 +19,6 @@ class AppTool {
 extension AppTool {
     //是否登录
     func isLogin() -> Bool {
-        return true
+        return false
     }
 }

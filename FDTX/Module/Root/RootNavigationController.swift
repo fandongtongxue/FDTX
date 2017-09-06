@@ -12,7 +12,7 @@ class RootNavigationController: UINavigationController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationBar.isTranslucent = true
+        self.navigationBar.isTranslucent = false
         self.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 18),NSForegroundColorAttributeName:UIColor.white]
         self.navigationBar.barTintColor = UIColor.black
         self.navigationBar.tintColor = UIColor.white

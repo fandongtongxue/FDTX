@@ -31,7 +31,21 @@ class RootTabBarController: UITabBarController{
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        log.info(self.selectedIndex)
+        switch self.selectedIndex {
+        case 0:
+            if !AppTool.shared.isLogin() {
+                let loginVC = LoginViewController()
+                loginVC.hidesBottomBarWhenPushed = true
+                let loginNav = RootNavigationController.init(rootViewController: loginVC)
+                present(loginNav, animated: true, completion: nil)
+            }
+            break
+        case 1:
+            //do nothing
+            break
+        default:
+            break
+        }
     }
     
     override func didReceiveMemoryWarning() {
