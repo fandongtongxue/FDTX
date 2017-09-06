@@ -19,6 +19,7 @@
 		CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */; };
 		CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */; };
 		CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */; };
+		CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141FD1F5FA4C600E3085C /* AppTool.swift */; };
 		CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E11F40376D00F2F7BA /* BaseViewController.swift */; };
 		CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */; };
 		CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E51F40376D00F2F7BA /* HomeViewController.swift */; };
@@ -55,6 +56,7 @@
 		CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserModel.swift; sourceTree = "<group>"; };
 		CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserProfileModel.swift; sourceTree = "<group>"; };
 		CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		CB7141FD1F5FA4C600E3085C /* AppTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTool.swift; sourceTree = "<group>"; };
 		CB7320E11F40376D00F2F7BA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CB7320E51F40376D00F2F7BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CB7141FC1F5FA4B300E3085C /* Untity */ = {
+			isa = PBXGroup;
+			children = (
+				CB7141FD1F5FA4C600E3085C /* AppTool.swift */,
+			);
+			path = Untity;
+			sourceTree = "<group>";
+		};
 		CB7320DE1F40376D00F2F7BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +304,7 @@
 				CB7320DE1F40376D00F2F7BA /* Network */,
 				CBEB87831F546016003C50AC /* Resource */,
 				CBC6AE711F56EDAB004455A6 /* ThirdPart */,
+				CB7141FC1F5FA4B300E3085C /* Untity */,
 				CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */,
 				CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */,
 				CBE54D401F33700B00FF4CA0 /* Assets.xcassets */,
@@ -464,6 +475,7 @@
 				CB1F58961F4A82210096CDC5 /* WebViewController.swift in Sources */,
 				CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */,
 				CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */,
+				CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */,
 				CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */,
 				CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */,
 			);

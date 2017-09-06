@@ -30,6 +30,10 @@ class RootTabBarController: UITabBarController{
         self.viewControllers = [homeNav,userVC]
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        log.info(self.selectedIndex)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

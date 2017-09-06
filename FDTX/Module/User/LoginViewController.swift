@@ -109,7 +109,7 @@ class LoginViewController: BaseViewController {
     lazy var backView : UIImageView = {
        let backImageView = UIImageView.init(frame: .zero)
 //       backImageView.image = UIImage.init(named: "")
-       backImageView.backgroundColor = .cyan
+       backImageView.backgroundColor = .black
        return backImageView
     }()
     
