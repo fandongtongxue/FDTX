@@ -14,6 +14,10 @@ class UserViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         self.initSubview()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.requestData()
     }
     
@@ -26,7 +30,7 @@ class UserViewController: BaseViewController {
     }
     
     func requestData() {
-        BaseNetwoking.manager.GET(url: "userInfo", parameters: ["uid":6], success: { (result) in
+        BaseNetwoking.manager.GET(url: "userInfo", parameters: ["uid":AppTool.shared.uid], success: { (result) in
             let userInfo = result["data"]?["userInfo"] as! NSArray
             let userInfoDict = userInfo.firstObject
             let model = UserInfoModel.deserialize(from: userInfoDict as? NSDictionary)

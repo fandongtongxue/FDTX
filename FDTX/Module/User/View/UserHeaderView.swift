@@ -22,7 +22,7 @@ class UserHeaderView: UIView {
     func initSubviews() {
         self.addSubview(self.bgView)
         self.addSubview(self.effectView)
-//        self.addSubview(self.shadowView)
+        self.addSubview(self.shadowView)
         self.addSubview(self.iconView)
         self.addSubview(self.nameLabel)
         self.addSubview(self.introduceLabel)
@@ -33,9 +33,9 @@ class UserHeaderView: UIView {
         self.effectView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-//        self.shadowView.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
+        self.shadowView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         self.iconView.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(NAVIGATIONBAR_HEIGHT)
             make.centerX.equalToSuperview()
@@ -73,8 +73,8 @@ class UserHeaderView: UIView {
     
     lazy var shadowView : UIView = {
         let shadowView = UIView.init()
-        shadowView.backgroundColor = .clear
-//        shadowView.alpha = 0.1
+        shadowView.backgroundColor = .black
+        shadowView.alpha = 0.3
         return shadowView;
     }()
     

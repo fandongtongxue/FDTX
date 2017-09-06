@@ -11,14 +11,15 @@ import Foundation
 private let AppToolShared = AppTool()
 
 class AppTool {
+    
+    var uid : String!
+    var isLogin : Bool!
+    
     class var shared : AppTool {
         return AppToolShared
     }
 }
 
 extension AppTool {
-    //是否登录
-    func isLogin() -> Bool {
-        return false
-    }
+    
 }
