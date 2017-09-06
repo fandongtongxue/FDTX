@@ -64,20 +64,7 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     }
     
     func webViewController(_ webViewController: GDWebViewController, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-        if let URL = navigationAction.request.url as URL?,
-        let host = URL.host as NSString?
-        {
-            decisionHandler(.allow)
-            return
-//            let testSubdomain = "." + gHost
-//            if host as String == gHost || host.range(of: testSubdomain, options: .caseInsensitive).location != NSNotFound {
-//                decisionHandler(.allow)
-//                return
-//            }
-        }
-        
-        print(navigationAction.request.url?.host as Any)
-        decisionHandler(.cancel)
+        decisionHandler(.allow)
     }
     
     func webViewController(_ webViewController: GDWebViewController, didFinishLoading loadedURL: URL?) {
