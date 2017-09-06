@@ -18,6 +18,7 @@
 		CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */; };
 		CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */; };
 		CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */; };
+		CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */; };
 		CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E11F40376D00F2F7BA /* BaseViewController.swift */; };
 		CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */; };
 		CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E51F40376D00F2F7BA /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 		CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUrlModel.swift; sourceTree = "<group>"; };
 		CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserModel.swift; sourceTree = "<group>"; };
 		CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserProfileModel.swift; sourceTree = "<group>"; };
+		CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		CB7320E11F40376D00F2F7BA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CB7320E51F40376D00F2F7BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		CB2C22F91F4D774300820C48 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				CB7141DE1F5F7EFC00E3085C /* Model */,
 				CB03C2BF1F5ED44E0013049D /* View */,
 				CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */,
 				CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */,
@@ -172,6 +175,14 @@
 				CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CB7141DE1F5F7EFC00E3085C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CB7320DE1F40376D00F2F7BA /* Network */ = {
@@ -434,6 +445,7 @@
 				CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */,
 				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
 				CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */,
+				CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */,
 				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
 				CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,

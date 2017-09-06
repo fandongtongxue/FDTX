@@ -84,7 +84,6 @@ class LoginViewController: BaseViewController {
         }) { (error) in
             //do nothing
             self.stopAnimating()
-            log.error(error)
         }
     }
     
@@ -104,7 +103,6 @@ class LoginViewController: BaseViewController {
         }) { (error) in
             //do nothing
             self.stopAnimating()
-            log.error(error)
         }
     }
     //Lazy Load

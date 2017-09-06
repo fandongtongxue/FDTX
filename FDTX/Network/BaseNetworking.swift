@@ -29,6 +29,7 @@ extension BaseNetwoking {
                         success(result)
                     }else{
                         let errorResult = NSError.init(domain: SERVER_HOST, code: result["state"] as! Int, userInfo: ["msg":result["msg"]!])
+                        log.error("error:\(errorResult)")
                         failure(errorResult as Error)
                     }
                 case .failure(let error):

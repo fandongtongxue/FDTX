@@ -37,10 +37,27 @@ class UserHeaderView: UIView {
             make.edges.equalToSuperview()
         }
         self.iconView.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(STATUSBAR_HEIGHT + NAVIGATIONBAR_HEIGHT)
+            make.top.equalTo(self).offset(NAVIGATIONBAR_HEIGHT)
             make.center.equalToSuperview()
-            
+            make.size.equalTo(CGSize.init(width: 70, height: 70))
         }
+        self.nameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.iconView.snp.bottom).offset(10)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+        }
+        self.introduceLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.nameLabel.snp.bottom).offset(10)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+        }
+    }
+    
+    func setModel(model:UserInfoModel) {
+        self.bgView.kf.setImage(with: URL.init(string: model.icon))
+        self.iconView.kf.setImage(with: URL.init(string: model.icon))
+        self.nameLabel.text = model.nickName
+        self.introduceLabel.text = model.introduce
     }
     
     lazy var bgView : UIImageView = {
@@ -81,6 +98,7 @@ class UserHeaderView: UIView {
         introduceLabel.textColor = .white
         introduceLabel.font = UIFont.systemFont(ofSize: 13)
         introduceLabel.textAlignment = .center
+        introduceLabel.numberOfLines = 0
         return introduceLabel;
     }()
 }
