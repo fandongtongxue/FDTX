@@ -27,8 +27,19 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     func requestData() {
         let path = Bundle.main.path(forResource: "openSource", ofType: "json")
-        let data = NSData.init(contentsOfFile: path!)
-        let result = try JSONSerialization.jsonObject(with: data! as Data, options: .mutableContainers)
+        do{
+            let data = NSData.init(contentsOfFile: path!)
+            let json : Any = try JSONSerialization.data(withJSONObject: data!, options:JSONSerialization.WritingOptions = [])
+            let result = json as! Dictionary<String, String>
+//            let dataDict = result["data"] as! Dictionary
+//            let openSourceArray = dataDict["openSource"]
+//            for dict in openSourceArray {
+//                let model = OpenSourceModel.deserialize(from: dict as? NSDictionary)
+//                self.dataArray.add(model)
+//            }
+        }catch let error as Error!{
+            log.error(error)
+        }
     }
     
     //UITableViewDelegate
@@ -51,5 +62,10 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
         tableView.alwaysBounceVertical = true
         tableView.separatorStyle = .none
         return tableView
+    }()
+    
+    lazy var dataArray : NSMutableArray = {
+        let dataArray = NSMutableArray.init()
+        return dataArray
     }()
 }

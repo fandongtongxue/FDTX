@@ -25,10 +25,10 @@ extension BaseNetwoking {
                 switch response.result {
                 case .success(let value):
                     let result = value as! [String : AnyObject]
-                    if result["state"]?.int64Value == 1{
+                    if result["status"]?.int64Value == 1{
                         success(result)
                     }else{
-                        let errorResult = NSError.init(domain: SERVER_HOST, code: result["state"] as! Int, userInfo: ["msg":result["msg"]!])
+                        let errorResult = NSError.init(domain: SERVER_HOST, code: result["status"] as! Int, userInfo: ["msg":result["msg"]!])
                         log.error("error:\(errorResult)")
                         failure(errorResult as Error)
                     }
