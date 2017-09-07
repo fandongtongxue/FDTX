@@ -37,6 +37,8 @@
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
 		CBE54D411F33700B00FF4CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D401F33700B00FF4CA0 /* Assets.xcassets */; };
 		CBE54D441F33700B00FF4CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D421F33700B00FF4CA0 /* LaunchScreen.storyboard */; };
+		CBFDCE3D1F61214E001422F5 /* OpenSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */; };
+		CBFDCE3F1F612ECA001422F5 /* openSource.json in Resources */ = {isa = PBXBuildFile; fileRef = CBFDCE3E1F612ECA001422F5 /* openSource.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		CBE54D401F33700B00FF4CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE54D431F33700B00FF4CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBE54D451F33700B00FF4CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
+		CBFDCE3E1F612ECA001422F5 /* openSource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openSource.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */,
 				CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */,
 				CB2C22FA1F4D775B00820C48 /* UserViewController.swift */,
+				CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 		CBEB87831F546016003C50AC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CBFDCE3E1F612ECA001422F5 /* openSource.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 			files = (
 				CBE54D441F33700B00FF4CA0 /* LaunchScreen.storyboard in Resources */,
 				CBE54D411F33700B00FF4CA0 /* Assets.xcassets in Resources */,
+				CBFDCE3F1F612ECA001422F5 /* openSource.json in Resources */,
 				CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +479,7 @@
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,
+				CBFDCE3D1F61214E001422F5 /* OpenSourceViewController.swift in Sources */,
 				CB1F58961F4A82210096CDC5 /* WebViewController.swift in Sources */,
 				CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */,
 				CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */,

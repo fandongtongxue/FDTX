@@ -1,0 +1,44 @@
+{
+    "data": {
+        "openSource": [
+                       {
+                       "name": "Alamofire",
+                       "url": "https://github.com/Alamofire/Alamofire"
+                       },
+                       {
+                       "name": "HandyJSON",
+                       "url": "https://github.com/alibaba/HandyJSON"
+                       },
+                       {
+                       "name": "Kingfisher",
+                       "url": "https://github.com/onevcat/Kingfisher"
+                       },
+                       {
+                       "name": "XCGLogger",
+                       "url": "https://github.com/DaveWoodCom/XCGLogger"
+                       },
+                       {
+                       "name": "NVActivityIndicatorView",
+                       "url": "https://github.com/ninjaprox/NVActivityIndicatorView"
+                       },
+                       {
+                       "name": "BMPlayer",
+                       "url": "https://github.com/BrikerMan/BMPlayer"
+                       },
+                       {
+                       "name": "SnapKit",
+                       "url": "https://github.com/SnapKit/SnapKit"
+                       },
+                       {
+                       "name": "ReachabilitySwift",
+                       "url": "https://github.com/ashleymills/Reachability.swift"
+                       },
+                       {
+                       "name": "PKHUD",
+                       "url": "https://github.com/pkluz/PKHUD"
+                       }
+                       ]
+    },
+    "state": 1,
+    "msg": "获取用户信息成功"
+}
