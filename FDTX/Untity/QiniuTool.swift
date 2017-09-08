@@ -38,6 +38,13 @@ extension QiniuTool {
                 }, params: nil, checkCrc: true, cancellationSignal:nil)
                 //上传
                 manager?.put(imageData, key: key, token: token, complete: { (responseInfo, key, resp) in
+                    if (responseInfo?.isOK)!{
+                        //上传成功
+                        log.info("Upload Success")
+                    }else{
+                        //上传失败
+                        log.info("Upload Failed")
+                    }
                     log.info(responseInfo)
                     log.info(resp)
                 }, option: uploadOption)
