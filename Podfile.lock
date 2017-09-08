@@ -25,6 +25,7 @@ PODS:
   - HandyJSON (1.7.2)
   - HappyDNS (0.3.10)
   - Kingfisher (3.11.0)
+  - NightNight (0.4.5)
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - BMPlayer
   - HandyJSON (~> 1.7.2)
   - Kingfisher (~> 3.0)
+  - NightNight
   - NVActivityIndicatorView
   - PKHUD (~> 4.0)
   - Qiniu
@@ -57,6 +59,7 @@ SPEC CHECKSUMS:
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   HappyDNS: 06a9fed2796663fd87626dbf02552933265bf059
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
+  NightNight: f6efd4faf72320f5b035f67ae158b80e96a39f37
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   Qiniu: 8af94ce9b1611ed5f4350883e41d4a62cabad491
@@ -64,6 +67,6 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 7bdbc2e4c200f86e4346a0d4341bd461728796f7
+PODFILE CHECKSUM: e2ccae6792a4acf284f08699bab688ddaf9588e7
 
 COCOAPODS: 1.2.1

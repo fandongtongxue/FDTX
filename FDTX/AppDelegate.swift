@@ -9,6 +9,7 @@
 import UIKit
 import XCGLogger
 import ReachabilitySwift
+import NightNight
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
