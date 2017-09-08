@@ -14,10 +14,12 @@ class UserViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         self.initSubview()
+        QiniuTool.shared.uploadImage(image: UIImage.init(named: "nav_btn_back_hl")!, key: "11")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.requestData()
     }
     
@@ -25,9 +27,7 @@ class UserViewController: BaseViewController {
         super.touchesBegan(touches, with: event)
         let openSourceVC = OpenSourceViewController()
         openSourceVC.hidesBottomBarWhenPushed = true
-        let openSourceNav = RootNavigationController.init(rootViewController: openSourceVC)
-        let rootVC = UIApplication.shared.keyWindow?.rootViewController
-        rootVC?.present(openSourceNav, animated: true, completion: nil)
+        self.navigationController?.pushViewController(openSourceVC, animated: true)
     }
     
     func initSubview() {
@@ -52,9 +52,7 @@ class UserViewController: BaseViewController {
     func toLoginVC() {
         let loginVC = LoginViewController()
         loginVC.hidesBottomBarWhenPushed = true
-        let loginNav = RootNavigationController.init(rootViewController: loginVC)
-        let rootVC = UIApplication.shared.keyWindow?.rootViewController
-        rootVC?.present(loginNav, animated: true, completion: nil)
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
     lazy var headerView : UserHeaderView = {

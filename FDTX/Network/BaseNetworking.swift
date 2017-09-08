@@ -20,7 +20,14 @@ class BaseNetwoking {
 extension BaseNetwoking {
     //GET请求
     func GET(url: String, parameters : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failure : @escaping (_ error : Error)->()) {
-        Alamofire.request(SERVER_HOST + url, method: .get, parameters: parameters)
+        var finalUrl = ""
+        //如果来源于原有API
+        if url.hasPrefix("http://api.fandong.me") {
+            finalUrl = url
+        }else{
+            finalUrl = SERVER_HOST + url
+        }
+        Alamofire.request(finalUrl, method: .get, parameters: parameters)
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let value):

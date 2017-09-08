@@ -24,6 +24,11 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
         self.requestData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func initSubview() {
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in

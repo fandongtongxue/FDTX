@@ -24,10 +24,11 @@ class RootTabBarController: UITabBarController{
         homeNav.tabBarItem = homeItem
         
         let userVC = UserViewController.init(nibName: nil, bundle: nil)
+        let userNav = RootNavigationController.init(rootViewController: userVC)
         let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 1)
-        userVC.tabBarItem = userItem
+        userNav.tabBarItem = userItem
         
-        self.viewControllers = [homeNav,userVC]
+        self.viewControllers = [homeNav,userNav]
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

@@ -26,6 +26,7 @@
 		CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */; };
 		CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */; };
 		CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */; };
+		CB87CA641F6247F10031A39C /* QiniuTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87CA631F6247F10031A39C /* QiniuTool.swift */; };
 		CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */; };
 		CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */; };
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
@@ -52,8 +53,6 @@
 		CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewCell.swift; sourceTree = "<group>"; };
 		CB1F58951F4A82210096CDC5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CB2C22FA1F4D775B00820C48 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		CB4824BA1F52A3D700AC5CA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		CB4824BB1F52A3D700AC5CA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CB542A711F47169C00BCB90F /* UnsplashPictureModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashPictureModel.swift; sourceTree = "<group>"; };
 		CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUrlModel.swift; sourceTree = "<group>"; };
 		CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserModel.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
+		CB87CA631F6247F10031A39C /* QiniuTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiniuTool.swift; sourceTree = "<group>"; };
 		CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
@@ -199,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7141FD1F5FA4C600E3085C /* AppTool.swift */,
+				CB87CA631F6247F10031A39C /* QiniuTool.swift */,
 			);
 			path = Untity;
 			sourceTree = "<group>";
@@ -462,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB87CA641F6247F10031A39C /* QiniuTool.swift in Sources */,
 				CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */,
 				CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */,
 				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
@@ -500,7 +502,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CBE54D3E1F33700B00FF4CA0 /* Base */,
-				CB4824BA1F52A3D700AC5CA7 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -509,7 +510,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CBE54D431F33700B00FF4CA0 /* Base */,
-				CB4824BB1F52A3D700AC5CA7 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
