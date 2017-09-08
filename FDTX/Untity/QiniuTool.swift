@@ -9,7 +9,7 @@
 import Foundation
 import Qiniu
 
-let QINIU_GETTOKEN_URL = "http://api.fandong.me/api/qiniucloudstorge/php-sdk-master/examples/upload_token.php"
+let QINIU_GETTOKEN_URL = "http://api.fandong.me/api/qiniucloudstorge/php-sdk-master/examples/upload_token_fandong.php"
 
 private let QiniuToolShared = QiniuTool()
 
@@ -32,12 +32,15 @@ extension QiniuTool {
                 }
                 let manager = QNUploadManager.init(configuration: config)
                 let imageData = UIImageJPEGRepresentation(image, 1.0)
-                let uploadOption = QNUploadOption.init(mime: <#T##String!#>, progressHandler: { (<#String?#>, <#Float#>) in
-                    <#code#>
-                }, params: <#T##[AnyHashable : Any]!#>, checkCrc: <#T##Bool#>, cancellationSignal: <#T##QNUpCancellationSignal!##QNUpCancellationSignal!##() -> Bool#>)
-                manager?.put(imageData, key: key, token: token, complete: { (<#QNResponseInfo?#>, <#String?#>, <#[AnyHashable : Any]?#>) in
-                    <#code#>
-                }, option: <#T##QNUploadOption!#>)
+                //上传配置设置
+                let uploadOption = QNUploadOption.init(mime: "image/jpeg", progressHandler: { (key, percent) in
+                    log.info(percent)
+                }, params: nil, checkCrc: true, cancellationSignal:nil)
+                //上传
+                manager?.put(imageData, key: key, token: token, complete: { (responseInfo, key, resp) in
+                    log.info(responseInfo)
+                    log.info(resp)
+                }, option: uploadOption)
             }
         }) { (error) in
             //do nothing
