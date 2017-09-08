@@ -34,8 +34,7 @@ class RootTabBarController: UITabBarController{
         switch self.selectedIndex {
         case 0:
             if !AppTool.shared.isLogin {
-//                let loginVC = LoginViewController()
-                let loginVC = OpenSourceViewController()
+                let loginVC = LoginViewController()
                 loginVC.hidesBottomBarWhenPushed = true
                 let loginNav = RootNavigationController.init(rootViewController: loginVC)
                 present(loginNav, animated: true, completion: nil)

@@ -21,6 +21,15 @@ class UserViewController: BaseViewController {
         self.requestData()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        let openSourceVC = OpenSourceViewController()
+        openSourceVC.hidesBottomBarWhenPushed = true
+        let openSourceNav = RootNavigationController.init(rootViewController: openSourceVC)
+        let rootVC = UIApplication.shared.keyWindow?.rootViewController
+        rootVC?.present(openSourceNav, animated: true, completion: nil)
+    }
+    
     func initSubview() {
         self.view.addSubview(self.headerView)
         self.headerView.snp.makeConstraints { (make) in
