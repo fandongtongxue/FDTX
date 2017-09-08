@@ -14,7 +14,7 @@ class UserViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         self.initSubview()
-        QiniuTool.shared.uploadImage(image: UIImage.init(named: "nav_btn_back_hl")!, key: "11")
+//        QiniuTool.shared.uploadImage(image: UIImage.init(named: "nav_btn_back_hl")!, key: "11")
     }
     
     override func viewWillAppear(_ animated: Bool) {

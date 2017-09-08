@@ -17,4 +17,5 @@ target 'FDTX' do
   pod 'PKHUD', '~> 4.0'
   pod "Qiniu"
   pod 'NightNight'
+  pod 'RealmSwift'
 end

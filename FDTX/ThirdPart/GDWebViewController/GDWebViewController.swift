@@ -192,20 +192,20 @@ open class GDWebViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
     
     open func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        showLoading(false)
+//        showLoading(false)
         if error._code == NSURLErrorCancelled {
             return
         }
         
-        showError(error.localizedDescription)
+//        showError(error.localizedDescription)
     }
     
     open func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        showLoading(false)
+//        showLoading(false)
         if error._code == NSURLErrorCancelled {
             return
         }
-        showError(error.localizedDescription)
+//        showError(error.localizedDescription)
     }
     
     open func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
@@ -222,7 +222,7 @@ open class GDWebViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
     
     open func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        showLoading(true)
+//        showLoading(true)
     }
     
     open func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
