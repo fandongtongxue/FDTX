@@ -41,24 +41,27 @@ class UserViewController: BaseViewController {
     }
     
     func requestData() {
-        BaseNetwoking.manager.GET(url: "userInfo", parameters: ["uid":AppTool.shared.uid], success: { (result) in
-            let dataDict = result["data"] as! NSDictionary
-            let userInfo = dataDict["userInfo"] as! NSArray
-            let userInfoDict = userInfo.firstObject
-            let model = UserInfoModel.deserialize(from: userInfoDict as? NSDictionary)
-            
-            let items = realm.objects(UserInfoModel.self)
-            if items.count > 0 {
-                log.info(items)
+        if AppTool.shared.isLogin() {
+            BaseNetwoking.manager.GET(url: "userInfo", parameters: ["uid":AppTool.shared.uid], success: { (result) in
+                let dataDict = result["data"] as! NSDictionary
+                let userInfo = dataDict["userInfo"] as! NSArray
+                let userInfoDict = userInfo.firstObject
+                let model = UserInfoModel.deserialize(from: userInfoDict as? NSDictionary)
+                
+                let realm = try! Realm()
+                let items = realm.objects(UserInfoModel.self)
+                if items.count > 0 {
+                    log.info(items)
+                }
+                try! realm.write {
+                    realm.add(model!)
+                }
+                log.info(realm.configuration.fileURL)
+                
+                self.headerView.setModel(model: model!)
+            }) { (error) in
+                
             }
-            try! realm.write {
-                realm.add(model!)
-            }
-            log.info(realm.configuration.fileURL)
-            
-            self.headerView.setModel(model: model!)
-        }) { (error) in
-            
         }
     }
     

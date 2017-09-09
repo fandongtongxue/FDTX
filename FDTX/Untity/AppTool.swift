@@ -22,6 +22,7 @@ class AppTool {
 
 extension AppTool {
     func isLogin() -> Bool {
+        let realm = try! Realm()
         let items = realm.objects(UserInfoModel.self)
         if items.count > 0 {
             return true
@@ -30,7 +31,8 @@ extension AppTool {
     }
     
     func uid() -> String {
-        if self.isLogin() {
+        if AppTool.shared.isLogin() {
+            let realm = try! Realm()
             let items = realm.objects(UserInfoModel.self)
             if items.count > 0 {
                 let userId = items[0].uid

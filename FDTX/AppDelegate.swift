@@ -10,10 +10,6 @@ import UIKit
 import XCGLogger
 import ReachabilitySwift
 import NightNight
-import RealmSwift
-import Realm
-
-let realm = try! Realm()
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
