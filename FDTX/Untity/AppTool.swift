@@ -8,13 +8,12 @@
 
 import Foundation
 import Qiniu
+import Realm
+import RealmSwift
 
 private let AppToolShared = AppTool()
 
 class AppTool {
-    
-    var uid : String!
-    var isLogin : Bool!
     
     class var shared : AppTool {
         return AppToolShared
@@ -22,5 +21,22 @@ class AppTool {
 }
 
 extension AppTool {
+    func isLogin() -> Bool {
+        let items = realm.objects(UserInfoModel.self)
+        if items.count > 0 {
+            return true
+        }
+        return false
+    }
     
+    func uid() -> String {
+        if self.isLogin() {
+            let items = realm.objects(UserInfoModel.self)
+            if items.count > 0 {
+                let userId = items[0].uid
+                return userId!
+            }
+        }
+        return ""
+    }
 }

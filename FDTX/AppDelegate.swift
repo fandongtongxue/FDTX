@@ -10,6 +10,10 @@ import UIKit
 import XCGLogger
 import ReachabilitySwift
 import NightNight
+import RealmSwift
+import Realm
+
+let realm = try! Realm()
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -96,7 +100,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         log.info("沙盒路径:\n"+NSHomeDirectory())
         //重置登录状态
-        AppTool.shared.isLogin = false
         //Listen Network Status
         let reachability = Reachability()!
         

@@ -8,8 +8,10 @@
 
 import Foundation
 import HandyJSON
+import RealmSwift
+import Realm
 
-class UserInfoModel: HandyJSON {
+class UserInfoModel: Object, HandyJSON {
     var icon:String!
     var nickName:String!
     var uid:String!
@@ -23,6 +25,14 @@ class UserInfoModel: HandyJSON {
 //    "id": 1
     
     required init() {
-        
+        super.init()
+    }
+    
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        fatalError("init(realm:schema:) has not been implemented")
+    }
+    
+    required init(value: Any, schema: RLMSchema) {
+        fatalError("init(value:schema:) has not been implemented")
     }
 }

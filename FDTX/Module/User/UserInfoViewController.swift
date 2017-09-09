@@ -29,17 +29,10 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
         return 3
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoViewControllerCellId)
-//        switch indexPath.row {
-//        case 0:
-//            cell
-//        case 1:
-//            
-//        default:
-//            <#code#>
-//        }
-//    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoViewControllerCellId)
+        return cell!
+    }
     
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: CGRect.zero, style: .plain)

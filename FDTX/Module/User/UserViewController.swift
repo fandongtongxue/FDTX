@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Realm
+import RealmSwift
 
 class UserViewController: BaseViewController {
     override func viewDidLoad() {
@@ -40,19 +42,24 @@ class UserViewController: BaseViewController {
     
     func requestData() {
         BaseNetwoking.manager.GET(url: "userInfo", parameters: ["uid":AppTool.shared.uid], success: { (result) in
-            let userInfo = result["data"]?["userInfo"] as! NSArray
+            let dataDict = result["data"] as! NSDictionary
+            let userInfo = dataDict["userInfo"] as! NSArray
             let userInfoDict = userInfo.firstObject
             let model = UserInfoModel.deserialize(from: userInfoDict as? NSDictionary)
+            
+            let items = realm.objects(UserInfoModel.self)
+            if items.count > 0 {
+                log.info(items)
+            }
+            try! realm.write {
+                realm.add(model!)
+            }
+            log.info(realm.configuration.fileURL)
+            
             self.headerView.setModel(model: model!)
         }) { (error) in
             
         }
-    }
-    
-    func toLoginVC() {
-        let loginVC = LoginViewController()
-        loginVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
     lazy var headerView : UserHeaderView = {

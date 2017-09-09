@@ -34,7 +34,7 @@ class RootTabBarController: UITabBarController{
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch self.selectedIndex {
         case 0:
-            if !AppTool.shared.isLogin {
+            if !AppTool.shared.isLogin() {
                 let loginVC = LoginViewController()
                 loginVC.hidesBottomBarWhenPushed = true
                 let loginNav = RootNavigationController.init(rootViewController: loginVC)

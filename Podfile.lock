@@ -34,6 +34,11 @@ PODS:
     - AFNetworking (~> 3)
     - HappyDNS (~> 0.3)
   - ReachabilitySwift (3)
+  - Realm (2.10.0):
+    - Realm/Headers (= 2.10.0)
+  - Realm/Headers (2.10.0)
+  - RealmSwift (2.10.0):
+    - Realm (= 2.10.0)
   - SnapKit (3.2.0)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -49,6 +54,7 @@ DEPENDENCIES:
   - PKHUD (~> 4.0)
   - Qiniu
   - ReachabilitySwift
+  - RealmSwift
   - SnapKit (~> 3.2.0)
   - XCGLogger (~> 4.0.0)
 
@@ -64,9 +70,11 @@ SPEC CHECKSUMS:
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   Qiniu: 8af94ce9b1611ed5f4350883e41d4a62cabad491
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
+  RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: e2ccae6792a4acf284f08699bab688ddaf9588e7
+PODFILE CHECKSUM: 87ba2e36d164680c580b5f6a6446a0171013d036
 
 COCOAPODS: 1.2.1
