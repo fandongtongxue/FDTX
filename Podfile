@@ -15,7 +15,5 @@ target 'FDTX' do
   pod 'SnapKit', '~> 3.2.0'
   pod 'ReachabilitySwift'
   pod 'PKHUD', '~> 4.0'
-  pod "Qiniu"
   pod 'NightNight'
-  pod 'RealmSwift'
 end

@@ -7,9 +7,6 @@
 //  通用工具类
 
 import Foundation
-import Qiniu
-import Realm
-import RealmSwift
 
 private let AppToolShared = AppTool()
 
@@ -31,14 +28,14 @@ extension AppTool {
     }
     
     func uid() -> String {
-        if AppTool.shared.isLogin() {
-            let realm = try! Realm()
-            let items = realm.objects(UserInfoModel.self)
-            if items.count > 0 {
-                let userId = items[0].uid
-                return userId!
-            }
-        }
+//        if AppTool.shared.isLogin() {
+//            let realm = try! Realm()
+//            let items = realm.objects(UserInfoModel.self)
+//            if items.count > 0 {
+//                let userId = items[0].uid
+//                return userId!
+//            }
+//        }
         return ""
     }
 }

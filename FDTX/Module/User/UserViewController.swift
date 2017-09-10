@@ -8,15 +8,12 @@
 
 import Foundation
 import UIKit
-import Realm
-import RealmSwift
 
 class UserViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         self.initSubview()
-//        QiniuTool.shared.uploadImage(image: UIImage.init(named: "nav_btn_back_hl")!, key: "11")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,17 +44,6 @@ class UserViewController: BaseViewController {
                 let userInfo = dataDict["userInfo"] as! NSArray
                 let userInfoDict = userInfo.firstObject
                 let model = UserInfoModel.deserialize(from: userInfoDict as? NSDictionary)
-                
-                let realm = try! Realm()
-                let items = realm.objects(UserInfoModel.self)
-                if items.count > 0 {
-                    log.info(items)
-                }
-                try! realm.write {
-                    realm.add(model!)
-                }
-                log.info(realm.configuration.fileURL)
-                
                 self.headerView.setModel(model: model!)
             }) { (error) in
                 

@@ -1,19 +1,4 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
   - Alamofire (4.5.0)
   - BMPlayer (0.8.7):
     - BMPlayer/Full (= 0.8.7)
@@ -23,22 +8,13 @@ PODS:
     - NVActivityIndicatorView (~> 3.5)
     - SnapKit (~> 3.2)
   - HandyJSON (1.7.2)
-  - HappyDNS (0.3.10)
   - Kingfisher (3.11.0)
   - NightNight (0.4.5)
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
   - PKHUD (4.2.3)
-  - Qiniu (7.1.6):
-    - AFNetworking (~> 3)
-    - HappyDNS (~> 0.3)
   - ReachabilitySwift (3)
-  - Realm (2.10.0):
-    - Realm/Headers (= 2.10.0)
-  - Realm/Headers (2.10.0)
-  - RealmSwift (2.10.0):
-    - Realm (= 2.10.0)
   - SnapKit (3.2.0)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -52,29 +28,22 @@ DEPENDENCIES:
   - NightNight
   - NVActivityIndicatorView
   - PKHUD (~> 4.0)
-  - Qiniu
   - ReachabilitySwift
-  - RealmSwift
   - SnapKit (~> 3.2.0)
   - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BMPlayer: 5ba9e3f3d61ccc5a24ebd9cdc24901dcf28c98bc
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
-  HappyDNS: 06a9fed2796663fd87626dbf02552933265bf059
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
   NightNight: f6efd4faf72320f5b035f67ae158b80e96a39f37
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
-  Qiniu: 8af94ce9b1611ed5f4350883e41d4a62cabad491
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
-  RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 87ba2e36d164680c580b5f6a6446a0171013d036
+PODFILE CHECKSUM: b8e72300e2065864898766183b210d537f1bc381
 
 COCOAPODS: 1.2.1
