@@ -45,6 +45,8 @@ extension BaseNetwoking {
             }
         }
     }
+    //POST
+    func POST(url : String, parameters : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failure : @escaping (_ error : Error)->()) {
         
         //Headers
         var headers:Dictionary = [String:String]()
