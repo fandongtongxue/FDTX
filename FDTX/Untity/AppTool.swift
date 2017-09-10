@@ -22,11 +22,11 @@ class AppTool {
 
 extension AppTool {
     func isLogin() -> Bool {
-        let realm = try! Realm()
-        let items = realm.objects(UserInfoModel.self)
-        if items.count > 0 {
-            return true
-        }
+//        let realm = try! Realm()
+//        let items = realm.objects(UserInfoModel.self)
+//        if items.count > 0 {
+//            return true
+//        }
         return false
     }
     

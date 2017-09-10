@@ -27,7 +27,7 @@ extension BaseNetwoking {
         }else{
             finalUrl = SERVER_HOST + url
         }
-        Alamofire.request(finalUrl, method: .get, parameters: parameters)
+        Alamofire.request(finalUrl, method: .get, parameters: parameters, headers:nil)
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let value):
@@ -43,6 +43,30 @@ extension BaseNetwoking {
                     log.error("error:\(error)")
                     failure(error)
             }
+        }
+    }
+        
+        //Headers
+        var headers:Dictionary = [String:String]()
+        headers["Content-Type"] = "application/json"
+        
+        Alamofire.request(SERVER_HOST + url, method: .post, parameters: parameters, headers: headers)
+            .responseJSON { (response) in
+            switch response.result{
+            case .success(let value):
+                let result = value as! [String : AnyObject]
+                if result["status"]?.int64Value == 1{
+                    success(result)
+                }else{
+                    let errorResult = NSError.init(domain: SERVER_HOST, code: result["status"] as! Int, userInfo: ["msg":result["msg"]!])
+                    log.error("error:\(errorResult)")
+                    failure(errorResult as Error)
+                }
+            case .failure(let error):
+                log.error("error:\(error)")
+                failure(error)
+            }
+            
         }
     }
 }

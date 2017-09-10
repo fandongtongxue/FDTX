@@ -75,7 +75,7 @@ class LoginViewController: BaseViewController {
         let size = CGSize.init(width: 30, height: 30)
         startAnimating(size, message: "Sign Ining", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         
-        BaseNetwoking.manager.GET(url: "userLogin", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
+        BaseNetwoking.manager.POST(url: "userLogin", parameters: ["userName":self.userNameTextField.text!,"passWord":self.passWordTextField.text!], success: { (result) in
             self.stopAnimating()
             HUD.flash(.label("Sign In Success"), delay: HUD_DELAY_TIME)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_DELAY_TIME) {
