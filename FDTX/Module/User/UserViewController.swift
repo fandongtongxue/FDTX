@@ -79,7 +79,6 @@ class UserViewController: BaseViewController {
             NightNight.theme = .normal
         }
     }
-    
     lazy var headerView : UserHeaderView = {
         let headerView = UserHeaderView.init(frame: .zero)
         return headerView
