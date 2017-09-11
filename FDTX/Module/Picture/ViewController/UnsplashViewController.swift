@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import NightNight
 
 let UnsplashViewControllerCellId = "UnsplashViewControllerCellId"
 let UnsplashUrl = "https://api.unsplash.com/photos/?client_id=522f34661134a2300e6d94d344a7ab6424e028a51b31353363b7a8cce11d73b6&per_page=20&page="
@@ -19,7 +20,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
+        self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         self.title = "Unsplash"
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
@@ -90,7 +91,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: CGRect.zero, style: .plain)
-        tableView.backgroundColor = UIColor.black
+        tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UnsplashViewCell.classForCoder(), forCellReuseIdentifier: UnsplashViewControllerCellId)

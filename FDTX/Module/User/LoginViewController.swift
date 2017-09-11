@@ -15,6 +15,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
+        self.title = "Sign In"
         self.initSubviews()
     }
     

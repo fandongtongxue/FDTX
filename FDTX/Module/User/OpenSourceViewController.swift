@@ -20,7 +20,7 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        self.title = "Open Source App"
+        self.title = "Open Source"
         self.initSubview()
         self.requestData()
     }

@@ -14,6 +14,7 @@ class UserViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
+        self.title = "UserCenter"
         self.initSubview()
     }
     
@@ -21,13 +22,6 @@ class UserViewController: BaseViewController {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.requestData()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        let openSourceVC = OpenSourceViewController()
-        openSourceVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(openSourceVC, animated: true)
     }
     
     func initSubview() {
@@ -62,6 +56,11 @@ class UserViewController: BaseViewController {
             }) { (error) in
                 
             }
+        }else{
+            let loginVC = LoginViewController()
+            loginVC.hidesBottomBarWhenPushed = true
+            let loginNav = RootNavigationController.init(rootViewController: loginVC)
+            present(loginNav, animated: true, completion: nil)
         }
     }
     
