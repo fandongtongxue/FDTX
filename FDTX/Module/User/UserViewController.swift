@@ -39,7 +39,7 @@ class UserViewController: BaseViewController {
     
     func requestData() {
         if AppTool.shared.isLogin() {
-            let parameters = ["uid":AppTool.shared.uid]
+            let parameters = ["uid":AppTool.shared.uid()]
             BaseNetwoking.manager.GET(url: "userInfo", parameters: parameters, success: { (result) in
                 let dataDict = result["data"] as! NSDictionary
                 let userInfo = dataDict["userInfo"] as! NSArray
