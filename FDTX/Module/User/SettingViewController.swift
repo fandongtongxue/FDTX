@@ -28,7 +28,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
             make.top.left.right.equalToSuperview()
             make.bottom.equalTo(logoutBtn.snp.top)
         }
-        dataArray = NSMutableArray.init(array: [["Open Source","About","Version"]])
+        dataArray = NSMutableArray.init(array: [["Open Source","About","Version 1.0.0"]])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,8 +37,15 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
     }
     
     func logoutBtnAction() {
-        UserDefault.shared.setObject(object: "0", forKey: USER_DEFAULT_KEY_ISLOGIN)
-        navigationController?.popViewController(animated: true)
+        let alertVC = UIAlertController.init(title: "Are You Want To Sign Out ?", message: nil, preferredStyle: .alert)
+        let confirmAlertAction = UIAlertAction.init(title: "Sign Out", style: .default) { (alertAction) in
+            UserDefault.shared.setObject(object: "0", forKey: USER_DEFAULT_KEY_ISLOGIN)
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancelAlertAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        alertVC.addAction(confirmAlertAction)
+        alertVC.addAction(cancelAlertAction)
+        present(alertVC, animated: true, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,10 +66,6 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
             cell?.textLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
             let array = dataArray.object(at: indexPath.section) as! NSArray
             cell?.textLabel?.text = (array.object(at: indexPath.row) as! String)
-            if indexPath.row == 2 {
-                cell?.detailTextLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
-                cell?.detailTextLabel?.text = "1.0.0"
-            }
             return cell!
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingViewControllerCellId)

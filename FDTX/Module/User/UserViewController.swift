@@ -64,6 +64,10 @@ class UserViewController: BaseViewController {
         }
     }
     
+    func headerViewBtnAction() {
+        
+    }
+    
     func settingBtnAction() {
         let settingVC = SettingViewController()
         settingVC.hidesBottomBarWhenPushed = true
@@ -80,6 +84,7 @@ class UserViewController: BaseViewController {
     }
     lazy var headerView : UserHeaderView = {
         let headerView = UserHeaderView.init(frame: .zero)
+        headerView.addTarget(self, action: #selector(headerViewBtnAction), for: .touchUpInside)
         return headerView
     }()
     

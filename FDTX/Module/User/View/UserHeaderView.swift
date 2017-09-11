@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserHeaderView: UIView {
+class UserHeaderView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.initSubviews()
