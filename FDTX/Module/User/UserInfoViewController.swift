@@ -8,13 +8,14 @@
 
 import Foundation
 import UIKit
+import NightNight
 
 let UserInfoViewControllerCellId = "UserInfoViewControllerCellId"
 
 class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         self.initSubview()
     }
     
@@ -36,7 +37,7 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
     
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: CGRect.zero, style: .plain)
-        tableView.backgroundColor = UIColor.black
+        tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: UserInfoViewControllerCellId)

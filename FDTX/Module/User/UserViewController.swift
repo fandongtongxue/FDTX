@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
+import NightNight
 
 class UserViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
+        self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         self.initSubview()
     }
     
@@ -35,6 +36,13 @@ class UserViewController: BaseViewController {
             make.top.left.right.equalToSuperview()
             make.height.equalTo(200)
         }
+        self.view.addSubview(self.settingBtn)
+        self.settingBtn.snp.makeConstraints { (make) in
+            make.height.equalTo(20)
+            make.width.equalTo(20)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalToSuperview().offset(30)
+        }
     }
     
     func requestData() {
@@ -52,8 +60,21 @@ class UserViewController: BaseViewController {
         }
     }
     
+    func settingBtnAction() {
+        let settingVC = SettingViewController()
+        settingVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(settingVC, animated: true)
+    }
+    
     lazy var headerView : UserHeaderView = {
         let headerView = UserHeaderView.init(frame: .zero)
         return headerView
+    }()
+    
+    lazy var settingBtn : UIButton = {
+        let settingBtn = UIButton.init(frame: .zero)
+        settingBtn.setImage(UIImage.init(named: "uc_btn_setting"), for: .normal)
+        settingBtn.addTarget(self, action: #selector(settingBtnAction), for: .touchUpInside)
+        return settingBtn
     }()
 }

@@ -24,7 +24,7 @@
 		CB71536C1F66183800826616 /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71536B1F66183800826616 /* UIConfig.swift */; };
 		CB71536E1F66184500826616 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71536D1F66184500826616 /* UserDefaultKey.swift */; };
 		CB7153701F66195000826616 /* TimeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71536F1F66195000826616 /* TimeConfig.swift */; };
-		CB7153721F6631F900826616 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7153711F6631F900826616 /* SetViewController.swift */; };
+		CB7153741F66332D00826616 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7153731F66332D00826616 /* SettingViewController.swift */; };
 		CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E11F40376D00F2F7BA /* BaseViewController.swift */; };
 		CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */; };
 		CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E51F40376D00F2F7BA /* HomeViewController.swift */; };
@@ -68,7 +68,7 @@
 		CB71536B1F66183800826616 /* UIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
 		CB71536D1F66184500826616 /* UserDefaultKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		CB71536F1F66195000826616 /* TimeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConfig.swift; sourceTree = "<group>"; };
-		CB7153711F6631F900826616 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		CB7153731F66332D00826616 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CB7320E11F40376D00F2F7BA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CB7320E51F40376D00F2F7BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */,
-				CB7153711F6631F900826616 /* SetViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 				CB2C22FA1F4D775B00820C48 /* UserViewController.swift */,
 				CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */,
 				CBA6340C1F62D58D00E14787 /* UserInfoViewController.swift */,
+				CB7153731F66332D00826616 /* SettingViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -483,6 +483,7 @@
 				CB6DBFCC1F657E9100461F9B /* UserDefault.swift in Sources */,
 				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
 				CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */,
+				CB7153741F66332D00826616 /* SettingViewController.swift in Sources */,
 				CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */,
 				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
 				CBA6340D1F62D58D00E14787 /* UserInfoViewController.swift in Sources */,
@@ -509,7 +510,6 @@
 				CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */,
 				CB71536C1F66183800826616 /* UIConfig.swift in Sources */,
 				CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */,
-				CB7153721F6631F900826616 /* SetViewController.swift in Sources */,
 				CB71536E1F66184500826616 /* UserDefaultKey.swift in Sources */,
 				CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */,
 			);
