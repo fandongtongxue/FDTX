@@ -23,7 +23,7 @@ class UserInfoModel: HandyJSON {
 //    "id": 1
     
     required init() {
-        fatalError("UserInfoModel fatalError")
+        
     }
     
 }

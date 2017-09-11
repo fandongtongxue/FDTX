@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import NightNight
 
 class RootNavigationController: UINavigationController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationBar.isTranslucent = false
-        self.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 18),NSForegroundColorAttributeName:UIColor.white]
-        self.navigationBar.barTintColor = UIColor.black
-        self.navigationBar.tintColor = UIColor.white
+        self.navigationBar.mixedTitleTextAttributes = [NNForegroundColorAttributeName:MixedColor.init(normal: .white, night: .black),NSFontAttributeName:UIFont.systemFont(ofSize: 18)]
+        self.navigationBar.mixedBarTintColor = MixedColor.init(normal: .black, night: .white)
+        self.navigationBar.mixedTintColor = MixedColor.init(normal: .white, night: .black)
     }
     
     override func didReceiveMemoryWarning() {

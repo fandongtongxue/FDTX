@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import NightNight
 
 class RootTabBarController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.white
-        self.tabBar.barTintColor = UIColor.black
+        self.tabBar.mixedBarTintColor = MixedColor.init(normal: .black, night: .white)
         self.initViewControllers()
     }
     

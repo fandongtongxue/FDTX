@@ -11,6 +11,7 @@ import HandyJSON
 import Kingfisher
 import NVActivityIndicatorView
 import SnapKit
+import NightNight
 
 class BaseViewController: UIViewController,NVActivityIndicatorViewable{
     
@@ -19,8 +20,8 @@ class BaseViewController: UIViewController,NVActivityIndicatorViewable{
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return UIStatusBarStyle.lightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return MixedStatusBarStyle(normal: .lightContent, night: .default).unfold()
     }
     
     override var prefersStatusBarHidden: Bool{

@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import NightNight
 
 let gHost = "blog.fandong.me"
 let gShowAlertOnDidFinishLoading = false
@@ -22,7 +23,7 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.black
+        self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         self.title = "Home"
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
@@ -91,9 +92,9 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewControllerCellId)!
         cell.selectionStyle = .none
-        cell.backgroundColor = UIColor.black
+        cell.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         cell.textLabel?.text = array[indexPath.row]
-        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -118,7 +119,7 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: CGRect.zero, style: .plain)
-        tableView.backgroundColor = UIColor.black
+        tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: HomeViewControllerCellId)

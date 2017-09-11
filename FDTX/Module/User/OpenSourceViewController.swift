@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import WebKit
+import NightNight
 
 let OpenSourceViewControllerCellId = "OpenSourceViewControllerCellId"
 
@@ -18,7 +19,7 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         self.title = "Open Source App"
         self.initSubview()
         self.requestData()
@@ -84,8 +85,8 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: OpenSourceViewControllerCellId)
         let model = self.dataArray.object(at: indexPath.row) as! OpenSourceModel
         cell?.selectionStyle = .none
-        cell?.backgroundColor = .black
-        cell?.textLabel?.textColor = .white
+        cell?.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
+        cell?.textLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
         cell?.textLabel?.text = model.name
         return cell!
     }
@@ -108,7 +109,7 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: CGRect.zero, style: .plain)
-        tableView.backgroundColor = UIColor.black
+        tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: OpenSourceViewControllerCellId)

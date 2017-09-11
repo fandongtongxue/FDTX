@@ -9,6 +9,7 @@
 import Foundation
 
 private let UserDefaultShared = UserDefault()
+let userDefaults = UserDefaults.standard
 
 class UserDefault {
     
@@ -18,5 +19,14 @@ class UserDefault {
 }
 
 extension UserDefault {
+    func setObject(object:String, forKey:String) {
+        userDefaults.set(object, forKey: forKey)
+        log.info("Save Operation: Object:" + object + "For Key:" + forKey)
+        userDefaults.synchronize()
+    }
     
+    func objectFor(key:String) -> String{
+        guard let object = userDefaults.value(forKey: key) else { return "" }
+        return object as! String
+    }
 }
