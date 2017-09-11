@@ -72,6 +72,10 @@ class RegisterViewController: BaseViewController {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_DELAY_TIME) {
                 self.dismiss(animated: true, completion: nil)
             }
+            //标记登录成功
+            UserDefault.shared.setObject(object: "1", forKey: USER_DEFAULT_KEY_ISLOGIN)
+            let uid = result["data"]?["uid"] as! String
+            UserDefault.shared.setObject(object: uid, forKey: USER_DEFAULT_KEY_UID)
         }) { (error) in
             self.stopAnimating()
             HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)

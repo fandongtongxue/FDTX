@@ -19,23 +19,18 @@ class AppTool {
 
 extension AppTool {
     func isLogin() -> Bool {
-//        let realm = try! Realm()
-//        let items = realm.objects(UserInfoModel.self)
-//        if items.count > 0 {
-//            return true
-//        }
+        let isLogin = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_ISLOGIN) 
+        if isLogin == "1" {
+            return true
+        }
         return false
     }
     
     func uid() -> String {
-//        if AppTool.shared.isLogin() {
-//            let realm = try! Realm()
-//            let items = realm.objects(UserInfoModel.self)
-//            if items.count > 0 {
-//                let userId = items[0].uid
-//                return userId!
-//            }
-//        }
+        if AppTool.shared.isLogin() {
+            let uid = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_UID)
+            return uid
+        }
         return ""
     }
 }
