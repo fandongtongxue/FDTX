@@ -36,6 +36,10 @@
                        {
                        "name": "PKHUD",
                        "url": "https://github.com/pkluz/PKHUD"
+                       },
+                       {
+                       "name":"NightNight",
+                       "url":"https://github.com/Draveness/NightNight"
                        }
                        ]
     },
