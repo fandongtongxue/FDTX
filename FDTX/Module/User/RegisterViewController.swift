@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import PKHUD
+import KeychainAccess
 
 class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
@@ -76,6 +77,10 @@ class RegisterViewController: BaseViewController {
             UserDefault.shared.setObject(object: "1", forKey: USER_DEFAULT_KEY_ISLOGIN)
             let uid = result["data"]?["uid"] as! String
             UserDefault.shared.setObject(object: uid, forKey: USER_DEFAULT_KEY_UID)
+            //KeyChain
+            let keychain: Keychain
+            keychain = Keychain(service: "fandongtongxue")
+            keychain[self.userNameTextField.text!] = self.passWordTextField.text!
         }) { (error) in
             self.stopAnimating()
             HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
@@ -105,6 +110,7 @@ class RegisterViewController: BaseViewController {
         passWordTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
         passWordTextField.textColor = .white
         passWordTextField.placeholder = "PassWord"
+        passWordTextField.isSecureTextEntry = true
         return passWordTextField
     }()
     

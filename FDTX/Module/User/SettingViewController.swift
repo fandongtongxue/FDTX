@@ -37,7 +37,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
     }
     
     func logoutBtnAction() {
-        let alertVC = UIAlertController.init(title: "Are You Want To Sign Out ?", message: nil, preferredStyle: .alert)
+        let alertVC = UIAlertController.init(title: "Warning", message: "Are You Want To Sign Out ?", preferredStyle: .alert)
         let confirmAlertAction = UIAlertAction.init(title: "Sign Out", style: .default) { (alertAction) in
             UserDefault.shared.setObject(object: "0", forKey: USER_DEFAULT_KEY_ISLOGIN)
             self.navigationController?.popViewController(animated: true)

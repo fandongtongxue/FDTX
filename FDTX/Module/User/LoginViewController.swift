@@ -9,14 +9,17 @@
 import Foundation
 import UIKit
 import PKHUD
+import KeychainAccess
 
 class LoginViewController: BaseViewController {
+    var itemsGroupedByService: [String: [[String: Any]]]?
     //Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         self.title = "Sign In"
         self.initSubviews()
+        self.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,7 +89,10 @@ class LoginViewController: BaseViewController {
             UserDefault.shared.setObject(object: "1", forKey: USER_DEFAULT_KEY_ISLOGIN)
             let uid = result["data"]?["uid"] as! String
             UserDefault.shared.setObject(object: uid, forKey: USER_DEFAULT_KEY_UID)
-            
+            //KeyChain
+            let keychain: Keychain
+            keychain = Keychain(service: "fandongtongxue")
+            keychain[self.userNameTextField.text!] = self.passWordTextField.text!
         }) { (error) in
             self.stopAnimating()
             HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
@@ -121,6 +127,7 @@ class LoginViewController: BaseViewController {
         passWordTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
         passWordTextField.textColor = .white
         passWordTextField.placeholder = "PassWord"
+        passWordTextField.isSecureTextEntry = true
         return passWordTextField
     }()
     
@@ -142,5 +149,35 @@ class LoginViewController: BaseViewController {
         registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
         return registerBtn
     }()
+    
+    func reloadData() {
+        let items = Keychain.allItems(.genericPassword)
+        itemsGroupedByService = groupBy(items) { item -> String in
+            if let service = item["service"] as? String {
+                return service
+            }
+            return ""
+        }
+        //Read KeyChain
+        let services = Array(itemsGroupedByService!.keys)
+        let service = services.first
+        
+        let allItems = Keychain(service: service!).allItems()
+        let item = allItems.first
+        
+        self.userNameTextField.text = item?["key"] as? String
+        self.passWordTextField.text = item?["value"] as? String
+    }
 
+}
+
+private func groupBy<C: Collection, K: Hashable>(_ xs: C, key: (C.Iterator.Element) -> K) -> [K:[C.Iterator.Element]] {
+    var gs: [K:[C.Iterator.Element]] = [:]
+    for x in xs {
+        let k = key(x)
+        var ys = gs[k] ?? []
+        ys.append(x)
+        gs.updateValue(ys, forKey: k)
+    }
+    return gs
 }

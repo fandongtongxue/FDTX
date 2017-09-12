@@ -8,6 +8,8 @@ PODS:
     - NVActivityIndicatorView (~> 3.5)
     - SnapKit (~> 3.2)
   - HandyJSON (1.7.2)
+  - IQKeyboardManagerSwift (4.0.13)
+  - KeychainAccess (3.0.2)
   - Kingfisher (3.11.0)
   - NightNight (0.4.5)
   - NVActivityIndicatorView (3.7.0):
@@ -24,6 +26,8 @@ DEPENDENCIES:
   - Alamofire
   - BMPlayer
   - HandyJSON (~> 1.7.2)
+  - IQKeyboardManagerSwift
+  - KeychainAccess
   - Kingfisher (~> 3.0)
   - NightNight
   - NVActivityIndicatorView
@@ -36,6 +40,8 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BMPlayer: 5ba9e3f3d61ccc5a24ebd9cdc24901dcf28c98bc
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  IQKeyboardManagerSwift: fb399c4cddcd8d9bbcd2d0c7c81ed290b61c088e
+  KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
   NightNight: f6efd4faf72320f5b035f67ae158b80e96a39f37
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
@@ -44,6 +50,6 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: b8e72300e2065864898766183b210d537f1bc381
+PODFILE CHECKSUM: 0defd7c32c8106d30694e63bc7d235d308cff4b6
 
 COCOAPODS: 1.2.1

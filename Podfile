@@ -16,4 +16,6 @@ target 'FDTX' do
   pod 'ReachabilitySwift'
   pod 'PKHUD', '~> 4.0'
   pod 'NightNight'
+  pod 'IQKeyboardManagerSwift'
+  pod 'KeychainAccess'
 end
