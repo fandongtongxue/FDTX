@@ -80,7 +80,7 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     
     func showVideoPlayerVC() {
         let videoVC = VideoViewController()
-        videoVC.setVideoUrl(videoUrl: URL.init(string: "http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4")!)
+        videoVC.setVideoUrl(videoUrl: URL.init(string: "http://223.110.245.139:80/PLTV/3/224/3221226977/index.m3u8")!)
         videoVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(videoVC, animated: true)
     }
