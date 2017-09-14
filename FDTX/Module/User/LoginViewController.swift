@@ -160,13 +160,15 @@ class LoginViewController: BaseViewController {
         }
         //Read KeyChain
         let services = Array(itemsGroupedByService!.keys)
-        let service = services.first
-        
-        let allItems = Keychain(service: service!).allItems()
-        let item = allItems.first
-        
-        self.userNameTextField.text = item?["key"] as? String
-        self.passWordTextField.text = item?["value"] as? String
+        if services.count > 0 {
+            let service = services.first
+            
+            let allItems = Keychain(service: service!).allItems()
+            let item = allItems.first
+            
+            self.userNameTextField.text = item?["key"] as? String
+            self.passWordTextField.text = item?["value"] as? String
+        }
     }
 
 }
