@@ -9,16 +9,14 @@
 import UIKit
 import WebKit
 import NightNight
+import SwiftWebVC
 
-let gHost = "blog.fandong.me"
-let gShowAlertOnDidFinishLoading = false
+let webViewUrl = "blog.fandong.me"
 
 let HomeViewControllerCellId = "HomeViewControllerCellId"
 let array = ["WebView","Unsplash","Music","Video"]
 
-class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,WKNavigationDelegate,WKUIDelegate,GDWebViewControllerDelegate{
-    
-    var webVC = GDWebViewController()
+class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,35 +41,9 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     }
     
     func showWebVC() {
-//        let webVC = WebViewController.init(nibName: nil, bundle: nil)
-//        webVC.hidesBottomBarWhenPushed = true
-//        self.navigationController?.pushViewController(webVC, animated: true)
-        webVC.delegate = self
-        webVC.loadURLWithString(gHost)
-        webVC.toolbar.toolbarTintColor = UIColor.darkGray
-        webVC.toolbar.toolbarBackgroundColor = UIColor.white
-        webVC.toolbar.toolbarTranslucent = false
-        webVC.allowsBackForwardNavigationGestures = true
+        let webVC = SwiftWebVC(urlString: webViewUrl)
         webVC.hidesBottomBarWhenPushed = true
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-            self.webVC.showToolbar(true, animated: true)
-        })
-        self.navigationController?.pushViewController(self.webVC, animated: true)
-    }
-    
-    func webViewController(_ webViewController: GDWebViewController, didChangeTitle newTitle: NSString?) {
-        self.webVC.navigationController?.navigationBar.topItem?.title = newTitle as String?
-    }
-    
-    func webViewController(_ webViewController: GDWebViewController, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-        decisionHandler(.allow)
-    }
-    
-    func webViewController(_ webViewController: GDWebViewController, didFinishLoading loadedURL: URL?) {
-        if gShowAlertOnDidFinishLoading {
-            webViewController.evaluateJavaScript("alert('Loaded!')", completionHandler: nil)
-        }
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     func showMusicPlayerVC() {

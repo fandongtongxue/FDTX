@@ -18,6 +18,7 @@ PODS:
   - PKHUD (4.2.3)
   - ReachabilitySwift (3)
   - SnapKit (3.2.0)
+  - SwiftWebVC (0.4.1)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - PKHUD (~> 4.0)
   - ReachabilitySwift
   - SnapKit (~> 3.2.0)
+  - SwiftWebVC
   - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
@@ -48,8 +50,9 @@ SPEC CHECKSUMS:
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftWebVC: 17ad75e1fac143d421e0498fb40d7e37532f26d1
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 0defd7c32c8106d30694e63bc7d235d308cff4b6
+PODFILE CHECKSUM: d01f907bab2cb1de5eded59395b62b0146c4ef2e
 
 COCOAPODS: 1.2.1

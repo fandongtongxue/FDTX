@@ -18,4 +18,5 @@ target 'FDTX' do
   pod 'NightNight'
   pod 'IQKeyboardManagerSwift'
   pod 'KeychainAccess'
+  pod 'SwiftWebVC'
 end

@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 import WebKit
 import NightNight
+import SwiftWebVC
 
 let OpenSourceViewControllerCellId = "OpenSourceViewControllerCellId"
 
-class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,WKNavigationDelegate,WKUIDelegate,GDWebViewControllerDelegate {
-    
-    var webVC = GDWebViewController()
+class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,27 +54,6 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
         }
     }
     
-    func showWebVC() {
-        //        let webVC = WebViewController.init(nibName: nil, bundle: nil)
-        //        webVC.hidesBottomBarWhenPushed = true
-        //        self.navigationController?.pushViewController(webVC, animated: true)
-        
-    }
-    
-    func webViewController(_ webViewController: GDWebViewController, didChangeTitle newTitle: NSString?) {
-        self.webVC.navigationController?.navigationBar.topItem?.title = newTitle as String?
-    }
-    
-    func webViewController(_ webViewController: GDWebViewController, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-        decisionHandler(.allow)
-    }
-    
-    func webViewController(_ webViewController: GDWebViewController, didFinishLoading loadedURL: URL?) {
-        if gShowAlertOnDidFinishLoading {
-            webViewController.evaluateJavaScript("alert('Loaded!')", completionHandler: nil)
-        }
-    }
-    
     //UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArray.count
@@ -93,18 +71,9 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.dataArray.object(at: indexPath.row) as! OpenSourceModel
-        webVC.delegate = self
-        webVC.loadURLWithString(model.url)
-        webVC.toolbar.toolbarTintColor = UIColor.darkGray
-        webVC.toolbar.toolbarBackgroundColor = UIColor.white
-        webVC.toolbar.toolbarTranslucent = false
-        webVC.allowsBackForwardNavigationGestures = true
+        let webVC = SwiftWebVC(urlString: model.url)
         webVC.hidesBottomBarWhenPushed = true
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-            self.webVC.showToolbar(true, animated: true)
-        })
-        self.navigationController?.pushViewController(self.webVC, animated: true)
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     lazy var tableView : UITableView = {

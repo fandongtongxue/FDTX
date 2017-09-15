@@ -35,8 +35,6 @@
 		CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */; };
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
-		CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */; };
-		CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */; };
 		CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
 		CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */; };
@@ -78,8 +76,6 @@
 		CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
-		CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewController.swift; sourceTree = "<group>"; };
-		CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewNavigationToolbar.swift; sourceTree = "<group>"; };
 		CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -276,18 +272,8 @@
 		CBC6AE711F56EDAB004455A6 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				CBC6AE721F56EDAB004455A6 /* GDWebViewController */,
 			);
 			path = ThirdPart;
-			sourceTree = "<group>";
-		};
-		CBC6AE721F56EDAB004455A6 /* GDWebViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CBC6AE731F56EDAB004455A6 /* GDWebViewController.swift */,
-				CBC6AE741F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift */,
-			);
-			path = GDWebViewController;
 			sourceTree = "<group>";
 		};
 		CBC6AE771F56FC58004455A6 /* Video */ = {
@@ -487,11 +473,9 @@
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
-				CBC6AE761F56EDAB004455A6 /* GDWebViewNavigationToolbar.swift in Sources */,
 				CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */,
 				CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
-				CBC6AE751F56EDAB004455A6 /* GDWebViewController.swift in Sources */,
 				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
 				CB71536A1F66183100826616 /* ServerConfig.swift in Sources */,
