@@ -24,12 +24,22 @@ class RootTabBarController: UITabBarController{
         let homeItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
         homeNav.tabBarItem = homeItem
         
+        let blogVC = GitHubPageViewController.init(nibName: nil, bundle: nil)
+        let blogNav = RootNavigationController.init(rootViewController: blogVC)
+        let blogItem = UITabBarItem.init(tabBarSystemItem: .bookmarks, tag: 1)
+        blogNav.tabBarItem = blogItem
+        
+        let videoBlogVC = WordPressViewController.init(nibName: nil, bundle: nil)
+        let videoBlogNav = RootNavigationController.init(rootViewController: videoBlogVC)
+        let videoBlogItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 2)
+        videoBlogNav.tabBarItem = videoBlogItem
+        
         let userVC = UserViewController.init(nibName: nil, bundle: nil)
         let userNav = RootNavigationController.init(rootViewController: userVC)
-        let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 1)
+        let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 3)
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [homeNav,userNav]
+        self.viewControllers = [homeNav,blogNav,videoBlogNav,userNav]
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

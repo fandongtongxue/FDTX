@@ -17,6 +17,10 @@
 		CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */; };
 		CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */; };
 		CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */; };
+		CB58D36E1F7159CE0003A01D /* GitHubPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */; };
+		CB58D3701F7159DB0003A01D /* WordPressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D36F1F7159DB0003A01D /* WordPressViewController.swift */; };
+		CB58D3731F715E090003A01D /* WordPressArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D3721F715E090003A01D /* WordPressArticleModel.swift */; };
+		CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D3751F7161620003A01D /* GitHubPageArticleModel.swift */; };
 		CB6DBFCC1F657E9100461F9B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DBFCB1F657E9100461F9B /* UserDefault.swift */; };
 		CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */; };
 		CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141FD1F5FA4C600E3085C /* AppTool.swift */; };
@@ -58,6 +62,10 @@
 		CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUrlModel.swift; sourceTree = "<group>"; };
 		CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserModel.swift; sourceTree = "<group>"; };
 		CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserProfileModel.swift; sourceTree = "<group>"; };
+		CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageViewController.swift; sourceTree = "<group>"; };
+		CB58D36F1F7159DB0003A01D /* WordPressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressViewController.swift; sourceTree = "<group>"; };
+		CB58D3721F715E090003A01D /* WordPressArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressArticleModel.swift; sourceTree = "<group>"; };
+		CB58D3751F7161620003A01D /* GitHubPageArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageArticleModel.swift; sourceTree = "<group>"; };
 		CB6DBFCB1F657E9100461F9B /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		CB7141FD1F5FA4C600E3085C /* AppTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTool.swift; sourceTree = "<group>"; };
@@ -194,6 +202,40 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		CB58D36B1F7159C60003A01D /* GitHubPage */ = {
+			isa = PBXGroup;
+			children = (
+				CB58D3741F7161530003A01D /* Model */,
+				CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */,
+			);
+			path = GitHubPage;
+			sourceTree = "<group>";
+		};
+		CB58D36C1F7159C60003A01D /* WordPress */ = {
+			isa = PBXGroup;
+			children = (
+				CB58D3711F715DD00003A01D /* Model */,
+				CB58D36F1F7159DB0003A01D /* WordPressViewController.swift */,
+			);
+			path = WordPress;
+			sourceTree = "<group>";
+		};
+		CB58D3711F715DD00003A01D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB58D3721F715E090003A01D /* WordPressArticleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB58D3741F7161530003A01D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB58D3751F7161620003A01D /* GitHubPageArticleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CB7141DE1F5F7EFC00E3085C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +265,8 @@
 		CB7320DF1F40376D00F2F7BA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CB58D36B1F7159C60003A01D /* GitHubPage */,
+				CB58D36C1F7159C60003A01D /* WordPress */,
 				CBC6AE771F56FC58004455A6 /* Video */,
 				CB1F58941F4A82190096CDC5 /* Common */,
 				CB1EDA181F47C8C300821092 /* Guide */,
@@ -472,6 +516,7 @@
 				CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
+				CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */,
 				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
 				CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */,
 				CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */,
@@ -481,10 +526,13 @@
 				CB71536A1F66183100826616 /* ServerConfig.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
 				CB7153701F66195000826616 /* TimeConfig.swift in Sources */,
+				CB58D3731F715E090003A01D /* WordPressArticleModel.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,
 				CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */,
+				CB58D3701F7159DB0003A01D /* WordPressViewController.swift in Sources */,
 				CBFDCE3D1F61214E001422F5 /* OpenSourceViewController.swift in Sources */,
 				CB1F58961F4A82210096CDC5 /* WebViewController.swift in Sources */,
+				CB58D36E1F7159CE0003A01D /* GitHubPageViewController.swift in Sources */,
 				CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */,
 				CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */,
 				CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */,

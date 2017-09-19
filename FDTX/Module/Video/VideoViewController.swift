@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import BMPlayer
+import NightNight
 
 class VideoViewController: BaseViewController {
     
@@ -18,7 +19,7 @@ class VideoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
+        self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         view.addSubview(player)
         player.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(0)

@@ -11,7 +11,7 @@ import WebKit
 import NightNight
 import SwiftWebVC
 
-let webViewUrl = "blog.fandong.me"
+let webViewUrl = "http://fandong.me"
 
 let HomeViewControllerCellId = "HomeViewControllerCellId"
 let array = ["WebView","Unsplash","Music","Video"]

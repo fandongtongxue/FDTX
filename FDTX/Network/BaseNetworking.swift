@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 private let BaseNetworkingManager = BaseNetwoking()
 
@@ -22,7 +23,7 @@ extension BaseNetwoking {
     func GET(url: String, parameters : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failure : @escaping (_ error : Error)->()) {
         var finalUrl = ""
         //如果来源于原有API
-        if url.hasPrefix("http://api.fandong.me") {
+        if url.hasPrefix("http://") {
             finalUrl = url
         }else{
             finalUrl = SERVER_HOST + url
