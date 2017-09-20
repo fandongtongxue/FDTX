@@ -14,6 +14,8 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
     
     var url = "http://fandong.me"
     
+    var HTMLString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -22,7 +24,12 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
         self.webView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        self.webView.load(NSURLRequest.init(url: URL.init(string: self.url)!) as URLRequest)
+        if HTMLString != "" {
+            self.webView.loadHTMLString(HTMLString, baseURL: URL.init(string: url))
+        }else{
+            self.webView.load(NSURLRequest.init(url: URL.init(string: self.url)!) as URLRequest)
+        }
+        
     }
     //Lazy Load
     lazy var webView : WKWebView = {

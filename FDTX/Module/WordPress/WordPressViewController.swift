@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import NightNight
 import Alamofire
+import SwiftWebVC
 
 let WordPressViewControllerCellId = "WordPressViewControllerCellId"
 let WORD_PRESS_BLOG_ARTICLES_URL = "http://video.fandong.me/jsonapi/get_posts/"
@@ -72,6 +73,15 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = dataArray.object(at: indexPath.row) as! WordPressArticleModel
+        let webVC = WebViewController.init(nibName: nil, bundle: nil)
+        webVC.HTMLString = model.content
+        webVC.url = model.url
+        webVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     lazy var tableView : UITableView = {

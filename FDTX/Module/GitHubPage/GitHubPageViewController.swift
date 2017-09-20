@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import NightNight
 import Alamofire
+import SwiftWebVC
 
 let GitHubPageViewControllerCellId = "GitHubPageViewControllerCellId"
 let GITHUB_PAGE_BLOG_ARTICLES_URL = "http://blog.fandong.me/getArticleList.json"
@@ -72,6 +73,13 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = dataArray.object(at: indexPath.row) as! GitHubPageArticleModel
+        let webVC = SwiftWebVC(urlString: model.url)
+        webVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     lazy var tableView : UITableView = {
