@@ -21,7 +21,7 @@ class UserDefault {
 extension UserDefault {
     func setObject(object:String, forKey:String) {
         userDefaults.set(object, forKey: forKey)
-        log.info("Save Operation: Object:" + object + "For Key:" + forKey)
+        log.info("UserDefault Save Operation: Object:" + object + "For Key:" + forKey)
         userDefaults.synchronize()
     }
     
