@@ -67,4 +67,40 @@ extension BaseNetwoking {
             
         }
     }
+    //上传图片
+    func upLoadImage(url : String, parameters: [String:String], data: [Data], name: [String], success : @escaping (_ response : [String : AnyObject])->(), failure : @escaping (_ error : Error)->()){
+        
+        let headers = ["content-type":"multipart/form-data"]
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                //多张图片
+                let flag = parameters["flag"]
+                let userId = parameters["userId"]
+                
+                multipartFormData.append((flag?.data(using: String.Encoding.utf8)!)!, withName: "flag")
+                multipartFormData.append( (userId?.data(using: String.Encoding.utf8)!)!, withName: "userId")
+                
+                for i in 0..<data.count {
+                    multipartFormData.append(data[i], withName: "appPhoto", fileName: name[i], mimeType: "image/png")
+                }
+        },
+            to: url,
+            headers: headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        if let value = response.result.value as? [String: AnyObject]{
+                            log.info(value)
+                            success(value)
+                        }
+                    }
+                case .failure(let error):
+                    log.error(error)
+                    failure(error)
+                }
+        }
+        )
+    }
 }
