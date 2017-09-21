@@ -67,12 +67,8 @@ extension BaseNetwoking {
             
         }
     }
-    //上传图片
-    func UPLOAD_IMAGE(url : String, parameters: [String:String], data: [Data], success : @escaping (_ response : [String : AnyObject])->(), failure : @escaping (_ error : Error)->()){
-        Alamofire.upload(multipartFormData: { (<#MultipartFormData#>) in
-            <#code#>
-        }, to: <#T##URLConvertible#>) { (<#SessionManager.MultipartFormDataEncodingResult#>) in
-            <#code#>
-        }
+    //UPLOAD
+    func UPLOAD(url : String, parameters: [String:String], data: [Data], success : @escaping (_ response : [String : AnyObject])->(), failure : @escaping (_ error : Error)->()){
+        //上传图片
     }
 }
