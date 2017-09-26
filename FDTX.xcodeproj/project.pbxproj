@@ -38,6 +38,7 @@
 		CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */; };
 		CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */; };
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
+		CB9721851F7A5E71006D03B1 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */; };
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
 		CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
@@ -83,6 +84,7 @@
 		CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
+		CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
 		CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 				CB2C22FA1F4D775B00820C48 /* UserViewController.swift */,
 				CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */,
 				CB7153731F66332D00826616 /* SettingViewController.swift */,
+				CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */,
 				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
+				CB9721851F7A5E71006D03B1 /* UserInfoViewController.swift in Sources */,
 				CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */,
 				CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
