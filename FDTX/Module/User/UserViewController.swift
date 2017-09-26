@@ -35,12 +35,20 @@ class UserViewController: BaseViewController {
             make.height.equalTo(20)
             make.width.equalTo(20)
             make.right.equalToSuperview().offset(-10)
-            make.top.equalToSuperview().offset(30)
+            if #available(iOS 11.0, *){
+                make.top.equalToSuperview().offset(50)
+            }else{
+                make.top.equalToSuperview().offset(30)
+            }
         }
         self.view.addSubview(self.nightModeSwitch)
         self.nightModeSwitch.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(30)
+            if #available(iOS 11.0, *){
+                make.top.equalToSuperview().offset(50)
+            }else{
+                make.top.equalToSuperview().offset(30)
+            }
         }
     }
     
