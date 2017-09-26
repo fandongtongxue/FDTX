@@ -37,7 +37,11 @@ class UserHeaderView: UIControl {
             make.edges.equalToSuperview()
         }
         self.iconView.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(NAVIGATIONBAR_HEIGHT)
+            if UIDevice.current.isiPhoneX(){
+                make.top.equalTo(self).offset(NAVIGATIONBAR_HEIGHT + 10)
+            }else{
+                make.top.equalTo(self).offset(NAVIGATIONBAR_HEIGHT)
+            }
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize.init(width: 70, height: 70))
         }

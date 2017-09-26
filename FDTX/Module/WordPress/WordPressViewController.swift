@@ -13,7 +13,7 @@ import Alamofire
 import SwiftWebVC
 
 let WordPressViewControllerCellId = "WordPressViewControllerCellId"
-let WORD_PRESS_BLOG_ARTICLES_URL = "http://video.fandong.me/jsonapi/get_posts/"
+let WORD_PRESS_BLOG_ARTICLES_URL = "http://video.fandong.me/jsonapi/get_posts/?count=1000"
 
 class WordPressViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
@@ -66,6 +66,7 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
         cell.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         cell.textLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
         cell.textLabel?.numberOfLines = 0
+        
         cell.textLabel?.text = model.title
         cell.detailTextLabel?.text = model.modified
         return cell

@@ -14,3 +14,14 @@ let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 let STATUSBAR_HEIGHT = 20.0
 let NAVIGATIONBAR_HEIGHT = 44.0
 let TABBAR_HEIGHT = 49.0
+
+//Extension
+extension UIDevice {
+    public func isiPhoneX() -> Bool {
+        if UIScreen.main.bounds.height == 812 {
+            return true
+        }
+        
+        return false
+    }
+}
