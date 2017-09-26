@@ -86,12 +86,11 @@ extension BaseNetwoking {
                     upload.responseJSON { response in
                         if let value = response.result.value as? [String: AnyObject]{
                             success(value)
-                            log.info(value)
                         }
                     }
                 case .failure(let encodingError):
                     failure(encodingError)
-                    log.error(encodingError)
+                    log.error("error:\(encodingError)")
                 }
             }
         )
