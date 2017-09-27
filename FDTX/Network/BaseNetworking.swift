@@ -72,13 +72,13 @@ extension BaseNetwoking {
         let headers = ["content-type":"multipart/form-data"]
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-                let userId = parameters["userId"]
+                let userId = parameters["uid"]
                 multipartFormData.append( (userId?.data(using: String.Encoding.utf8)!)!, withName: "userId")
                 for i in 0..<data.count {
                     multipartFormData.append(data[i], withName: "userIcon", fileName: "test", mimeType: "image/png")
                 }
         },
-            to: url,
+            to: SERVER_HOST + url,
             headers: headers,
             encodingCompletion: { encodingResult in
                 switch encodingResult {

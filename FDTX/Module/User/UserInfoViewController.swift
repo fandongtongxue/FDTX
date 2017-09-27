@@ -25,7 +25,7 @@ class UserInfoViewController: BaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         let data = UIImagePNGRepresentation(UIImage.init(named: "uc_btn_setting")!)!
-        BaseNetwoking.manager.UPLOAD(url: "userChangeUserIcon", parameters: ["userId":AppTool.shared.uid()], data:[data], success: { (result) in
+        BaseNetwoking.manager.UPLOAD(url: "userChangeUserIcon", parameters: ["uid":AppTool.shared.uid()], data:[data], success: { (result) in
             log.info(result)
         }) { (error) in
             //do nothing
