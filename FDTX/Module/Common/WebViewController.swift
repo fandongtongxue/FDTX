@@ -16,6 +16,10 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
     
     var HTMLString = ""
     
+    var isArticle = false
+    
+    var post_id = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -29,6 +33,14 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
         }else{
             self.webView.load(NSURLRequest.init(url: URL.init(string: self.url)!) as URLRequest)
         }
+        if isArticle {
+            self.view.addSubview(self.bottomView)
+            self.bottomView.post_id = self.post_id
+            self.bottomView.snp.makeConstraints({ (make) in
+                make.bottom.left.right.equalToSuperview()
+                make.height.equalTo(TABBAR_HEIGHT + (UIDevice.current.isiPhoneX() ? STATUSBAR_HEIGHT : 0))
+            })
+        }
         
     }
     //Lazy Load
@@ -39,6 +51,12 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
         webView.navigationDelegate = self
         return webView
     }()
+    
+    lazy var bottomView : BottomCommentView = {
+        let bottomView = BottomCommentView.init(frame: .zero)
+        return bottomView
+    }()
+    
     //WebViewNavigationDelegate
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("网页开始加载")

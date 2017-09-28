@@ -33,4 +33,12 @@ extension AppTool {
         }
         return ""
     }
+    
+    func nickName() -> String {
+        if AppTool.shared.isLogin() {
+            let nickName = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_NICKNAME)
+            return nickName
+        }
+        return ""
+    }
 }

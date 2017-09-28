@@ -20,7 +20,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
         title = "Setting"
         view.addSubview(logoutBtn)
         logoutBtn.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(UIDevice.current.isiPhoneX() ? STATUSBAR_HEIGHT : 0)
             make.left.right.equalToSuperview()
             make.height.equalTo(TABBAR_HEIGHT)
         }

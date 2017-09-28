@@ -82,6 +82,8 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
         webVC.HTMLString = model.content
         webVC.url = model.url
         webVC.hidesBottomBarWhenPushed = true
+        webVC.isArticle = true
+        webVC.post_id = model.id
         self.navigationController?.pushViewController(webVC, animated: true)
     }
     
