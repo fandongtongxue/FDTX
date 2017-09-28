@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import NightNight
+import SwiftWebVC
 
 let SettingViewControllerCellId = "SettingViewControllerCellId"
 
@@ -81,6 +82,13 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 let openSourceVC = OpenSourceViewController()
                 openSourceVC.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(openSourceVC, animated: true)
+                break
+            case 1:
+                let webVC = SwiftWebVC(urlString:SERVER_HOST + "about")
+                webVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(webVC, animated: true)
+                break
+            case 2:
                 break
             default:
                 //do nothing

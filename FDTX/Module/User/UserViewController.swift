@@ -24,13 +24,6 @@ class UserViewController: BaseViewController {
         self.requestData()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        let vc = UserInfoViewController.init(nibName: nil, bundle: nil)
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func initSubview() {
         self.view.addSubview(self.headerView)
         self.headerView.snp.makeConstraints { (make) in
@@ -80,7 +73,9 @@ class UserViewController: BaseViewController {
     }
     
     func headerViewBtnAction() {
-        
+        let userInfoVC = UserInfoViewController.init(nibName: nil, bundle: nil)
+        userInfoVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(userInfoVC, animated: true)
     }
     
     func settingBtnAction() {

@@ -13,6 +13,11 @@ class GitHubPageArticleModel: HandyJSON {
     var title : String!
     var url : String!
     var date : String!
+    var author : String!
+    var header_img : String!
+    var subtitle : String!
+    var content : String!
+    
     
     required init() {
         

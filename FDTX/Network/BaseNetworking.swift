@@ -72,8 +72,8 @@ extension BaseNetwoking {
         let headers = ["content-type":"multipart/form-data"]
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-                let userId = parameters["uid"]
-                multipartFormData.append( (userId?.data(using: String.Encoding.utf8)!)!, withName: "userId")
+                let uid = parameters["uid"]
+                multipartFormData.append( (uid?.data(using: String.Encoding.utf8)!)!, withName: "uid")
                 for i in 0..<data.count {
                     multipartFormData.append(data[i], withName: "userIcon", fileName: "test", mimeType: "image/png")
                 }
