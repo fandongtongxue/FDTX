@@ -50,6 +50,9 @@ class UserViewController: BaseViewController {
                 make.top.equalToSuperview().offset(30)
             }
         }
+        let nightModel = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_NIGHTMODE)
+        self.nightModeSwitch.isOn = (nightModel as NSString).integerValue == 1 ? true : false
+        NightNight.theme = self.nightModeSwitch.isOn == true ? .night : .normal
     }
     
     func requestData() {
@@ -88,8 +91,10 @@ class UserViewController: BaseViewController {
         if sender.isOn {
             //夜间模式打开
             NightNight.theme = .night
+            UserDefault.shared.setObject(object: "1", forKey: USER_DEFAULT_KEY_NIGHTMODE)
         }else{
             NightNight.theme = .normal
+            UserDefault.shared.setObject(object: "0", forKey: USER_DEFAULT_KEY_NIGHTMODE)
         }
     }
     lazy var headerView : UserHeaderView = {
