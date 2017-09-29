@@ -68,6 +68,8 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = model.title
         cell.detailTextLabel?.text = model.date
+        cell.imageView?.kf.setImage(with: URL.init(string: GITHUB_URL + model.header_img))
+        cell.imageView?.frame = CGRect.init(x: 20, y: 20, width: 40 * 16 / 9, height: 40)
         return cell
     }
     

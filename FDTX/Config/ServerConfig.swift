@@ -16,4 +16,6 @@ let SERVER_HOST = "http://112.74.33.82:8080/"
 //WordPress API URL
 let WORDPRESS_URL = "http://video.fandong.me/jsonapi/"
 
+//GitHub Page URL
+let GITHUB_URL = "http://blog.fandong.me/"
 
