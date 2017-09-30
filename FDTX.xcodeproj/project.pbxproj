@@ -13,6 +13,7 @@
 		CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */; };
 		CB1F58961F4A82210096CDC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58951F4A82210096CDC5 /* WebViewController.swift */; };
 		CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C22FA1F4D775B00820C48 /* UserViewController.swift */; };
+		CB3484371F7F79A70062BF84 /* GitHubPageArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3484361F7F79A70062BF84 /* GitHubPageArticleCell.swift */; };
 		CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A711F47169C00BCB90F /* UnsplashPictureModel.swift */; };
 		CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */; };
 		CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */; };
@@ -60,6 +61,7 @@
 		CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewCell.swift; sourceTree = "<group>"; };
 		CB1F58951F4A82210096CDC5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CB2C22FA1F4D775B00820C48 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		CB3484361F7F79A70062BF84 /* GitHubPageArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageArticleCell.swift; sourceTree = "<group>"; };
 		CB542A711F47169C00BCB90F /* UnsplashPictureModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashPictureModel.swift; sourceTree = "<group>"; };
 		CB542A721F47169C00BCB90F /* UnsplashUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUrlModel.swift; sourceTree = "<group>"; };
 		CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserModel.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		CB3484351F7F79920062BF84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB3484361F7F79A70062BF84 /* GitHubPageArticleCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CB542A6F1F47166F00BCB90F /* Picture */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +221,7 @@
 		CB58D36B1F7159C60003A01D /* GitHubPage */ = {
 			isa = PBXGroup;
 			children = (
+				CB3484351F7F79920062BF84 /* View */,
 				CB58D3741F7161530003A01D /* Model */,
 				CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */,
 			);
@@ -519,6 +530,7 @@
 				CB7153741F66332D00826616 /* SettingViewController.swift in Sources */,
 				CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */,
 				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
+				CB3484371F7F79A70062BF84 /* GitHubPageArticleCell.swift in Sources */,
 				CB68E26C1F7CDF89004FD3B3 /* BottomCommentView.swift in Sources */,
 				CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,

@@ -60,16 +60,9 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: GitHubPageViewControllerCellId) as! UITableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: GitHubPageViewControllerCellId) as! GitHubPageArticleCell
         let model = dataArray.object(at: indexPath.row) as! GitHubPageArticleModel
-        cell.selectionStyle = .none
-        cell.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        cell.textLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = model.title
-        cell.detailTextLabel?.text = model.date
-        cell.imageView?.kf.setImage(with: URL.init(string: GITHUB_URL + model.header_img))
-        cell.imageView?.frame = CGRect.init(x: 20, y: 20, width: 40 * 16 / 9, height: 40)
+        cell.setModel(model: model)
         return cell
     }
     
@@ -89,9 +82,9 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
         tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: GitHubPageViewControllerCellId)
+        tableView.register(GitHubPageArticleCell.classForCoder(), forCellReuseIdentifier: GitHubPageViewControllerCellId)
         tableView.alwaysBounceVertical = true
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         return tableView
     }()
     

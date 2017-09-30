@@ -94,7 +94,7 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: WordPressViewControllerCellId)
         tableView.alwaysBounceVertical = true
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         return tableView
     }()
     

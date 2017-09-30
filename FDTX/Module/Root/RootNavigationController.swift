@@ -14,8 +14,8 @@ class RootNavigationController: UINavigationController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationBar.isTranslucent = false
-        self.navigationBar.mixedTitleTextAttributes = [NNForegroundColorAttributeName:MixedColor.init(normal: .white, night: .black),NSFontAttributeName:UIFont.systemFont(ofSize: 18)]
-        self.navigationBar.mixedBarTintColor = MixedColor.init(normal: .black, night: .white)
+        self.navigationBar.mixedTitleTextAttributes = [NNForegroundColorAttributeName:MixedColor.init(normal: .white, night: .white),NSFontAttributeName:UIFont.systemFont(ofSize: 18)]
+        self.navigationBar.mixedBarTintColor = MixedColor.init(normal: .black, night: .blue)
         self.navigationBar.mixedTintColor = MixedColor.init(normal: .white, night: .black)
     }
     
