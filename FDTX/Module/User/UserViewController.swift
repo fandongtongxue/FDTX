@@ -64,6 +64,7 @@ class UserViewController: BaseViewController {
                 let userInfoDict = userInfo.firstObject
                 let model = UserInfoModel.deserialize(from: userInfoDict as? NSDictionary)
                 self.headerView.setModel(model: model!)
+                UserDefault.shared.setObject(object: (model?.nickName)!, forKey: USER_DEFAULT_KEY_NICKNAME)
             }) { (error) in
                 
             }

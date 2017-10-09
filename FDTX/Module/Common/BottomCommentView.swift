@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import NightNight
 import Alamofire
+import PKHUD
 
 class BottomCommentView: UIView {
     
@@ -17,7 +18,7 @@ class BottomCommentView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        mixedBackgroundColor = MixedColor.init(normal: .black, night: .black)
+        mixedBackgroundColor = MixedColor.init(normal: UIColor.init(hex: "007aff"), night: UIColor.init(hex: "007aff"))
         initSubviews()
     }
     
@@ -35,19 +36,38 @@ class BottomCommentView: UIView {
         }
     }
     
-    func sendBtnAction() {
-        log.info("Send" + self.textField.text!)
+    func sendBtnAction(sender:UIButton) {
+        sender.isEnabled = false
         
-        let parameters = ["post_id":post_id,"name":AppTool.shared.nickName(),"email":"user@fandong.me","content":self.textField.text!]
+        log.info("Send:" + self.textField.text!)
         
-        Alamofire.request(WORDPRESS_URL+"respond/submit_comment/", method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
+        let content = self.textField.text?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        let url = WORDPRESS_URL+"respond/submit_comment?post_id=" + post_id + "&name=" + AppTool.shared.nickName() + "&email=" + "user@fandong.me" + "&content="
+        
+        let finalUrl = url + content!
+        
+        Alamofire.request(finalUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
             switch response.result{
             case .success:
                 if let result = response.result.value{
+                    log.info("Comment Publish Success")
                     log.info(result)
+                    HUD.flash(.label("Comment Success"), delay: HUD_DELAY_TIME)
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_DELAY_TIME) {
+                        self.viewController()?.dismiss(animated: true, completion: nil)
+                        sender.isEnabled = true
+                        self.textField.text = ""
+                        self.textField.resignFirstResponder()
+                    }
                 }
             case.failure(let error):
                 log.error(error)
+                sender.isEnabled = true
+                HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_DELAY_TIME) {
+                    self.viewController()?.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
@@ -66,7 +86,7 @@ class BottomCommentView: UIView {
         sendBtn.setTitle("Send", for: .normal)
         sendBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         sendBtn.titleLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .white)
-        sendBtn.addTarget(self, action: #selector(sendBtnAction), for: .touchUpInside)
+        sendBtn.addTarget(self, action: #selector(sendBtnAction(sender:)), for: .touchUpInside)
         return sendBtn
     }()
     
