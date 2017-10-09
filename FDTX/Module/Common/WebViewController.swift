@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import WebKit
 
-class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate {
+class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate,UIScrollViewDelegate {
     
     var url = "http://fandong.me"
     
@@ -25,9 +25,6 @@ class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate {
         self.view.backgroundColor = UIColor.white
         self.title = "Loading..."
         self.view.addSubview(self.webView)
-        self.webView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
         if HTMLString != "" {
             self.webView.loadHTMLString(HTMLString, baseURL: URL.init(string: url))
         }else{
@@ -40,15 +37,29 @@ class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate {
                 make.bottom.left.right.equalToSuperview()
                 make.height.equalTo(TABBAR_HEIGHT + (UIDevice.current.isiPhoneX() ? STATUSBAR_HEIGHT : 0))
             })
+            self.webView.snp.makeConstraints { (make) in
+//                make.edges.equalToSuperview()
+                make.left.right.top.equalToSuperview()
+                make.bottom.equalTo(self.bottomView.snp.top)
+            }
+        }else{
+            self.webView.snp.makeConstraints { (make) in
+                make.edges.equalToSuperview()
+            }
         }
         
     }
     //Lazy Load
     lazy var webView : WKWebView = {
         let configuration = WKWebViewConfiguration.init()
+        let userContentController = WKUserContentController.init()
+        let js = "var meta = document.createElement('meta'); meta.name = 'viewport'; meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' var head = document.getElementsByTagName('head')[0]; head.appendChild(meta);"
+        userContentController.addUserScript(WKUserScript.init(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: true))
+        configuration.userContentController = userContentController
         let webView : WKWebView = WKWebView.init(frame: CGRect.zero, configuration: configuration)
         webView.uiDelegate = self
         webView.navigationDelegate = self
+        webView.scrollView.delegate = self
         return webView
     }()
     
@@ -70,6 +81,11 @@ class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("网页加载失败")
     }
+    
+    //UIScrollViewDelegate
+//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+//        return nil
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
