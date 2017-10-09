@@ -122,7 +122,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
         logoutBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         logoutBtn.mixedBackgroundColor = MixedColor.init(normal: .red, night: .red)
         logoutBtn.addTarget(self, action: #selector(logoutBtnAction), for: .touchUpInside)
-        logoutBtn.titleEdgeInsets = UIEdgeInsets.init(top: -10, left: 0, bottom: 10, right: 0)
+        logoutBtn.titleEdgeInsets = UIEdgeInsets.init(top: UIDevice.current.isiPhoneX() ? -10 : 0, left: 0, bottom: UIDevice.current.isiPhoneX() ? 10 : 0, right: 0)
         return logoutBtn
     }()
     
