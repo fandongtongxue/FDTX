@@ -8,6 +8,7 @@ PODS:
     - NVActivityIndicatorView (~> 3.5)
     - SnapKit (~> 3.2)
   - HandyJSON (1.7.2)
+  - Hue (2.0.1)
   - IQKeyboardManagerSwift (4.0.13)
   - KeychainAccess (3.0.2)
   - Kingfisher (3.11.0)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - Alamofire
   - BMPlayer
   - HandyJSON (~> 1.7.2)
+  - Hue
   - IQKeyboardManagerSwift
   - KeychainAccess
   - Kingfisher (~> 3.0)
@@ -42,6 +44,7 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BMPlayer: 5ba9e3f3d61ccc5a24ebd9cdc24901dcf28c98bc
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
   IQKeyboardManagerSwift: fb399c4cddcd8d9bbcd2d0c7c81ed290b61c088e
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
@@ -53,6 +56,6 @@ SPEC CHECKSUMS:
   SwiftWebVC: 17ad75e1fac143d421e0498fb40d7e37532f26d1
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: d01f907bab2cb1de5eded59395b62b0146c4ef2e
+PODFILE CHECKSUM: 2bac20c82cb12ed12c22ba732568f6357a876910
 
 COCOAPODS: 1.2.1

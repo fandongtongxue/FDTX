@@ -20,9 +20,8 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
         title = "Setting"
         view.addSubview(logoutBtn)
         logoutBtn.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(UIDevice.current.isiPhoneX() ? STATUSBAR_HEIGHT : 0)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(TABBAR_HEIGHT)
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(TABBAR_HEIGHT + (UIDevice.current.isiPhoneX() ? STATUSBAR_HEIGHT : 0))
         }
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
@@ -119,10 +118,11 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
     lazy var logoutBtn : UIButton = {
         let logoutBtn = UIButton.init(frame: .zero)
         logoutBtn.setTitle("Sign Out", for: .normal)
-        logoutBtn.setMixedTitleColor(MixedColor.init(normal: .black, night: .white), forState: .normal)
+        logoutBtn.setMixedTitleColor(MixedColor.init(normal: .white, night: .white), forState: .normal)
         logoutBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        logoutBtn.mixedBackgroundColor = MixedColor.init(normal: .white, night: .black)
+        logoutBtn.mixedBackgroundColor = MixedColor.init(normal: .red, night: .red)
         logoutBtn.addTarget(self, action: #selector(logoutBtnAction), for: .touchUpInside)
+        logoutBtn.titleEdgeInsets = UIEdgeInsets.init(top: -10, left: 0, bottom: 10, right: 0)
         return logoutBtn
     }()
     

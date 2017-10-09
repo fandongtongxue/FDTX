@@ -8,6 +8,7 @@
 
 import UIKit
 import NightNight
+import Hue
 
 class RootNavigationController: UINavigationController{
     override func viewDidLoad() {
@@ -15,8 +16,8 @@ class RootNavigationController: UINavigationController{
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationBar.isTranslucent = false
         self.navigationBar.mixedTitleTextAttributes = [NNForegroundColorAttributeName:MixedColor.init(normal: .white, night: .white),NSFontAttributeName:UIFont.systemFont(ofSize: 18)]
-        self.navigationBar.mixedBarTintColor = MixedColor.init(normal: .black, night: .blue)
-        self.navigationBar.mixedTintColor = MixedColor.init(normal: .white, night: .black)
+        self.navigationBar.mixedBarTintColor = MixedColor.init(normal: .black, night: UIColor(hex:"007aff"))
+        self.navigationBar.mixedTintColor = MixedColor.init(normal: .white, night: .white)
     }
     
     override func didReceiveMemoryWarning() {

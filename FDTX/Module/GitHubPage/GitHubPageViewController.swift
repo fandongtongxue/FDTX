@@ -90,7 +90,7 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     lazy var refreshControl : UIRefreshControl = {
         let refreshControl = UIRefreshControl.init()
-        refreshControl.tintColor = UIColor.white
+        refreshControl.mixedTintColor = MixedColor.init(normal: .white, night: .black)
         refreshControl.addTarget(self, action: #selector(requestData), for: UIControlEvents.valueChanged)
         return refreshControl
     }()

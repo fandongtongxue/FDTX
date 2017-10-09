@@ -23,7 +23,7 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        self.title = "WebView"
+        self.title = "Loading..."
         self.view.addSubview(self.webView)
         self.webView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -64,6 +64,7 @@ class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("网页加载完成")
+        title = webView.title
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

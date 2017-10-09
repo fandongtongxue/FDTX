@@ -101,7 +101,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     }()
     lazy var refreshControl : UIRefreshControl = {
         let refreshControl = UIRefreshControl.init()
-        refreshControl.tintColor = UIColor.white
+        refreshControl.mixedTintColor = MixedColor.init(normal: .white, night: .black)
         refreshControl.addTarget(self, action: #selector(requestFirstPageData), for: UIControlEvents.valueChanged)
         return refreshControl
     }()

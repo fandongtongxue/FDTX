@@ -17,7 +17,7 @@ class BottomCommentView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
+        mixedBackgroundColor = MixedColor.init(normal: .black, night: .black)
         initSubviews()
     }
     
@@ -54,9 +54,9 @@ class BottomCommentView: UIView {
     
     lazy var textField : UITextField = {
         let textField = UITextField.init(frame: .zero)
-        textField.placeholder = "请输入评论的内容"
-        textField.mixedBackgroundColor = MixedColor.init(normal: .white, night: .black)
-        textField.mixedTextColor = MixedColor.init(normal: .black, night: .white)
+        textField.placeholder = "Please Input Comments"
+        textField.mixedBackgroundColor = MixedColor.init(normal: .white, night: .white)
+        textField.mixedTextColor = MixedColor.init(normal: .black, night: .black)
         textField.font = UIFont.systemFont(ofSize: 15)
         return textField
     }()
@@ -65,7 +65,7 @@ class BottomCommentView: UIView {
         let sendBtn = UIButton.init(frame: .zero)
         sendBtn.setTitle("Send", for: .normal)
         sendBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        sendBtn.titleLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
+        sendBtn.titleLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .white)
         sendBtn.addTarget(self, action: #selector(sendBtnAction), for: .touchUpInside)
         return sendBtn
     }()

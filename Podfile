@@ -19,4 +19,5 @@ target 'FDTX' do
   pod 'IQKeyboardManagerSwift'
   pod 'KeychainAccess'
   pod 'SwiftWebVC'
+  pod 'Hue'
 end
