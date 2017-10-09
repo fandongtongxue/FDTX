@@ -15,6 +15,7 @@ class WordPressArticleModel: HandyJSON {
     var title:String!
     var modified:String!
     var content:String!
+    var comments:Array<CommentModel>!
 /*
  {
  "id": 49,

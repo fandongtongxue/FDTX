@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController,WKNavigationDelegate,WKUIDelegate {
+class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate {
     
     var url = "http://fandong.me"
     
