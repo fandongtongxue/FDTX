@@ -83,7 +83,7 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: OpenSourceViewControllerCellId)
         tableView.alwaysBounceVertical = true
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         return tableView
     }()
     

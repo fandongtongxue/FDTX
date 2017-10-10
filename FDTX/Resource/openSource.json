@@ -40,6 +40,22 @@
                        {
                        "name":"NightNight",
                        "url":"https://github.com/Draveness/NightNight"
+                       },
+                       {
+                       "name":"IQKeyboardManagerSwift",
+                       "url":"https://github.com/hackiftekhar/IQKeyboardManager"
+                       },
+                       {
+                       "name":"KeychainAccess",
+                       "url":"https://github.com/kishikawakatsumi/KeychainAccess"
+                       },
+                       {
+                       "name":"SwiftWebVC",
+                       "url":"https://github.com/meismyles/SwiftWebVC"
+                       },
+                       {
+                       "name":"Hue",
+                       "url":"https://github.com/hyperoslo/Hue"
                        }
                        ]
     },
