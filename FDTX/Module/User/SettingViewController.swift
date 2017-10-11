@@ -106,7 +106,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: SettingViewControllerCellId)
         tableView.alwaysBounceVertical = true
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         return tableView
     }()
     
