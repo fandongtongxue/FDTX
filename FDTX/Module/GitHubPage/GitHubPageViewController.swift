@@ -33,10 +33,12 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
             let size = CGSize.init(width: 30, height: 30)
             startAnimating(size, message: "Loading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         }
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         Alamofire.request(GITHUB_PAGE_BLOG_ARTICLES_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
             self.stopAnimating()
             switch response.result{
             case .success:
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.dataArray.removeAllObjects()
                 if let result = response.result.value{
                     let array = result as! NSArray
@@ -49,6 +51,7 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
                     self.refreshControl.endRefreshing()
                 }
             case.failure(let error):
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 log.error(error)
                 self.refreshControl.endRefreshing()
             }

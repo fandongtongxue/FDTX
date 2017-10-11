@@ -26,7 +26,7 @@ class UnsplashViewCell: UITableViewCell {
     }
     
     func setModel(model:UnsplashPictureModel) {
-        self.pictureImageView.kf.setImage(with: URL.init(string: model.urls.regular))
+        self.pictureImageView.kf.setImage(with: URL.init(string: model.urls.small))
         self.iconImageView.kf.setImage(with: URL.init(string: model.user.profile_image.large))
         self.nameLabel.text = model.user.name
         self.introduceLabel.text = model.user.bio

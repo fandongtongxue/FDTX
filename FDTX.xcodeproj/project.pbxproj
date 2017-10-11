@@ -42,6 +42,7 @@
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
 		CB9721851F7A5E71006D03B1 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */; };
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
+		CBA7B3B41F8E18DD00AA87DD /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B3B31F8E18DD00AA87DD /* DemoData.swift */; };
 		CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
 		CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */; };
@@ -91,6 +92,7 @@
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
 		CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
+		CBA7B3B31F8E18DD00AA87DD /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		CB542A7A1F4716B700BCB90F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CBA7B3B31F8E18DD00AA87DD /* DemoData.swift */,
 				CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */,
 			);
 			path = ViewController;
@@ -524,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BF873DF48E6ECDE5FB61C68D /* [CP] Copy Pods Resources */ = {
@@ -573,6 +576,7 @@
 				CB71536A1F66183100826616 /* ServerConfig.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
 				CB7153701F66195000826616 /* TimeConfig.swift in Sources */,
+				CBA7B3B41F8E18DD00AA87DD /* DemoData.swift in Sources */,
 				CB58D3731F715E090003A01D /* WordPressArticleModel.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,
 				CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */,

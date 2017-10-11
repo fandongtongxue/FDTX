@@ -28,10 +28,12 @@ extension BaseNetwoking {
         }else{
             finalUrl = SERVER_HOST + url
         }
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         Alamofire.request(finalUrl, method: .get, parameters: parameters, headers:nil)
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let value):
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     let result = value as! [String : AnyObject]
                     if result["status"]?.int64Value == 1{
                         success(result)
@@ -41,6 +43,7 @@ extension BaseNetwoking {
                         failure(errorResult as Error)
                     }
                 case .failure(let error):
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     log.error("error:\(error)")
                     failure(error)
             }
@@ -48,10 +51,12 @@ extension BaseNetwoking {
     }
     //POST
     func POST(url : String, parameters : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failure : @escaping (_ error : Error)->()) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         Alamofire.request(SERVER_HOST + url, method: .post, parameters: parameters, headers: nil)
             .responseJSON { (response) in
             switch response.result{
             case .success(let value):
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 let result = value as! [String : AnyObject]
                 if result["status"]?.int64Value == 1{
                     success(result)
@@ -61,6 +66,7 @@ extension BaseNetwoking {
                     failure(errorResult as Error)
                 }
             case .failure(let error):
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 log.error("error:\(error)")
                 failure(error)
             }

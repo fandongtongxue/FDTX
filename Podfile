@@ -20,4 +20,5 @@ target 'FDTX' do
   pod 'KeychainAccess'
   pod 'SwiftWebVC'
   pod 'Hue'
+  pod 'MediaBrowser'
 end

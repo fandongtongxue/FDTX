@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Alamofire
 import NightNight
+import MediaBrowser
+import Photos
 
 let UnsplashViewControllerCellId = "UnsplashViewControllerCellId"
 let UnsplashUrl = "https://api.unsplash.com/photos/?client_id=522f34661134a2300e6d94d344a7ab6424e028a51b31353363b7a8cce11d73b6&per_page=20&page="
@@ -17,6 +19,11 @@ let UnsplashUrl = "https://api.unsplash.com/photos/?client_id=522f34661134a2300e
 class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
     
     var page : NSInteger = 1
+    
+    var selections = [Bool]()
+    
+    var raws = [Media]()
+    var thumbs = [Media]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +46,12 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         
         page = 1
         let firstUrl = UnsplashUrl + String.init(format: "%d", page)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         Alamofire.request(firstUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
             self.stopAnimating()
             switch response.result{
             case .success:
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.dataArray.removeAllObjects()
                 if let result = response.result.value{
                     let array = result as! NSArray
@@ -55,6 +64,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
                     self.refreshControl.endRefreshing()
                 }
             case.failure(let error):
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 log.error(error)
                 self.refreshControl.endRefreshing()
             }
@@ -81,6 +91,39 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.dataArray.object(at: indexPath.row) as! UnsplashPictureModel
         log.info(model.urls.regular)
+        //PhotoBrowser
+        raws = self.getRaws()
+        thumbs = self.getThumbs()
+        let browser = MediaBrowser(delegate: self)
+        browser.displayActionButton = true
+        browser.displayMediaNavigationArrows = false
+        browser.displaySelectionButtons = false
+        browser.alwaysShowControls = false
+        browser.zoomPhotosToFill = true
+        browser.enableGrid = false
+        browser.startOnGrid = false
+        browser.enableSwipeToDismiss = true
+        browser.autoPlayOnAppear = false
+        browser.cachingImageCount = 2
+        browser.setCurrentIndex(at: indexPath.row)
+        self.navigationController?.pushViewController(browser, animated: true)
+    }
+    
+    func getRaws() -> [Media] {
+        for model in dataArray {
+            let media = Media.init(url: URL.init(string: (model as! UnsplashPictureModel).urls.regular)!)
+            raws.append(media)
+        }
+        return raws
+    }
+    
+    
+    func getThumbs() -> [Media] {
+        for model in dataArray {
+            let media = Media.init(url: URL.init(string: (model as! UnsplashPictureModel).urls.thumb)!)
+            thumbs.append(media)
+        }
+        return thumbs
     }
     
     //懒加载
@@ -108,5 +151,42 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+//MARK: MediaBrowserDelegate
+extension UnsplashViewController: MediaBrowserDelegate {
+    func thumbnail(for mediaBrowser: MediaBrowser, at index: Int) -> Media {
+        if index < thumbs.count {
+            return thumbs[index]
+        }
+        return DemoData.localMediaPhoto(imageName: "iTunesArtwork", caption: "ThumbPhoto at index is wrong")
+    }
+    
+    func media(for mediaBrowser: MediaBrowser, at index: Int) -> Media {
+        if index < raws.count {
+            return raws[index]
+        }
+        return DemoData.localMediaPhoto(imageName: "iTunesArtwork", caption: "Photo at index is Wrong")
+    }
+    
+    func numberOfMedia(in mediaBrowser: MediaBrowser) -> Int {
+        return raws.count
+    }
+    
+    func isMediaSelected(at index: Int, in mediaBrowser: MediaBrowser) -> Bool {
+        return selections[index]
+    }
+    
+    func didDisplayMedia(at index: Int, in mediaBrowser: MediaBrowser) {
+        log.info("Did start viewing photo at index \(index)")
+    }
+    
+    func mediaDid(selected: Bool, at index: Int, in mediaBrowser: MediaBrowser) {
+        selections[index] = selected
+    }
+    
+    func titleForPhotoAtIndex(index: Int, MediaBrowser: MediaBrowser) -> String {
+        return "Title"
     }
 }
