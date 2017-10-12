@@ -24,22 +24,27 @@ class RootTabBarController: UITabBarController{
         let homeItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
         homeNav.tabBarItem = homeItem
         
+        let chatVC = VaporChatController.init(nibName: nil, bundle: nil)
+        let chatNav = RootNavigationController.init(rootViewController: chatVC)
+        let chatItem = UITabBarItem.init(tabBarSystemItem: .search, tag: 1)
+        chatNav.tabBarItem = chatItem
+        
         let blogVC = GitHubPageViewController.init(nibName: nil, bundle: nil)
         let blogNav = RootNavigationController.init(rootViewController: blogVC)
-        let blogItem = UITabBarItem.init(tabBarSystemItem: .bookmarks, tag: 1)
+        let blogItem = UITabBarItem.init(tabBarSystemItem: .bookmarks, tag: 2)
         blogNav.tabBarItem = blogItem
         
         let videoBlogVC = WordPressViewController.init(nibName: nil, bundle: nil)
         let videoBlogNav = RootNavigationController.init(rootViewController: videoBlogVC)
-        let videoBlogItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 2)
+        let videoBlogItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 3)
         videoBlogNav.tabBarItem = videoBlogItem
         
         let userVC = UserViewController.init(nibName: nil, bundle: nil)
         let userNav = RootNavigationController.init(rootViewController: userVC)
-        let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 3)
+        let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 4)
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [homeNav,blogNav,videoBlogNav,userNav]
+        self.viewControllers = [homeNav,chatNav,blogNav,videoBlogNav,userNav]
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

@@ -8,7 +8,7 @@
 
 import UIKit
 import XCGLogger
-import ReachabilitySwift
+import Reachability
 import NightNight
 import IQKeyboardManagerSwift
 

@@ -21,4 +21,5 @@ target 'FDTX' do
   pod 'SwiftWebVC'
   pod 'Hue'
   pod 'MediaBrowser'
+  pod 'Starscream'
 end
