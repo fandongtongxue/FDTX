@@ -1,6 +1,6 @@
 import Starscream
 
-private let chatURL = URL(string: "wss://vapor-chat.herokuapp.com/chat")!
+private let chatURL = URL(string: "wss://127.0.0.1:8080/")!
 
 internal class ChatModel {
 
