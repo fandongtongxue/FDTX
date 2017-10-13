@@ -1,6 +1,8 @@
 import Starscream
 
-private let chatURL = URL(string: "wss://127.0.0.1:8080/")!
+private let socketURL = "wss://112.74.33.82:8080/"
+
+private let chatURL = URL(string: socketURL)!
 
 internal class ChatModel {
 
