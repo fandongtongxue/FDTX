@@ -1,6 +1,6 @@
 import Starscream
 
-private let socketURL = "wss://112.74.33.82:8080/"
+private let socketURL = "wss://vapor-chat.herokuapp.com/chat"
 
 private let chatURL = URL(string: socketURL)!
 

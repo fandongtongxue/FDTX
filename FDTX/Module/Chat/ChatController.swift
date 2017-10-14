@@ -50,19 +50,24 @@ class VaporChatController: ChatController {
     }
 
     internal func showDisconnect() {
-        let new = UIAlertController(title: "Disconnected", message: nil, preferredStyle: .alert)
-        let kill = UIAlertAction(title: "Kill", style: UIAlertActionStyle.default) { action in
-            fatalError()
+        if self.model.username == "null" {
+            self.askForName()
+        } else {
+            self.model.start()
         }
-        let tryAgain = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default) { [weak self] action in
-            if self?.model.username == "null" {
-                self?.askForName()
-            } else {
-                self?.model.start()
-            }
-        }
-        new.addAction(kill)
-        new.addAction(tryAgain)
-        present(new, animated: true, completion: nil)
+//        let new = UIAlertController(title: "Disconnected", message: nil, preferredStyle: .alert)
+//        let kill = UIAlertAction(title: "Kill", style: UIAlertActionStyle.default) { action in
+//            fatalError()
+//        }
+//        let tryAgain = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default) { [weak self] action in
+//            if self?.model.username == "null" {
+//                self?.askForName()
+//            } else {
+//                self?.model.start()
+//            }
+//        }
+//        new.addAction(kill)
+//        new.addAction(tryAgain)
+//        present(new, animated: true, completion: nil)
     }
 }
