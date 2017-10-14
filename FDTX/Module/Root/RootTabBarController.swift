@@ -24,11 +24,6 @@ class RootTabBarController: UITabBarController{
         let homeItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
         homeNav.tabBarItem = homeItem
         
-        let chatVC = VaporChatController.init(nibName: nil, bundle: nil)
-        let chatNav = RootNavigationController.init(rootViewController: chatVC)
-        let chatItem = UITabBarItem.init(tabBarSystemItem: .search, tag: 1)
-        chatNav.tabBarItem = chatItem
-        
         let blogVC = GitHubPageViewController.init(nibName: nil, bundle: nil)
         let blogNav = RootNavigationController.init(rootViewController: blogVC)
         let blogItem = UITabBarItem.init(tabBarSystemItem: .bookmarks, tag: 2)
@@ -44,7 +39,7 @@ class RootTabBarController: UITabBarController{
         let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 4)
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [homeNav,chatNav,blogNav,videoBlogNav,userNav]
+        self.viewControllers = [homeNav,blogNav,videoBlogNav,userNav]
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
