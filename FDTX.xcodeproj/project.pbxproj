@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F2A2A23B9CA885D42119FEC /* Pods_FDTX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222061FFF99EC331450FC66 /* Pods_FDTX.framework */; };
 		CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */; };
-		CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EDA191F47C8C300821092 /* GuideViewController.swift */; };
 		CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */; };
 		CB1F58961F4A82210096CDC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58951F4A82210096CDC5 /* WebViewController.swift */; };
 		CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C22FA1F4D775B00820C48 /* UserViewController.swift */; };
@@ -33,7 +32,6 @@
 		CB7153741F66332D00826616 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7153731F66332D00826616 /* SettingViewController.swift */; };
 		CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E11F40376D00F2F7BA /* BaseViewController.swift */; };
 		CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */; };
-		CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E51F40376D00F2F7BA /* HomeViewController.swift */; };
 		CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */; };
 		CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */; };
 		CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */; };
@@ -67,7 +65,6 @@
 		CBF146021F945BA100C5E701 /* UDPSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF145EF1F945BA100C5E701 /* UDPSocket.swift */; };
 		CBF146031F945BA100C5E701 /* SynchronousTCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF145F11F945BA100C5E701 /* SynchronousTCPServer.swift */; };
 		CBF146041F945BA100C5E701 /* SynchronousUDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF145F21F945BA100C5E701 /* SynchronousUDPServer.swift */; };
-		CBF146061F945C1400C5E701 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF146051F945C1400C5E701 /* ChatViewController.swift */; };
 		CBFC94651F8B540C00A9EE2E /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC94641F8B540C00A9EE2E /* CommentModel.swift */; };
 		CBFDCE3D1F61214E001422F5 /* OpenSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */; };
 		CBFDCE3F1F612ECA001422F5 /* openSource.json in Resources */ = {isa = PBXBuildFile; fileRef = CBFDCE3E1F612ECA001422F5 /* openSource.json */; };
@@ -78,7 +75,6 @@
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
 		3346974645089DE4EEF0FAE6 /* Pods-FDTX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.debug.xcconfig"; sourceTree = "<group>"; };
 		CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
-		CB1EDA191F47C8C300821092 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewCell.swift; sourceTree = "<group>"; };
 		CB1F58951F4A82210096CDC5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CB2C22FA1F4D775B00820C48 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +98,6 @@
 		CB7153731F66332D00826616 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CB7320E11F40376D00F2F7BA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		CB7320E51F40376D00F2F7BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
@@ -138,7 +133,6 @@
 		CBF145EF1F945BA100C5E701 /* UDPSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPSocket.swift; sourceTree = "<group>"; };
 		CBF145F11F945BA100C5E701 /* SynchronousTCPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronousTCPServer.swift; sourceTree = "<group>"; };
 		CBF145F21F945BA100C5E701 /* SynchronousUDPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronousUDPServer.swift; sourceTree = "<group>"; };
-		CBF146051F945C1400C5E701 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CBFC94641F8B540C00A9EE2E /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
 		CBFDCE3E1F612ECA001422F5 /* openSource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openSource.json; sourceTree = "<group>"; };
@@ -181,14 +175,6 @@
 				CB71536F1F66195000826616 /* TimeConfig.swift */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		CB1EDA181F47C8C300821092 /* Guide */ = {
-			isa = PBXGroup;
-			children = (
-				CB1EDA191F47C8C300821092 /* GuideViewController.swift */,
-			);
-			path = Guide;
 			sourceTree = "<group>";
 		};
 		CB1F58941F4A82190096CDC5 /* Common */ = {
@@ -326,16 +312,13 @@
 		CB7320DF1F40376D00F2F7BA /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				CB9693E51F8F77C500C54ED7 /* Chat */,
 				CB58D36B1F7159C60003A01D /* GitHubPage */,
 				CB58D36C1F7159C60003A01D /* WordPress */,
 				CBC6AE771F56FC58004455A6 /* Video */,
 				CB1F58941F4A82190096CDC5 /* Common */,
-				CB1EDA181F47C8C300821092 /* Guide */,
 				CB542A6F1F47166F00BCB90F /* Picture */,
 				CB7320E01F40376D00F2F7BA /* Base */,
 				CB7320E21F40376D00F2F7BA /* Container */,
-				CB7320E41F40376D00F2F7BA /* Home */,
 				CB2C22F91F4D774300820C48 /* User */,
 				CB7320E61F40376D00F2F7BA /* Root */,
 			);
@@ -358,14 +341,6 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
-		CB7320E41F40376D00F2F7BA /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				CB7320E51F40376D00F2F7BA /* HomeViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		CB7320E61F40376D00F2F7BA /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,14 +348,6 @@
 				CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		CB9693E51F8F77C500C54ED7 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				CBF146051F945C1400C5E701 /* ChatViewController.swift */,
-			);
-			path = Chat;
 			sourceTree = "<group>";
 		};
 		CBC6AE771F56FC58004455A6 /* Video */ = {
@@ -639,7 +606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF873DF48E6ECDE5FB61C68D /* [CP] Copy Pods Resources */ = {
@@ -664,7 +631,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB7320EB1F40376D00F2F7BA /* HomeViewController.swift in Sources */,
 				CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */,
 				CB6DBFCC1F657E9100461F9B /* UserDefault.swift in Sources */,
 				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
@@ -676,10 +642,8 @@
 				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
 				CB3484371F7F79A70062BF84 /* GitHubPageArticleCell.swift in Sources */,
 				CB68E26C1F7CDF89004FD3B3 /* BottomCommentView.swift in Sources */,
-				CB1EDA1A1F47C8C300821092 /* GuideViewController.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
-				CBF146061F945C1400C5E701 /* ChatViewController.swift in Sources */,
 				CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */,
 				CBF146001F945BA100C5E701 /* TCPSocket.swift in Sources */,
 				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,

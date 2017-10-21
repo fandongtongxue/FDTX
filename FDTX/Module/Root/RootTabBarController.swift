@@ -19,15 +19,16 @@ class RootTabBarController: UITabBarController{
     }
     
     func initViewControllers() {
-        let homeVC = HomeViewController.init(nibName: nil, bundle: nil)
+        let homeVC = UnsplashViewController.init(nibName: nil, bundle: nil)
         let homeNav = RootNavigationController.init(rootViewController: homeVC)
         let homeItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
         homeNav.tabBarItem = homeItem
         
-        let chatVC = ChatViewController.init(nibName: nil, bundle: nil)
-        let chatNav = RootNavigationController.init(rootViewController: chatVC)
-        let chatItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
-        chatNav.tabBarItem = chatItem
+        
+//        let chatVC = ChatViewController.init(nibName: nil, bundle: nil)
+//        let chatNav = RootNavigationController.init(rootViewController: chatVC)
+//        let chatItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
+//        chatNav.tabBarItem = chatItem
         
         let blogVC = GitHubPageViewController.init(nibName: nil, bundle: nil)
         let blogNav = RootNavigationController.init(rootViewController: blogVC)
@@ -44,7 +45,7 @@ class RootTabBarController: UITabBarController{
         let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 4)
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [homeNav,chatNav,blogNav,videoBlogNav,userNav]
+        self.viewControllers = [homeNav,blogNav,videoBlogNav,userNav]
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
