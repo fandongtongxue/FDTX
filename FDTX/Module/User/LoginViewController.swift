@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import PKHUD
 import KeychainAccess
+import NightNight
 
 class LoginViewController: BaseViewController {
     var itemsGroupedByService: [String: [[String: Any]]]?
@@ -115,7 +116,7 @@ class LoginViewController: BaseViewController {
     lazy var userNameTextField : UITextField = {
         let userNameTextField = UITextField()
         userNameTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
-        userNameTextField.textColor = .white
+        userNameTextField.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         userNameTextField.keyboardType = .default
         userNameTextField.placeholder = "UserName"
         return userNameTextField
@@ -125,7 +126,7 @@ class LoginViewController: BaseViewController {
         let passWordTextField = UITextField()
         passWordTextField.keyboardType = .default
         passWordTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
-        passWordTextField.textColor = .white
+        passWordTextField.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         passWordTextField.placeholder = "PassWord"
         passWordTextField.isSecureTextEntry = true
         return passWordTextField
@@ -145,7 +146,7 @@ class LoginViewController: BaseViewController {
     lazy var registerBtn : UIButton = {
         let registerBtn = UIButton.init(frame: .zero)
         registerBtn.setTitle("Sign Up", for: .normal)
-        registerBtn.setTitleColor(.white, for: .normal)
+        registerBtn.setMixedTitleColor(MixedColor.init(normal: .lightGray, night: .white), forState: .normal)
         registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
         return registerBtn
     }()

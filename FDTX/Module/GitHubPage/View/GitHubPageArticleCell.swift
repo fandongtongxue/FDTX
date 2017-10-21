@@ -63,7 +63,7 @@ class GitHubPageArticleCell: UITableViewCell {
     lazy var titleLabel : UILabel = {
         let titleLabel = UILabel.init(frame: CGRect.zero)
         titleLabel.font = UIFont.systemFont(ofSize: 15)
-        titleLabel.mixedTextColor = MixedColor.init(normal: .white, night: .black)
+        titleLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
         titleLabel.numberOfLines = 0
         return titleLabel
     }()
@@ -71,7 +71,7 @@ class GitHubPageArticleCell: UITableViewCell {
     lazy var timeLabel : UILabel = {
         let timeLabel = UILabel.init(frame: CGRect.zero)
         timeLabel.font = UIFont.systemFont(ofSize: 13)
-        timeLabel.mixedTextColor = MixedColor.init(normal: .white, night: .black)
+        timeLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
         return timeLabel
     }()
 }

@@ -28,7 +28,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        self.title = "每日美图"
+        self.title = "Unsplash Selected"
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

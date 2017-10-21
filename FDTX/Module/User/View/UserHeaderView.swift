@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import NightNight
 
 class UserHeaderView: UIControl {
     override init(frame: CGRect) {
@@ -91,7 +92,7 @@ class UserHeaderView: UIControl {
     
     lazy var nameLabel : UILabel = {
         let nameLabel = UILabel.init()
-        nameLabel.textColor = .white
+        nameLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         nameLabel.font = UIFont.systemFont(ofSize: 15)
         nameLabel.textAlignment = .center
         return nameLabel;
@@ -99,7 +100,7 @@ class UserHeaderView: UIControl {
     
     lazy var introduceLabel : UILabel = {
         let introduceLabel = UILabel.init()
-        introduceLabel.textColor = .white
+        introduceLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         introduceLabel.font = UIFont.systemFont(ofSize: 13)
         introduceLabel.textAlignment = .center
         introduceLabel.numberOfLines = 0

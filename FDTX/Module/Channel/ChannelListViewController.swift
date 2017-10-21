@@ -1,25 +1,22 @@
 //
-//  WordPressViewController.swift
+//  ChannelList.swift
 //  FDTX
 //
-//  Created by fandong on 2017/9/19.
+//  Created by 范东 on 2017/10/21.
 //  Copyright © 2017年 fandong. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import NightNight
-import Alamofire
-import SwiftWebVC
 
-let WordPressViewControllerCellId = "WordPressViewControllerCellId"
-let WORD_PRESS_BLOG_ARTICLES_URL = "http://video.fandong.me/jsonapi/get_posts/?count=1000"
+let ChannelListViewControllerCellId = "ChannelListViewControllerCellId"
 
-class WordPressViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class ChannelListViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        title = "video.fandong.me"
+        title = "Channel Selected"
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -33,28 +30,20 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
             let size = CGSize.init(width: 30, height: 30)
             startAnimating(size, message: "Loading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
         }
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        Alamofire.request(WORD_PRESS_BLOG_ARTICLES_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: .mutableContainers) { (response) in
+        BaseNetwoking.manager.GET(url: "channelList", parameters: ["":""], success: { (result) in
             self.stopAnimating()
-            switch response.result{
-            case .success:
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.dataArray.removeAllObjects()
-                if let result = response.result.value as? NSDictionary{
-                    let array = result["posts"] as! NSArray
-                    self.dataArray.removeAllObjects()
-                    for dict in array{
-                        let model = WordPressArticleModel.deserialize(from: dict as? NSDictionary)
-                        self.dataArray.add(model!)
-                    }
-                    self.tableView.reloadData()
-                    self.refreshControl.endRefreshing()
-                }
-            case.failure(let error):
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                log.error(error)
-                self.refreshControl.endRefreshing()
+            self.refreshControl.endRefreshing()
+            self.dataArray.removeAllObjects()
+            let dataDict = result["data"] as! NSDictionary
+            let dataArray = dataDict["channelList"] as! NSArray
+            for dict in dataArray {
+                let model = ChannelModel.deserialize(from: (dict as! NSDictionary))
+                self.dataArray.add(model!)
             }
+            self.tableView.reloadData()
+        }) { (error) in
+            self.stopAnimating()
+            self.refreshControl.endRefreshing()
         }
     }
     
@@ -63,15 +52,12 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: WordPressViewControllerCellId) as! UITableViewCell
-        let model = dataArray.object(at: indexPath.row) as! WordPressArticleModel
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelListViewControllerCellId) as! UITableViewCell
+        let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
+        cell.textLabel?.text = model.channelName
         cell.selectionStyle = .none
         cell.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         cell.textLabel?.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
-        cell.textLabel?.numberOfLines = 0
-        
-        cell.textLabel?.text = model.title
-        cell.detailTextLabel?.text = model.modified
         return cell
     }
     
@@ -80,14 +66,7 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = dataArray.object(at: indexPath.row) as! WordPressArticleModel
-        let webVC = WebViewController.init(nibName: nil, bundle: nil)
-        webVC.HTMLString = model.content
-        webVC.url = model.url
-        webVC.hidesBottomBarWhenPushed = true
-        webVC.isArticle = true
-        webVC.post_id = model.id
-        self.navigationController?.pushViewController(webVC, animated: true)
+        
     }
     
     lazy var tableView : UITableView = {
@@ -95,7 +74,7 @@ class WordPressViewController: BaseViewController,UITableViewDelegate,UITableVie
         tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: WordPressViewControllerCellId)
+        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: ChannelListViewControllerCellId)
         tableView.alwaysBounceVertical = true
         tableView.separatorStyle = .singleLine
         return tableView

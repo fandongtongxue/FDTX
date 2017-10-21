@@ -64,7 +64,7 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
         let model = self.dataArray.object(at: indexPath.row) as! OpenSourceModel
         cell?.selectionStyle = .none
         cell?.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        cell?.textLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
+        cell?.textLabel?.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
         cell?.textLabel?.text = model.name
         return cell!
     }

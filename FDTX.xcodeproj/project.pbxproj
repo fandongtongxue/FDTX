@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE4591F9B43AE0018D395 /* DemoData.swift */; };
+		26BFE45D1F9B48060018D395 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45C1F9B48060018D395 /* ChannelListViewController.swift */; };
+		26BFE4601F9B4F750018D395 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45F1F9B4F750018D395 /* ChannelModel.swift */; };
 		5F2A2A23B9CA885D42119FEC /* Pods_FDTX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222061FFF99EC331450FC66 /* Pods_FDTX.framework */; };
 		CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */; };
 		CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */; };
@@ -40,7 +43,6 @@
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
 		CB9721851F7A5E71006D03B1 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */; };
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
-		CBA7B3B41F8E18DD00AA87DD /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7B3B31F8E18DD00AA87DD /* DemoData.swift */; };
 		CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
 		CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */; };
@@ -73,6 +75,9 @@
 /* Begin PBXFileReference section */
 		1222061FFF99EC331450FC66 /* Pods_FDTX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDTX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
+		26BFE4591F9B43AE0018D395 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
+		26BFE45C1F9B48060018D395 /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
+		26BFE45F1F9B4F750018D395 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		3346974645089DE4EEF0FAE6 /* Pods-FDTX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.debug.xcconfig"; sourceTree = "<group>"; };
 		CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewCell.swift; sourceTree = "<group>"; };
@@ -106,7 +111,6 @@
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
 		CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
-		CBA7B3B31F8E18DD00AA87DD /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +154,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26BFE45B1F9B47F90018D395 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				26BFE45E1F9B4F650018D395 /* Model */,
+				26BFE45C1F9B48060018D395 /* ChannelListViewController.swift */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		26BFE45E1F9B4F650018D395 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26BFE45F1F9B4F750018D395 /* ChannelModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		73FC0507FE2AFA6AD853D27E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +263,7 @@
 		CB542A7A1F4716B700BCB90F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CBA7B3B31F8E18DD00AA87DD /* DemoData.swift */,
+				26BFE4591F9B43AE0018D395 /* DemoData.swift */,
 				CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */,
 			);
 			path = ViewController;
@@ -312,6 +333,7 @@
 		CB7320DF1F40376D00F2F7BA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				26BFE45B1F9B47F90018D395 /* Channel */,
 				CB58D36B1F7159C60003A01D /* GitHubPage */,
 				CB58D36C1F7159C60003A01D /* WordPress */,
 				CBC6AE771F56FC58004455A6 /* Video */,
@@ -632,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */,
+				26BFE4601F9B4F750018D395 /* ChannelModel.swift in Sources */,
 				CB6DBFCC1F657E9100461F9B /* UserDefault.swift in Sources */,
 				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
 				CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */,
@@ -647,6 +670,7 @@
 				CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */,
 				CBF146001F945BA100C5E701 /* TCPSocket.swift in Sources */,
 				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
+				26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */,
 				CB9721851F7A5E71006D03B1 /* UserInfoViewController.swift in Sources */,
 				CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */,
 				CBF146021F945BA100C5E701 /* UDPSocket.swift in Sources */,
@@ -659,12 +683,12 @@
 				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
 				CB71536A1F66183100826616 /* ServerConfig.swift in Sources */,
+				26BFE45D1F9B48060018D395 /* ChannelListViewController.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
 				CB7153701F66195000826616 /* TimeConfig.swift in Sources */,
 				CBF145FD1F945BA100C5E701 /* Select.swift in Sources */,
 				CBF145FA1F945BA100C5E701 /* FDSet.swift in Sources */,
 				CBF145F31F945BA100C5E701 /* TCPClient.swift in Sources */,
-				CBA7B3B41F8E18DD00AA87DD /* DemoData.swift in Sources */,
 				CBF146041F945BA100C5E701 /* SynchronousUDPServer.swift in Sources */,
 				CB58D3731F715E090003A01D /* WordPressArticleModel.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,

@@ -75,14 +75,14 @@ class UnsplashViewCell: UITableViewCell {
     lazy var nameLabel : UILabel = {
         let nameLabel = UILabel.init(frame: CGRect.zero)
         nameLabel.font = UIFont.systemFont(ofSize: 15)
-        nameLabel.textColor = UIColor.white
+        nameLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         return nameLabel
     }()
     
     lazy var introduceLabel : UILabel = {
         let introduceLabel = UILabel.init(frame: CGRect.zero)
         introduceLabel.font = UIFont.systemFont(ofSize: 13)
-        introduceLabel.textColor = UIColor.white
+        introduceLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         return introduceLabel
     }()
 }

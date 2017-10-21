@@ -56,6 +56,10 @@
                        {
                        "name":"Hue",
                        "url":"https://github.com/hyperoslo/Hue"
+                       },
+                       {
+                       "name":"MediaBrowser",
+                       "url":"https://github.com/younatics/MediaBrowser"
                        }
                        ]
     },

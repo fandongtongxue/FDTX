@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import PKHUD
 import KeychainAccess
+import NightNight
 
 class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
@@ -98,7 +99,7 @@ class RegisterViewController: BaseViewController {
     lazy var userNameTextField : UITextField = {
         let userNameTextField = UITextField()
         userNameTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
-        userNameTextField.textColor = .white
+        userNameTextField.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         userNameTextField.keyboardType = .alphabet
         userNameTextField.placeholder = "UserName"
         return userNameTextField
@@ -108,7 +109,7 @@ class RegisterViewController: BaseViewController {
         let passWordTextField = UITextField()
         passWordTextField.keyboardType = .alphabet
         passWordTextField.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
-        passWordTextField.textColor = .white
+        passWordTextField.mixedTextColor = MixedColor.init(normal: .lightGray, night: .white)
         passWordTextField.placeholder = "PassWord"
         passWordTextField.isSecureTextEntry = true
         return passWordTextField

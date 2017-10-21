@@ -12,6 +12,7 @@ import NightNight
 import SwiftWebVC
 
 let SettingViewControllerCellId = "SettingViewControllerCellId"
+let SettingViewControllerSwitchCellId = "SettingViewControllerSwitchCellId"
 
 class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
@@ -28,12 +29,23 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
             make.top.left.right.equalToSuperview()
             make.bottom.equalTo(logoutBtn.snp.top)
         }
-        dataArray = NSMutableArray.init(array: [["Open Source","About","Version 1.0.0"]])
+        dataArray = NSMutableArray.init(array: [["NightMode"],["Open Source","About","Version 1.0.0"]])
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func modeSwitchAction(sender: UISwitch) {
+        if sender.isOn {
+            //夜间模式打开
+            NightNight.theme = .night
+            UserDefault.shared.setObject(object: "1", forKey: USER_DEFAULT_KEY_NIGHTMODE)
+        }else{
+            NightNight.theme = .normal
+            UserDefault.shared.setObject(object: "0", forKey: USER_DEFAULT_KEY_NIGHTMODE)
+        }
     }
     
     func logoutBtnAction() {
@@ -60,10 +72,23 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingViewControllerSwitchCellId)
+            let modeSwitch = UISwitch.init(frame: CGRect.init(x: 0, y: 0, width: 44, height: 44))
+            let nightMode = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_NIGHTMODE)
+            modeSwitch.isOn = (nightMode as NSString).integerValue == 1 ? true : false
+            NightNight.theme = modeSwitch.isOn == true ? .night : .normal
+            modeSwitch.addTarget(self, action: #selector(modeSwitchAction(sender:)), for: .touchUpInside)
+            cell?.accessoryView = modeSwitch
+            cell?.selectionStyle = .none
+            cell?.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
+            cell?.textLabel?.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
+            cell?.textLabel?.text = "DayMode"
+            return cell!
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingViewControllerCellId)
             cell?.selectionStyle = .none
             cell?.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-            cell?.textLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .black)
+            cell?.textLabel?.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
             let array = dataArray.object(at: indexPath.section) as! NSArray
             cell?.textLabel?.text = (array.object(at: indexPath.row) as! String)
             return cell!
@@ -75,7 +100,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
-        case 0:
+        case 1:
             switch indexPath.row {
             case 0:
                 let openSourceVC = OpenSourceViewController()
@@ -105,6 +130,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: SettingViewControllerCellId)
+        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: SettingViewControllerSwitchCellId)
         tableView.alwaysBounceVertical = true
         tableView.separatorStyle = .singleLine
         return tableView
@@ -118,7 +144,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
     lazy var logoutBtn : UIButton = {
         let logoutBtn = UIButton.init(frame: .zero)
         logoutBtn.setTitle("Sign Out", for: .normal)
-        logoutBtn.setMixedTitleColor(MixedColor.init(normal: .white, night: .white), forState: .normal)
+        logoutBtn.setMixedTitleColor(MixedColor.init(normal: .lightGray, night: .white), forState: .normal)
         logoutBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         logoutBtn.mixedBackgroundColor = MixedColor.init(normal: .red, night: .red)
         logoutBtn.addTarget(self, action: #selector(logoutBtnAction), for: .touchUpInside)

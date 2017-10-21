@@ -41,18 +41,6 @@ class UserViewController: BaseViewController {
                 make.top.equalToSuperview().offset(30)
             }
         }
-        self.view.addSubview(self.nightModeSwitch)
-        self.nightModeSwitch.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
-            if UIDevice.current.isiPhoneX(){
-                make.top.equalToSuperview().offset(50)
-            }else{
-                make.top.equalToSuperview().offset(30)
-            }
-        }
-        let nightModel = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_NIGHTMODE)
-        self.nightModeSwitch.isOn = (nightModel as NSString).integerValue == 1 ? true : false
-        NightNight.theme = self.nightModeSwitch.isOn == true ? .night : .normal
     }
     
     func requestData() {
@@ -87,17 +75,7 @@ class UserViewController: BaseViewController {
         settingVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(settingVC, animated: true)
     }
-    
-    func nightModeSwitch(sender:UISwitch) {
-        if sender.isOn {
-            //夜间模式打开
-            NightNight.theme = .night
-            UserDefault.shared.setObject(object: "1", forKey: USER_DEFAULT_KEY_NIGHTMODE)
-        }else{
-            NightNight.theme = .normal
-            UserDefault.shared.setObject(object: "0", forKey: USER_DEFAULT_KEY_NIGHTMODE)
-        }
-    }
+
     lazy var headerView : UserHeaderView = {
         let headerView = UserHeaderView.init(frame: .zero)
         headerView.addTarget(self, action: #selector(headerViewBtnAction), for: .touchUpInside)
@@ -111,10 +89,4 @@ class UserViewController: BaseViewController {
         return settingBtn
     }()
     
-    lazy var nightModeSwitch : UISwitch = {
-        let nightModeSwitch = UISwitch.init(frame: .zero)
-        nightModeSwitch.addTarget(self, action: #selector(nightModeSwitch(sender:)), for: .touchUpInside)
-        nightModeSwitch.setOn(false, animated: true)
-        return nightModeSwitch
-    }()
 }

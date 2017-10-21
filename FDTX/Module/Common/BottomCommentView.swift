@@ -85,7 +85,7 @@ class BottomCommentView: UIView {
         let sendBtn = UIButton.init(frame: .zero)
         sendBtn.setTitle("Send", for: .normal)
         sendBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        sendBtn.titleLabel?.mixedTextColor = MixedColor.init(normal: .white, night: .white)
+        sendBtn.titleLabel?.mixedTextColor = MixedColor.init(normal: .lightGray, night: .lightGray)
         sendBtn.addTarget(self, action: #selector(sendBtnAction(sender:)), for: .touchUpInside)
         return sendBtn
     }()
