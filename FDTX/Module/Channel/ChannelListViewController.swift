@@ -9,20 +9,42 @@
 import Foundation
 import UIKit
 import NightNight
+import BMPlayer
 
 let ChannelListViewControllerCellId = "ChannelListViewControllerCellId"
 
 class ChannelListViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    let player = BMPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         title = "Channel Selected"
+        
+        view.addSubview(player)
+        player.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view).offset(0)
+            make.left.right.equalTo(self.view)
+            // Note here, the aspect ratio 16:9 priority is lower than 1000 on the line, because the 4S iPhone aspect ratio is not 16:9
+            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0).priority(750)
+        }
+        //hidden the back button
+        player.controlView.backButton.isHidden = true
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.left.right.bottom.equalTo(self.view)
+            make.top.equalTo(self.view).offset(SCREEN_WIDTH * 9 / 16)
         }
         tableView.addSubview(refreshControl)
         requestData()
+    }
+    
+    func setVideoUrl(videoUrl : URL) {
+        let asset = BMPlayerResource(url: videoUrl,
+                                     name: "Video Title")
+        player.setVideo(resource: asset)
     }
     
     func requestData() {
@@ -40,6 +62,8 @@ class ChannelListViewController: BaseViewController,UITableViewDelegate,UITableV
                 let model = ChannelModel.deserialize(from: (dict as! NSDictionary))
                 self.dataArray.add(model!)
             }
+            let model = self.dataArray.lastObject as! ChannelModel
+            self.setVideoUrl(videoUrl: URL.init(string: model.channelUrl)!)
             self.tableView.reloadData()
         }) { (error) in
             self.stopAnimating()
@@ -66,7 +90,8 @@ class ChannelListViewController: BaseViewController,UITableViewDelegate,UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
+        self.setVideoUrl(videoUrl: URL.init(string: model.channelUrl)!)
     }
     
     lazy var tableView : UITableView = {
