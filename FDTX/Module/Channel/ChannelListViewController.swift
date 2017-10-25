@@ -41,9 +41,9 @@ class ChannelListViewController: BaseViewController,UITableViewDelegate,UITableV
         requestData()
     }
     
-    func setVideoUrl(videoUrl : URL) {
+    func setVideo(videoUrl : URL, videoTitle : String) {
         let asset = BMPlayerResource(url: videoUrl,
-                                     name: "Video Title")
+                                     name: videoTitle)
         player.setVideo(resource: asset)
     }
     
@@ -63,7 +63,7 @@ class ChannelListViewController: BaseViewController,UITableViewDelegate,UITableV
                 self.dataArray.add(model!)
             }
             let model = self.dataArray.lastObject as! ChannelModel
-            self.setVideoUrl(videoUrl: URL.init(string: model.channelUrl)!)
+            self.setVideo(videoUrl: URL.init(string: model.channelUrl)!, videoTitle: model.channelName)
             self.tableView.reloadData()
         }) { (error) in
             self.stopAnimating()
@@ -91,7 +91,7 @@ class ChannelListViewController: BaseViewController,UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
-        self.setVideoUrl(videoUrl: URL.init(string: model.channelUrl)!)
+        self.setVideo(videoUrl: URL.init(string: model.channelUrl)!, videoTitle: model.channelName)
     }
     
     lazy var tableView : UITableView = {
