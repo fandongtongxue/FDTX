@@ -43,7 +43,6 @@
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
 		CB9721851F7A5E71006D03B1 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */; };
 		CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */; };
-		CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */; };
 		CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */; };
 		CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */; };
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
@@ -111,7 +110,6 @@
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
 		CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CBA3AF6B1F47FFD800B6293E /* UnsplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
-		CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CBE54D361F33700B00FF4CA0 /* FDTX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDTX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE54D3B1F33700B00FF4CA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -337,7 +335,6 @@
 				26BFE45B1F9B47F90018D395 /* Channel */,
 				CB58D36B1F7159C60003A01D /* GitHubPage */,
 				CB58D36C1F7159C60003A01D /* WordPress */,
-				CBC6AE771F56FC58004455A6 /* Video */,
 				CB1F58941F4A82190096CDC5 /* Common */,
 				CB7320E01F40376D00F2F7BA /* Base */,
 				CB7320E21F40376D00F2F7BA /* Container */,
@@ -370,14 +367,6 @@
 				CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		CBC6AE771F56FC58004455A6 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				CBC6AE781F56FFE3004455A6 /* VideoViewController.swift */,
-			);
-			path = Video;
 			sourceTree = "<group>";
 		};
 		CBE54D2D1F33700B00FF4CA0 = {
@@ -669,7 +658,6 @@
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */,
 				CBF146001F945BA100C5E701 /* TCPSocket.swift in Sources */,
-				CBC6AE791F56FFE3004455A6 /* VideoViewController.swift in Sources */,
 				26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */,
 				CB9721851F7A5E71006D03B1 /* UserInfoViewController.swift in Sources */,
 				CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */,
