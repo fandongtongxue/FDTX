@@ -27,7 +27,7 @@ class RootTabBarController: UITabBarController{
         
         let channelVC = ChannelListViewController.init(nibName: nil, bundle: nil)
         let channelNav = RootNavigationController.init(rootViewController: channelVC)
-        let channelVCItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
+        let channelVCItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 0)
         channelNav.tabBarItem = channelVCItem
         
         let blogVC = GitHubPageViewController.init(nibName: nil, bundle: nil)
@@ -35,17 +35,17 @@ class RootTabBarController: UITabBarController{
         let blogItem = UITabBarItem.init(tabBarSystemItem: .bookmarks, tag: 2)
         blogNav.tabBarItem = blogItem
         
-        let videoBlogVC = WordPressViewController.init(nibName: nil, bundle: nil)
-        let videoBlogNav = RootNavigationController.init(rootViewController: videoBlogVC)
-        let videoBlogItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 3)
-        videoBlogNav.tabBarItem = videoBlogItem
+//        let videoBlogVC = WordPressViewController.init(nibName: nil, bundle: nil)
+//        let videoBlogNav = RootNavigationController.init(rootViewController: videoBlogVC)
+//        let videoBlogItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 3)
+//        videoBlogNav.tabBarItem = videoBlogItem
         
         let userVC = UserViewController.init(nibName: nil, bundle: nil)
         let userNav = RootNavigationController.init(rootViewController: userVC)
-        let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 4)
+        let userItem = UITabBarItem.init(tabBarSystemItem: .contacts, tag: 3)
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [unsplashNav,channelNav,blogNav,videoBlogNav,userNav]
+        self.viewControllers = [unsplashNav,channelNav,blogNav,userNav]
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
