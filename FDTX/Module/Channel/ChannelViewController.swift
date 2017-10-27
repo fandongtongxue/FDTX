@@ -27,6 +27,11 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
         requestData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func requestData() {
         if !refreshControl.isRefreshing {
             let size = CGSize.init(width: 30, height: 30)
@@ -42,7 +47,6 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 let model = ChannelModel.deserialize(from: (dict as! NSDictionary))
                 self.dataArray.add(model!)
             }
-            let model = self.dataArray.lastObject as! ChannelModel
             self.tableView.reloadData()
         }) { (error) in
             self.stopAnimating()
@@ -55,13 +59,9 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelListViewControllerCellId) as! UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelListViewControllerCellId) as! ChannelCell
         let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
-        cell.textLabel?.text = model.channelName
-        cell.selectionStyle = .none
-        cell.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        cell.textLabel?.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
-        cell.imageView?.kf.setImage(with: URL.init(string: model.channelImgUrl))
+        cell.setModel(model: model)
         return cell
     }
     
@@ -72,6 +72,9 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
         let vc = VideoViewController.init(nibName: nil, bundle: nil)
+        vc.videoUrl = model.channelUrl
+        vc.videoTitle = model.channelName
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -80,7 +83,7 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
         tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: ChannelListViewControllerCellId)
+        tableView.register(ChannelCell.classForCoder(), forCellReuseIdentifier: ChannelListViewControllerCellId)
         tableView.alwaysBounceVertical = true
         tableView.separatorStyle = .singleLine
         return tableView
