@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE4591F9B43AE0018D395 /* DemoData.swift */; };
-		26BFE45D1F9B48060018D395 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45C1F9B48060018D395 /* ChannelListViewController.swift */; };
+		26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45C1F9B48060018D395 /* ChannelViewController.swift */; };
 		26BFE4601F9B4F750018D395 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45F1F9B4F750018D395 /* ChannelModel.swift */; };
 		5F2A2A23B9CA885D42119FEC /* Pods_FDTX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222061FFF99EC331450FC66 /* Pods_FDTX.framework */; };
 		CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */; };
+		CB15537C1FA30E3000CDBE49 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15537B1FA30E3000CDBE49 /* VideoViewController.swift */; };
 		CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */; };
 		CB1F58961F4A82210096CDC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F58951F4A82210096CDC5 /* WebViewController.swift */; };
 		CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C22FA1F4D775B00820C48 /* UserViewController.swift */; };
@@ -75,10 +76,11 @@
 		1222061FFF99EC331450FC66 /* Pods_FDTX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDTX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
 		26BFE4591F9B43AE0018D395 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
-		26BFE45C1F9B48060018D395 /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
+		26BFE45C1F9B48060018D395 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		26BFE45F1F9B4F750018D395 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		3346974645089DE4EEF0FAE6 /* Pods-FDTX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.debug.xcconfig"; sourceTree = "<group>"; };
 		CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
+		CB15537B1FA30E3000CDBE49 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CB1F58921F4A81E20096CDC5 /* UnsplashViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashViewCell.swift; sourceTree = "<group>"; };
 		CB1F58951F4A82210096CDC5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CB2C22FA1F4D775B00820C48 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				26BFE45E1F9B4F650018D395 /* Model */,
-				26BFE45C1F9B48060018D395 /* ChannelListViewController.swift */,
+				26BFE45C1F9B48060018D395 /* ChannelViewController.swift */,
+				CB15537B1FA30E3000CDBE49 /* VideoViewController.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -617,7 +620,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BF873DF48E6ECDE5FB61C68D /* [CP] Copy Pods Resources */ = {
@@ -667,11 +670,12 @@
 				CBF145F81F945BA100C5E701 /* Conversions.swift in Sources */,
 				CBF145F51F945BA100C5E701 /* Address+C.swift in Sources */,
 				CBF145F41F945BA100C5E701 /* UDPClient.swift in Sources */,
+				CB15537C1FA30E3000CDBE49 /* VideoViewController.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
 				CB71536A1F66183100826616 /* ServerConfig.swift in Sources */,
-				26BFE45D1F9B48060018D395 /* ChannelListViewController.swift in Sources */,
+				26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
 				CB7153701F66195000826616 /* TimeConfig.swift in Sources */,
 				CBF145FD1F945BA100C5E701 /* Select.swift in Sources */,

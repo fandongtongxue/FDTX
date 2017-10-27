@@ -25,7 +25,7 @@ class RootTabBarController: UITabBarController{
         unsplashNav.tabBarItem = unsplashItem
         
         
-        let channelVC = ChannelListViewController.init(nibName: nil, bundle: nil)
+        let channelVC = ChannelViewController.init(nibName: nil, bundle: nil)
         let channelNav = RootNavigationController.init(rootViewController: channelVC)
         let channelVCItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 0)
         channelNav.tabBarItem = channelVCItem

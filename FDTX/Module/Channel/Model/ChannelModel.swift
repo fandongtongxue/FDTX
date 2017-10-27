@@ -13,6 +13,7 @@ class ChannelModel: HandyJSON {
     var id : String!
     var channelName : String!
     var channelUrl : String!
+    var channelImgUrl : String!
     
     required init() {
         
