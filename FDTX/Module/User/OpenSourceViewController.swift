@@ -39,19 +39,15 @@ class OpenSourceViewController: BaseViewController,UITableViewDelegate,UITableVi
     func requestData() {
         let path = Bundle.main.path(forResource: "openSource", ofType: "json")
         let url = URL.init(fileURLWithPath: path!)
-        do{
-            let data = try! Data.init(contentsOf: url)
-            let jsonDic = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-            let dataDict = jsonDic["data"] as! NSDictionary
-            let openSourceArray = dataDict["openSource"] as! NSArray
-            for dict in openSourceArray {
-                let model = OpenSourceModel.deserialize(from: (dict as! NSDictionary))
-                self.dataArray.add(model!)
-            }
-            self.tableView.reloadData()
-        }catch{
-            //do nothing
+        let data = try! Data.init(contentsOf: url)
+        let jsonDic = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+        let dataDict = jsonDic["data"] as! NSDictionary
+        let openSourceArray = dataDict["openSource"] as! NSArray
+        for dict in openSourceArray {
+            let model = OpenSourceModel.deserialize(from: (dict as! NSDictionary))
+            self.dataArray.add(model!)
         }
+        self.tableView.reloadData()
     }
     
     //UITableViewDelegate
