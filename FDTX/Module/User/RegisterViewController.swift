@@ -35,6 +35,7 @@ class RegisterViewController: BaseViewController {
         self.view.addSubview(self.userNameTextField)
         self.view.addSubview(self.passWordTextField)
         self.view.addSubview(self.registerBtn)
+        self.view.addSubview(self.cancelBtn)
         
         self.backView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -59,6 +60,13 @@ class RegisterViewController: BaseViewController {
             make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
             make.top.equalTo(self.passWordTextField.snp.bottom).offset(STATUSBAR_HEIGHT)
             make.height.equalTo(NAVIGATIONBAR_HEIGHT)
+        }
+        
+        self.cancelBtn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
+            make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
+            make.top.equalTo(self.registerBtn.snp.bottom).offset(20)
+            make.height.equalTo(STATUSBAR_HEIGHT)
         }
     }
     
@@ -85,6 +93,14 @@ class RegisterViewController: BaseViewController {
         }) { (error) in
             self.stopAnimating()
             HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
+        }
+    }
+    
+    func cancel() {
+        let containerVC = UIApplication.shared.keyWindow?.rootViewController as! ContainViewController
+        containerVC.tabBarVC.selectedIndex = 0
+        self.dismiss(animated: true) {
+            
         }
     }
     
@@ -123,6 +139,14 @@ class RegisterViewController: BaseViewController {
         registerBtn.layer.cornerRadius = CGFloat(NAVIGATIONBAR_HEIGHT / 2)
         registerBtn.clipsToBounds = true
         registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
+        return registerBtn
+    }()
+    
+    lazy var cancelBtn : UIButton = {
+        let registerBtn = UIButton.init(frame: .zero)
+        registerBtn.setTitle("Not This Time", for: .normal)
+        registerBtn.setMixedTitleColor(MixedColor.init(normal: .lightGray, night: .white), forState: .normal)
+        registerBtn.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         return registerBtn
     }()
 }

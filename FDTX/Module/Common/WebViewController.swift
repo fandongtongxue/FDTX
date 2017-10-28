@@ -16,10 +16,6 @@ class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate,UI
     
     var HTMLString = ""
     
-    var isArticle = false
-    
-    var post_id = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -30,22 +26,8 @@ class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate,UI
         }else{
             self.webView.load(NSURLRequest.init(url: URL.init(string: self.url)!) as URLRequest)
         }
-        if isArticle {
-            self.view.addSubview(self.bottomView)
-            self.bottomView.post_id = self.post_id
-            self.bottomView.snp.makeConstraints({ (make) in
-                make.bottom.left.right.equalToSuperview()
-                make.height.equalTo(TABBAR_HEIGHT + (UIDevice.current.isiPhoneX() ? STATUSBAR_HEIGHT : 0))
-            })
-            self.webView.snp.makeConstraints { (make) in
-//                make.edges.equalToSuperview()
-                make.left.right.top.equalToSuperview()
-                make.bottom.equalTo(self.bottomView.snp.top)
-            }
-        }else{
-            self.webView.snp.makeConstraints { (make) in
-                make.edges.equalToSuperview()
-            }
+        self.webView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
         
     }
@@ -61,11 +43,6 @@ class WebViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate,UI
         webView.navigationDelegate = self
         webView.scrollView.delegate = self
         return webView
-    }()
-    
-    lazy var bottomView : BottomCommentView = {
-        let bottomView = BottomCommentView.init(frame: .zero)
-        return bottomView
     }()
     
     //WebViewNavigationDelegate

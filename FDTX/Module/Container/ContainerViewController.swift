@@ -9,10 +9,12 @@
 import UIKit
 
 class ContainViewController: UIViewController{
+    
+    var tabBarVC = RootTabBarController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let tabBarVC = RootTabBarController.init(nibName: nil, bundle: nil)
         self.addChildViewController(tabBarVC)
         self.view.addSubview(tabBarVC.view)
     }

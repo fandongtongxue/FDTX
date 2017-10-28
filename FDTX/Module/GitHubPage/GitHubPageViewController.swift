@@ -19,7 +19,7 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        title = "blog.fandong.me"
+        navigationItem.title  = "Article Selected"
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -63,7 +63,7 @@ class GitHubPageViewController: BaseViewController,UITableViewDelegate,UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: GitHubPageViewControllerCellId) as! GitHubPageArticleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: GitHubPageViewControllerCellId) as! GitHubPageArticleCell
         let model = dataArray.object(at: indexPath.row) as! GitHubPageArticleModel
         cell.setModel(model: model)
         return cell

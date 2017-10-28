@@ -11,14 +11,31 @@ import UIKit
 import NightNight
 import BMPlayer
 
-class VideoViewController: BaseViewController {
+let VideoViewControllerCellId = "VideoViewControllerCellId"
+
+class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDelegate,UITableViewDataSource {
     
     var videoUrl = ""
     var videoTitle = ""
     
+    var sendView = ChatInput()
+    var chatInputOffset = 0.0
+    
+    
+    fileprivate var bottomChatInputConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
+        //MARK: SendView
+        view.addSubview(sendView)
+        sendView.delegate = self
+        sendView.snp.remakeConstraints { (make) in
+            make.bottom.equalTo(self.view).offset(UIDevice.current.isiPhoneX() ? (-24-chatInputOffset) : -chatInputOffset)
+            make.left.right.equalToSuperview()
+        }
+        listenForKeyboardChanges()
+        //MARK: Player
         let player = BMPlayer()
         view.addSubview(player)
         player.snp.makeConstraints { (make) in
@@ -26,7 +43,7 @@ class VideoViewController: BaseViewController {
             // Note here, the aspect ratio 16:9 priority is lower than 1000 on the line, because the 4S iPhone aspect ratio is not 16:9
             make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0).priority(750)
         }
-        // Back button event
+        //MARK: Back button event
         player.backBlock = { [unowned self] (isFullScreen) in
             if isFullScreen == true { return }
             let _ = self.navigationController?.popViewController(animated: true)
@@ -43,4 +60,92 @@ class VideoViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.unregisterKeyboardObservers()
+    }
+    
+    fileprivate func listenForKeyboardChanges() {
+        let defaultCenter = NotificationCenter.default
+        defaultCenter.addObserver(self,
+                                  selector: #selector(keyboardWillChangeFrame(_:)),
+                                  name: NSNotification.Name.UIKeyboardWillChangeFrame,
+                                  object: nil)
+    }
+    
+    fileprivate func unregisterKeyboardObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillChangeFrame(_ note: Notification) {
+        let keyboardAnimationDetail = note.userInfo!
+        let duration = keyboardAnimationDetail[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        var keyboardFrame = (keyboardAnimationDetail[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        if let window = self.view.window {
+            keyboardFrame = window.convert(keyboardFrame, to: self.view)
+        }
+        let animationCurve = keyboardAnimationDetail[UIKeyboardAnimationCurveUserInfoKey] as! UInt
+        
+        self.view.layoutIfNeeded()
+        chatInputOffset = Double(-((self.view.bounds.height - self.bottomLayoutGuide.length) - keyboardFrame.minY))
+        if chatInputOffset > 0 {
+            chatInputOffset = 0
+        }
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(rawValue: animationCurve), animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        }, completion: {(finished) -> () in
+            
+        })
+    }
+    //MARK: ChatInPutDelegate
+    func chatInputDidResize(_ chatInput: ChatInput) {
+        //do nothing
+    }
+    func chatInput(_ chatInput: ChatInput, didSendMessage message: String) {
+        //do nothing
+    }
+    
+    //MARK: UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelListViewControllerCellId) as! ChannelCell
+        let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
+        cell.setModel(model: model)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    //MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
+        let vc = VideoViewController.init(nibName: nil, bundle: nil)
+        vc.videoUrl = model.channelUrl
+        vc.videoTitle = model.channelName
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK: Lazy Load
+    lazy var dataArray : NSMutableArray = {
+        let dataArray = NSMutableArray.init()
+        return dataArray
+    }()
+    
+    lazy var tableView : UITableView = {
+        let tableView : UITableView = UITableView.init(frame: CGRect.zero, style: .plain)
+        tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ChannelCell.classForCoder(), forCellReuseIdentifier: VideoViewControllerCellId)
+        tableView.alwaysBounceVertical = true
+        tableView.separatorStyle = .singleLine
+        return tableView
+    }()
 }

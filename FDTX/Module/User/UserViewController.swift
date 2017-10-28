@@ -14,14 +14,21 @@ class UserViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        self.title = "UserCenter"
+        self.navigationItem.title  = "UserCenter"
         self.initSubview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        self.requestData()
+        if !AppTool.shared.isLogin() {
+            let loginVC = LoginViewController()
+            loginVC.hidesBottomBarWhenPushed = true
+            let loginNav = RootNavigationController.init(rootViewController: loginVC)
+            present(loginNav, animated: true, completion: nil)
+        }else{
+            self.requestData()
+        }
     }
     
     func initSubview() {

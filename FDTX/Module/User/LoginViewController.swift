@@ -39,6 +39,7 @@ class LoginViewController: BaseViewController {
         self.view.addSubview(self.passWordTextField)
         self.view.addSubview(self.loginBtn)
         self.view.addSubview(self.registerBtn)
+        self.view.addSubview(self.cancelBtn)
         
         self.backView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -69,6 +70,13 @@ class LoginViewController: BaseViewController {
             make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
             make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
             make.top.equalTo(self.loginBtn.snp.bottom).offset(20)
+            make.height.equalTo(STATUSBAR_HEIGHT)
+        }
+        
+        self.cancelBtn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
+            make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
+            make.top.equalTo(self.registerBtn.snp.bottom).offset(20)
             make.height.equalTo(STATUSBAR_HEIGHT)
         }
     }
@@ -105,6 +113,15 @@ class LoginViewController: BaseViewController {
         let registerVC = RegisterViewController()
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
+    
+    func cancel() {
+        let containerVC = UIApplication.shared.keyWindow?.rootViewController as! ContainViewController
+        containerVC.tabBarVC.selectedIndex = 0
+        self.dismiss(animated: true) { 
+            
+        }
+    }
+    
     //Lazy Load
     lazy var backView : UIImageView = {
        let backImageView = UIImageView.init(frame: .zero)
@@ -148,6 +165,14 @@ class LoginViewController: BaseViewController {
         registerBtn.setTitle("Sign Up", for: .normal)
         registerBtn.setMixedTitleColor(MixedColor.init(normal: .lightGray, night: .white), forState: .normal)
         registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
+        return registerBtn
+    }()
+    
+    lazy var cancelBtn : UIButton = {
+        let registerBtn = UIButton.init(frame: .zero)
+        registerBtn.setTitle("Not This Time", for: .normal)
+        registerBtn.setMixedTitleColor(MixedColor.init(normal: .lightGray, night: .white), forState: .normal)
+        registerBtn.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         return registerBtn
     }()
     

@@ -17,7 +17,7 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        title = "Channel Selected"
+        navigationItem.title  = "Channel Selected"
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in

@@ -10,7 +10,7 @@ import Foundation
 import HandyJSON
 
 class ChannelModel: HandyJSON {
-    var id : String!
+    var channelId : String!
     var channelName : String!
     var channelUrl : String!
     var channelImgUrl : String!

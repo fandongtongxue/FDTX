@@ -28,7 +28,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        self.title = "Unsplash Selected"
+        self.navigationItem.title = "Unsplash Selected"
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -110,18 +110,22 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
     }
     
     func getRaws() -> [Media] {
-        for model in dataArray {
-            let media = Media.init(url: URL.init(string: (model as! UnsplashPictureModel).urls.regular)!)
-            raws.append(media)
+        if raws.count == 0 {
+            for model in dataArray {
+                let media = Media.init(url: URL.init(string: (model as! UnsplashPictureModel).urls.regular)!)
+                raws.append(media)
+            }
         }
         return raws
     }
     
     
     func getThumbs() -> [Media] {
-        for model in dataArray {
-            let media = Media.init(url: URL.init(string: (model as! UnsplashPictureModel).urls.thumb)!)
-            thumbs.append(media)
+        if thumbs.count == 0 {
+            for model in dataArray {
+                let media = Media.init(url: URL.init(string: (model as! UnsplashPictureModel).urls.thumb)!)
+                thumbs.append(media)
+            }
         }
         return thumbs
     }
@@ -179,7 +183,7 @@ extension UnsplashViewController: MediaBrowserDelegate {
     }
     
     func didDisplayMedia(at index: Int, in mediaBrowser: MediaBrowser) {
-        log.info("Did start viewing photo at index \(index)")
+//        log.info("Did start viewing photo at index \(index)")
     }
     
     func mediaDid(selected: Bool, at index: Int, in mediaBrowser: MediaBrowser) {

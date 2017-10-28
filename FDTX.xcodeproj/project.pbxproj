@@ -11,6 +11,7 @@
 		26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE4591F9B43AE0018D395 /* DemoData.swift */; };
 		26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45C1F9B48060018D395 /* ChannelViewController.swift */; };
 		26BFE4601F9B4F750018D395 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45F1F9B4F750018D395 /* ChannelModel.swift */; };
+		26FF31DA1FA425DE00B72EB4 /* CommonSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF31D91FA425DE00B72EB4 /* CommonSendView.swift */; };
 		5F2A2A23B9CA885D42119FEC /* Pods_FDTX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222061FFF99EC331450FC66 /* Pods_FDTX.framework */; };
 		CB03C2C11F5ED4E70013049D /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */; };
 		CB15537C1FA30E3000CDBE49 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15537B1FA30E3000CDBE49 /* VideoViewController.swift */; };
@@ -23,10 +24,7 @@
 		CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */; };
 		CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */; };
 		CB58D36E1F7159CE0003A01D /* GitHubPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */; };
-		CB58D3701F7159DB0003A01D /* WordPressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D36F1F7159DB0003A01D /* WordPressViewController.swift */; };
-		CB58D3731F715E090003A01D /* WordPressArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D3721F715E090003A01D /* WordPressArticleModel.swift */; };
 		CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D3751F7161620003A01D /* GitHubPageArticleModel.swift */; };
-		CB68E26C1F7CDF89004FD3B3 /* BottomCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB68E26B1F7CDF89004FD3B3 /* BottomCommentView.swift */; };
 		CB6DBFCC1F657E9100461F9B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DBFCB1F657E9100461F9B /* UserDefault.swift */; };
 		CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */; };
 		CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141FD1F5FA4C600E3085C /* AppTool.swift */; };
@@ -80,6 +78,7 @@
 		26BFE4591F9B43AE0018D395 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		26BFE45C1F9B48060018D395 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		26BFE45F1F9B4F750018D395 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		26FF31D91FA425DE00B72EB4 /* CommonSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSendView.swift; sourceTree = "<group>"; };
 		3346974645089DE4EEF0FAE6 /* Pods-FDTX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.debug.xcconfig"; sourceTree = "<group>"; };
 		CB03C2C01F5ED4E70013049D /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		CB15537B1FA30E3000CDBE49 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -92,10 +91,7 @@
 		CB542A731F47169C00BCB90F /* UnsplashUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserModel.swift; sourceTree = "<group>"; };
 		CB542A741F47169C00BCB90F /* UnsplashUserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashUserProfileModel.swift; sourceTree = "<group>"; };
 		CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageViewController.swift; sourceTree = "<group>"; };
-		CB58D36F1F7159DB0003A01D /* WordPressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressViewController.swift; sourceTree = "<group>"; };
-		CB58D3721F715E090003A01D /* WordPressArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressArticleModel.swift; sourceTree = "<group>"; };
 		CB58D3751F7161620003A01D /* GitHubPageArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageArticleModel.swift; sourceTree = "<group>"; };
-		CB68E26B1F7CDF89004FD3B3 /* BottomCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCommentView.swift; sourceTree = "<group>"; };
 		CB6DBFCB1F657E9100461F9B /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		CB7141FD1F5FA4C600E3085C /* AppTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTool.swift; sourceTree = "<group>"; };
@@ -214,8 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				CB1F58951F4A82210096CDC5 /* WebViewController.swift */,
-				CB68E26B1F7CDF89004FD3B3 /* BottomCommentView.swift */,
 				CBFC94641F8B540C00A9EE2E /* CommentModel.swift */,
+				26FF31D91FA425DE00B72EB4 /* CommonSendView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -291,23 +287,6 @@
 			path = GitHubPage;
 			sourceTree = "<group>";
 		};
-		CB58D36C1F7159C60003A01D /* WordPress */ = {
-			isa = PBXGroup;
-			children = (
-				CB58D3711F715DD00003A01D /* Model */,
-				CB58D36F1F7159DB0003A01D /* WordPressViewController.swift */,
-			);
-			path = WordPress;
-			sourceTree = "<group>";
-		};
-		CB58D3711F715DD00003A01D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CB58D3721F715E090003A01D /* WordPressArticleModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CB58D3741F7161530003A01D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,7 +327,6 @@
 				CB542A6F1F47166F00BCB90F /* Picture */,
 				26BFE45B1F9B47F90018D395 /* Channel */,
 				CB58D36B1F7159C60003A01D /* GitHubPage */,
-				CB58D36C1F7159C60003A01D /* WordPress */,
 				CB1F58941F4A82190096CDC5 /* Common */,
 				CB7320E01F40376D00F2F7BA /* Base */,
 				CB7320E21F40376D00F2F7BA /* Container */,
@@ -667,7 +645,6 @@
 				CBF145F71F945BA100C5E701 /* Bytes.swift in Sources */,
 				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
 				CB3484371F7F79A70062BF84 /* GitHubPageArticleCell.swift in Sources */,
-				CB68E26C1F7CDF89004FD3B3 /* BottomCommentView.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */,
@@ -685,6 +662,7 @@
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
+				26FF31DA1FA425DE00B72EB4 /* CommonSendView.swift in Sources */,
 				CB71536A1F66183100826616 /* ServerConfig.swift in Sources */,
 				26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
@@ -693,10 +671,8 @@
 				CBF145FA1F945BA100C5E701 /* FDSet.swift in Sources */,
 				CBF145F31F945BA100C5E701 /* TCPClient.swift in Sources */,
 				CBF146041F945BA100C5E701 /* SynchronousUDPServer.swift in Sources */,
-				CB58D3731F715E090003A01D /* WordPressArticleModel.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,
 				CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */,
-				CB58D3701F7159DB0003A01D /* WordPressViewController.swift in Sources */,
 				26B8A57A1FA39A0500A414C8 /* ChannelCell.swift in Sources */,
 				CBFDCE3D1F61214E001422F5 /* OpenSourceViewController.swift in Sources */,
 				CB1F58961F4A82210096CDC5 /* WebViewController.swift in Sources */,
