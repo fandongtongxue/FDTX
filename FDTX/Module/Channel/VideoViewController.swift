@@ -10,14 +10,13 @@ import Foundation
 import UIKit
 import NightNight
 import BMPlayer
+import PKHUD
 
 let VideoViewControllerCellId = "VideoViewControllerCellId"
 
 class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDelegate,UITableViewDataSource {
     
-    var videoUrl = ""
-    var videoTitle = ""
-    
+    var channelModel = ChannelModel()
     var sendView = ChatInput()
     var chatInputOffset = 0.0
     
@@ -48,12 +47,19 @@ class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDeleg
             if isFullScreen == true { return }
             let _ = self.navigationController?.popViewController(animated: true)
         }
-        let res0 = BMPlayerResourceDefinition(url: URL(string: videoUrl)!,
+        let res0 = BMPlayerResourceDefinition(url: URL(string: channelModel.channelUrl)!,
                                               definition: "HD")
         
-        let asset = BMPlayerResource(name: videoTitle,
+        let asset = BMPlayerResource(name: channelModel.channelName,
                                      definitions: [res0])
         player.setVideo(resource: asset)
+        requestData()
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(self.sendView.snp.top)
+            make.top.equalTo(player.snp.bottom)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +109,41 @@ class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDeleg
         //do nothing
     }
     func chatInput(_ chatInput: ChatInput, didSendMessage message: String) {
-        //do nothing
+        if !AppTool.shared.isLogin() {
+            let loginVC = LoginViewController()
+            loginVC.hidesBottomBarWhenPushed = true
+            let loginNav = RootNavigationController.init(rootViewController: loginVC)
+            present(loginNav, animated: true, completion: nil)
+            return
+        }
+        //Comment
+        let param = ["uid":AppTool.shared.uid(),
+                         "objectId":channelModel.channelId,
+                         "type":"0",
+                         "comment":message]
+        BaseNetwoking.manager.POST(url: "comment", parameters: param as! [String : String], success: { (result) in
+            HUD.flash(.label("Comment Success"), delay: HUD_DELAY_TIME)
+            self.requestData()
+        }) { (error) in
+            HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
+        }
+    }
+    
+    //MARK: CommentList
+    func requestData() {
+        let param = ["objectId":channelModel.channelId,"type":"0"]
+        BaseNetwoking.manager.GET(url: "commentList", parameters:param as! [String:String] , success: { (result) in
+            self.dataArray.removeAllObjects()
+            let dataDict = result["data"] as! NSDictionary
+            let dataArray = dataDict["commentList"] as! NSArray
+            for dict in dataArray {
+                let model = ChannelCommentModel.deserialize(from: (dict as! NSDictionary))
+                self.dataArray.add(model!)
+            }
+            self.tableView.reloadData()
+        }) { (error) in
+            HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
+        }
     }
     
     //MARK: UITableViewDataSource
@@ -112,8 +152,8 @@ class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelListViewControllerCellId) as! ChannelCell
-        let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
+        let cell = tableView.dequeueReusableCell(withIdentifier: VideoViewControllerCellId) as! ChannelCommentCell
+        let model = self.dataArray.object(at: indexPath.row) as! ChannelCommentModel
         cell.setModel(model: model)
         return cell
     }
@@ -124,12 +164,7 @@ class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDeleg
     
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
-        let vc = VideoViewController.init(nibName: nil, bundle: nil)
-        vc.videoUrl = model.channelUrl
-        vc.videoTitle = model.channelName
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        //do nothing
     }
     
     //MARK: Lazy Load
@@ -143,7 +178,7 @@ class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDeleg
         tableView.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ChannelCell.classForCoder(), forCellReuseIdentifier: VideoViewControllerCellId)
+        tableView.register(ChannelCommentCell.classForCoder(), forCellReuseIdentifier: VideoViewControllerCellId)
         tableView.alwaysBounceVertical = true
         tableView.separatorStyle = .singleLine
         return tableView

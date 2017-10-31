@@ -72,8 +72,7 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.dataArray.object(at: indexPath.row) as! ChannelModel
         let vc = VideoViewController.init(nibName: nil, bundle: nil)
-        vc.videoUrl = model.channelUrl
-        vc.videoTitle = model.channelName
+        vc.channelModel = model
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

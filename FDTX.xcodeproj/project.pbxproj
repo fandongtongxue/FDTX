@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262BEE5D1FA8B35B004B517A /* ChannelCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */; };
+		262BEE5F1FA8B3D2004B517A /* ChannelCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */; };
 		26B8A57A1FA39A0500A414C8 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8A5791FA39A0500A414C8 /* ChannelCell.swift */; };
 		26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE4591F9B43AE0018D395 /* DemoData.swift */; };
 		26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45C1F9B48060018D395 /* ChannelViewController.swift */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		1222061FFF99EC331450FC66 /* Pods_FDTX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDTX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
+		262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentModel.swift; sourceTree = "<group>"; };
+		262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentCell.swift; sourceTree = "<group>"; };
 		26B8A5791FA39A0500A414C8 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		26BFE4591F9B43AE0018D395 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		26BFE45C1F9B48060018D395 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				26B8A5791FA39A0500A414C8 /* ChannelCell.swift */,
+				262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				26BFE45F1F9B4F750018D395 /* ChannelModel.swift */,
+				262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -659,6 +665,7 @@
 				CBF145F51F945BA100C5E701 /* Address+C.swift in Sources */,
 				CBF145F41F945BA100C5E701 /* UDPClient.swift in Sources */,
 				CB15537C1FA30E3000CDBE49 /* VideoViewController.swift in Sources */,
+				262BEE5D1FA8B35B004B517A /* ChannelCommentModel.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
 				CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */,
@@ -666,6 +673,7 @@
 				CB71536A1F66183100826616 /* ServerConfig.swift in Sources */,
 				26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */,
 				CB1F58931F4A81E20096CDC5 /* UnsplashViewCell.swift in Sources */,
+				262BEE5F1FA8B3D2004B517A /* ChannelCommentCell.swift in Sources */,
 				CB7153701F66195000826616 /* TimeConfig.swift in Sources */,
 				CBF145FD1F945BA100C5E701 /* Select.swift in Sources */,
 				CBF145FA1F945BA100C5E701 /* FDSet.swift in Sources */,
