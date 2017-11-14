@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		262BEE5D1FA8B35B004B517A /* ChannelCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */; };
 		262BEE5F1FA8B3D2004B517A /* ChannelCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */; };
+		265CA7C31FBB3431005B47D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CA7C21FBB3431005B47D6 /* ChatViewController.swift */; };
 		26B8A57A1FA39A0500A414C8 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8A5791FA39A0500A414C8 /* ChannelCell.swift */; };
 		26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE4591F9B43AE0018D395 /* DemoData.swift */; };
 		26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45C1F9B48060018D395 /* ChannelViewController.swift */; };
@@ -78,6 +79,7 @@
 		212E91FE6DD6C0520B8672C1 /* Pods-FDTX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDTX.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDTX/Pods-FDTX.release.xcconfig"; sourceTree = "<group>"; };
 		262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentModel.swift; sourceTree = "<group>"; };
 		262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentCell.swift; sourceTree = "<group>"; };
+		265CA7C21FBB3431005B47D6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		26B8A5791FA39A0500A414C8 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		26BFE4591F9B43AE0018D395 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		26BFE45C1F9B48060018D395 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		265CA7C11FBB3425005B47D6 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				265CA7C21FBB3431005B47D6 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		26B8A5781FA399F800A414C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +341,7 @@
 		CB7320DF1F40376D00F2F7BA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				265CA7C11FBB3425005B47D6 /* Chat */,
 				CB542A6F1F47166F00BCB90F /* Picture */,
 				26BFE45B1F9B47F90018D395 /* Channel */,
 				CB58D36B1F7159C60003A01D /* GitHubPage */,
@@ -578,6 +589,8 @@
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftWebVC/SwiftWebVC.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -598,6 +611,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebVC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
@@ -622,7 +637,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF873DF48E6ECDE5FB61C68D /* [CP] Copy Pods Resources */ = {
@@ -705,6 +720,7 @@
 				CBF145F61F945BA100C5E701 /* Address.swift in Sources */,
 				CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */,
 				CBF146011F945BA100C5E701 /* Types.swift in Sources */,
+				265CA7C31FBB3431005B47D6 /* ChatViewController.swift in Sources */,
 				CBF145FF1F945BA100C5E701 /* SocketOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,7 +864,7 @@
 				INFOPLIST_FILE = FDTX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.fandong.blogobjective-c";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.FDTX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -868,7 +884,7 @@
 				INFOPLIST_FILE = FDTX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.fandong.blogobjective-c";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.FDTX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

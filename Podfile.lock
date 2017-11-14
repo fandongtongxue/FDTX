@@ -9,7 +9,7 @@ PODS:
     - SnapKit (~> 3.2)
   - HandyJSON (1.7.2)
   - Hue (2.0.1)
-  - IQKeyboardManagerSwift (5.0.3)
+  - IQKeyboardManagerSwift (5.0.6)
   - KeychainAccess (3.1.0)
   - Kingfisher (3.13.1)
   - MediaBrowser (0.4.6):
@@ -25,6 +25,9 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SnapKit (3.2.0)
+  - Socket.IO-Client-Swift (13.0.1):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.2)
   - SwiftWebVC (0.4.1)
   - UICircularProgressRing (1.7.4)
   - XCGLogger (4.0.0):
@@ -45,6 +48,7 @@ DEPENDENCIES:
   - PKHUD (~> 4.0)
   - ReachabilitySwift
   - SnapKit (~> 3.2.0)
+  - Socket.IO-Client-Swift
   - SwiftWebVC
   - XCGLogger (~> 4.0.0)
 
@@ -53,7 +57,7 @@ SPEC CHECKSUMS:
   BMPlayer: e68ba160d9c05ea5fffc31d37448aa02433418ab
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
-  IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: ed9707a409cc47fddafbcd12a43a9757e3600af5
   MediaBrowser: 30366497b725beed8b69722148c7d559c049e356
@@ -63,10 +67,12 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  Socket.IO-Client-Swift: 7055c89b7a9926b343194c4cac75998329c4a95a
+  Starscream: b512c62f6706421221b5ceb2ba01a9f58aca5bea
   SwiftWebVC: 17ad75e1fac143d421e0498fb40d7e37532f26d1
   UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 4fd9734f4bb3e9aef0fc70d40dc754386b1c9b95
+PODFILE CHECKSUM: 544dc5cb125988a455886170ceb08dff46bde0dc
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0.beta.2
