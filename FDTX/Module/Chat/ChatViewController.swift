@@ -20,23 +20,14 @@ class ChatViewController: BaseViewController {
     }
     
     func test() {
-        let manager = SocketManager(socketURL: URL(string: "http://112.74.33.82:3000")!, config: [.log(true), .compress])
-        let socket = manager.defaultSocket
-        
-        socket.on(clientEvent: .connect) {data, ack in
-            print("socket connected")
+        let socket = SocketIOClient.init(socketURL: URL(string: "http://112.74.33.82:3000")!, config: [.log(true), .compress])
+        socket.on("connect") { (data, emitter) in
+            print(data)
+            print(emitter)
         }
-        
-        socket.on("currentAmount") {data, ack in
-            guard let cur = data[0] as? Double else { return }
-            
-            socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
-                socket.emit("update", ["amount": cur + 2.50])
-            }
-            
-            ack.with("Got your currentAmount", "dude")
+        socket.connect(timeoutAfter: 5) {
+            //
+            print("")
         }
-        
-        socket.connect()
     }
 }

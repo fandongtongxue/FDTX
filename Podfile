@@ -22,5 +22,5 @@ target 'FDTX' do
   pod 'SwiftWebVC'
   pod 'Hue'
   pod 'MediaBrowser'
-  pod 'Socket.IO-Client-Swift'
+  pod 'Socket.IO-Client-Swift', '~> 11.1.3'
 end
