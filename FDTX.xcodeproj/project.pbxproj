@@ -43,6 +43,7 @@
 		CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */; };
 		CB8445E11FBED37A000921D4 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8445E01FBED37A000921D4 /* ChatManager.swift */; };
 		CB8445E31FBEECC5000921D4 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8445E21FBEECC5000921D4 /* ChatDetailViewController.swift */; };
+		CB8445E61FBEF12B000921D4 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8445E51FBEF12B000921D4 /* StatusViewController.swift */; };
 		CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */; };
 		CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */; };
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
@@ -115,6 +116,7 @@
 		CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
 		CB8445E01FBED37A000921D4 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		CB8445E21FBEECC5000921D4 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
+		CB8445E51FBEF12B000921D4 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		CB7320DF1F40376D00F2F7BA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CB8445E41FBEF11B000921D4 /* Status */,
 				265CA7C11FBB3425005B47D6 /* Chat */,
 				CB542A6F1F47166F00BCB90F /* Picture */,
 				26BFE45B1F9B47F90018D395 /* Channel */,
@@ -382,6 +385,14 @@
 				CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		CB8445E41FBEF11B000921D4 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				CB8445E51FBEF12B000921D4 /* StatusViewController.swift */,
+			);
+			path = Status;
 			sourceTree = "<group>";
 		};
 		CBE54D2D1F33700B00FF4CA0 = {
@@ -672,6 +683,7 @@
 				CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */,
 				CBA3AF6C1F47FFD800B6293E /* UnsplashViewController.swift in Sources */,
 				CB7153741F66332D00826616 /* SettingViewController.swift in Sources */,
+				CB8445E61FBEF12B000921D4 /* StatusViewController.swift in Sources */,
 				CBF145FB1F945BA100C5E701 /* InternetSocket.swift in Sources */,
 				CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */,
 				CBF145F71F945BA100C5E701 /* Bytes.swift in Sources */,

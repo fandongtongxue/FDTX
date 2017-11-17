@@ -1,5 +1,5 @@
 //
-//  ChatDetailViewController.swift
+//  StatusListViewController.swift
 //  FDTX
 //
 //  Created by fandong on 2017/11/17.
@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 import NightNight
-import Chatto
 
-class ChatDetailViewController: BaseChatViewController {
+class StatusViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
+        navigationItem.title = "Status Selected"
     }
 }

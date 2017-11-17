@@ -29,6 +29,11 @@ class RootTabBarController: UITabBarController{
         let chatItem = UITabBarItem.init(title: "Chat", image: UIImage.init(named: "nav_chat_nor"), selectedImage: UIImage.init(named: "nav_chat_sel"))
         chatNav.tabBarItem = chatItem
         
+        let statusVC = StatusViewController.init(nibName: nil, bundle: nil)
+        let statusNav = RootNavigationController.init(rootViewController: statusVC)
+        let statusItem = UITabBarItem.init(title: "Status", image: UIImage.init(named: "nav_status_nor"), selectedImage: UIImage.init(named: "nav_status_sel"))
+        statusNav.tabBarItem = statusItem
+        
 //        let channelVC = ChannelViewController.init(nibName: nil, bundle: nil)
 //        let channelNav = RootNavigationController.init(rootViewController: channelVC)
 //        let channelVCItem = UITabBarItem.init(title: "TV", image: UIImage.init(named: "nav_tv_nor"), selectedImage: UIImage.init(named: "nav_tv_sel"))
@@ -44,7 +49,7 @@ class RootTabBarController: UITabBarController{
         let userItem = UITabBarItem.init(title: "User", image: UIImage.init(named: "nav_user_nor"), selectedImage: UIImage.init(named: "nav_user_sel"))
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [chatNav,userNav]
+        self.viewControllers = [chatNav,statusNav,userNav]
     }
     
     override func didReceiveMemoryWarning() {
