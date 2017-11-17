@@ -9,25 +9,17 @@
 import Foundation
 import UIKit
 import NightNight
-import SocketIO
 
 class ChatViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        title = "Chat Selected"
-        test()
+        navigationItem.title = "Chat Selected"
     }
     
-    func test() {
-        let socket = SocketIOClient.init(socketURL: URL(string: "http://112.74.33.82:3000")!, config: [.log(true), .compress])
-        socket.on("connect") { (data, emitter) in
-            print(data)
-            print(emitter)
-        }
-        socket.connect(timeoutAfter: 5) {
-            //
-            print("")
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        let chatDetailVC = ChatDetailViewController()
+        navigationController?.pushViewController(chatDetailVC, animated: true)
     }
 }

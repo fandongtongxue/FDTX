@@ -7,6 +7,9 @@ PODS:
     - BMPlayer/Core
     - NVActivityIndicatorView (~> 3.5)
     - SnapKit (~> 3.2)
+  - Chatto (3.2.0)
+  - ChattoAdditions (3.2.0):
+    - Chatto
   - HandyJSON (1.7.2)
   - Hue (2.0.1)
   - IQKeyboardManagerSwift (5.0.6)
@@ -37,6 +40,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - BMPlayer
+  - Chatto (= 3.2.0)
+  - ChattoAdditions (= 3.2.0)
   - HandyJSON (~> 1.7.2)
   - Hue
   - IQKeyboardManagerSwift
@@ -55,6 +60,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BMPlayer: e68ba160d9c05ea5fffc31d37448aa02433418ab
+  Chatto: c5d1d9bfea49618bd55946e903b54d6503f8883f
+  ChattoAdditions: af8f01388821c0ceb6a45654ab6b38dbee6c8836
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
@@ -73,6 +80,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: a8c8ea9fe7796098bb1183d6e1c4e549a23d7eff
+PODFILE CHECKSUM: 51156fbc4c47feaa1596e29d2af25c5354ced16d
 
 COCOAPODS: 1.2.1

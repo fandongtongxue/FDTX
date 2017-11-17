@@ -23,4 +23,7 @@ target 'FDTX' do
   pod 'Hue'
   pod 'MediaBrowser'
   pod 'Socket.IO-Client-Swift', '~> 11.1.3'
+  # Swift 3
+  pod 'Chatto', '= 3.2.0'
+  pod 'ChattoAdditions', '= 3.2.0' # if you want to use the cells or the input component
 end

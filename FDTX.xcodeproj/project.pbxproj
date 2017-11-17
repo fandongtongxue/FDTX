@@ -41,6 +41,8 @@
 		CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */; };
 		CB7320ED1F40376D00F2F7BA /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */; };
 		CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */; };
+		CB8445E11FBED37A000921D4 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8445E01FBED37A000921D4 /* ChatManager.swift */; };
+		CB8445E31FBEECC5000921D4 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8445E21FBEECC5000921D4 /* ChatDetailViewController.swift */; };
 		CB8920FE1F5D55C700BAB22B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */; };
 		CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */; };
 		CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9150451F6195F200AE85CA /* OpenSourceModel.swift */; };
@@ -111,6 +113,8 @@
 		CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		CB7320E81F40376D00F2F7BA /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CB7320EE1F4037C000F2F7BA /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
+		CB8445E01FBED37A000921D4 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		CB8445E21FBEECC5000921D4 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
 		CB8920FC1F5D55C700BAB22B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB8920FD1F5D55C700BAB22B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB9150451F6195F200AE85CA /* OpenSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceModel.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				265CA7C21FBB3431005B47D6 /* ChatViewController.swift */,
+				CB8445E21FBEECC5000921D4 /* ChatDetailViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			children = (
 				CB7141FD1F5FA4C600E3085C /* AppTool.swift */,
 				CB6DBFCB1F657E9100461F9B /* UserDefault.swift */,
+				CB8445E01FBED37A000921D4 /* ChatManager.swift */,
 			);
 			path = Untity;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				CBF145F51F945BA100C5E701 /* Address+C.swift in Sources */,
 				CBF145F41F945BA100C5E701 /* UDPClient.swift in Sources */,
 				CB15537C1FA30E3000CDBE49 /* VideoViewController.swift in Sources */,
+				CB8445E11FBED37A000921D4 /* ChatManager.swift in Sources */,
 				262BEE5D1FA8B35B004B517A /* ChannelCommentModel.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
@@ -710,6 +717,7 @@
 				CBFC94651F8B540C00A9EE2E /* CommentModel.swift in Sources */,
 				CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */,
 				CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */,
+				CB8445E31FBEECC5000921D4 /* ChatDetailViewController.swift in Sources */,
 				CBF145FC1F945BA100C5E701 /* Pipe.swift in Sources */,
 				CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */,
 				CB71536C1F66183800826616 /* UIConfig.swift in Sources */,

@@ -19,32 +19,32 @@ class RootTabBarController: UITabBarController{
     }
     
     func initViewControllers() {
-        let unsplashVC = UnsplashViewController.init(nibName: nil, bundle: nil)
-        let unsplashNav = RootNavigationController.init(rootViewController: unsplashVC)
-        let unsplashItem = UITabBarItem.init(title: "Picture", image: UIImage.init(named: "nav_img_nor"), selectedImage: UIImage.init(named: "nav_img_sel"))
-        unsplashNav.tabBarItem = unsplashItem
+//        let unsplashVC = UnsplashViewController.init(nibName: nil, bundle: nil)
+//        let unsplashNav = RootNavigationController.init(rootViewController: unsplashVC)
+//        let unsplashItem = UITabBarItem.init(title: "Picture", image: UIImage.init(named: "nav_img_nor"), selectedImage: UIImage.init(named: "nav_img_sel"))
+//        unsplashNav.tabBarItem = unsplashItem
         
         let chatVC = ChatViewController.init(nibName: nil, bundle: nil)
         let chatNav = RootNavigationController.init(rootViewController: chatVC)
-        let chatItem = UITabBarItem.init(title: "Picture", image: UIImage.init(named: "nav_img_nor"), selectedImage: UIImage.init(named: "nav_img_sel"))
+        let chatItem = UITabBarItem.init(title: "Chat", image: UIImage.init(named: "nav_chat_nor"), selectedImage: UIImage.init(named: "nav_chat_sel"))
         chatNav.tabBarItem = chatItem
         
-        let channelVC = ChannelViewController.init(nibName: nil, bundle: nil)
-        let channelNav = RootNavigationController.init(rootViewController: channelVC)
-        let channelVCItem = UITabBarItem.init(title: "TV", image: UIImage.init(named: "nav_tv_nor"), selectedImage: UIImage.init(named: "nav_tv_sel"))
-        channelNav.tabBarItem = channelVCItem
+//        let channelVC = ChannelViewController.init(nibName: nil, bundle: nil)
+//        let channelNav = RootNavigationController.init(rootViewController: channelVC)
+//        let channelVCItem = UITabBarItem.init(title: "TV", image: UIImage.init(named: "nav_tv_nor"), selectedImage: UIImage.init(named: "nav_tv_sel"))
+//        channelNav.tabBarItem = channelVCItem
         
-        let blogVC = GitHubPageViewController.init(nibName: nil, bundle: nil)
-        let blogNav = RootNavigationController.init(rootViewController: blogVC)
-        let blogItem = UITabBarItem.init(title: "Article", image: UIImage.init(named: "nav_article_nor"), selectedImage: UIImage.init(named: "nav_article_sel"))
-        blogNav.tabBarItem = blogItem
+//        let blogVC = GitHubPageViewController.init(nibName: nil, bundle: nil)
+//        let blogNav = RootNavigationController.init(rootViewController: blogVC)
+//        let blogItem = UITabBarItem.init(title: "Article", image: UIImage.init(named: "nav_article_nor"), selectedImage: UIImage.init(named: "nav_article_sel"))
+//        blogNav.tabBarItem = blogItem
         
         let userVC = UserViewController.init(nibName: nil, bundle: nil)
         let userNav = RootNavigationController.init(rootViewController: userVC)
         let userItem = UITabBarItem.init(title: "User", image: UIImage.init(named: "nav_user_nor"), selectedImage: UIImage.init(named: "nav_user_sel"))
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [unsplashNav,chatNav,channelNav,blogNav,userNav]
+        self.viewControllers = [chatNav,userNav]
     }
     
     override func didReceiveMemoryWarning() {
