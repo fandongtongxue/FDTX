@@ -20,6 +20,7 @@ class ChatViewController: BaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         let chatDetailVC = ChatDetailViewController()
+        chatDetailVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatDetailVC, animated: true)
     }
 }
