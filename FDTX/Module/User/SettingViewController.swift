@@ -37,7 +37,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func modeSwitchAction(sender: UISwitch) {
+    @objc func modeSwitchAction(sender: UISwitch) {
         if sender.isOn {
             //夜间模式打开
             NightNight.theme = .night
@@ -48,7 +48,7 @@ class SettingViewController: BaseViewController,UITableViewDelegate,UITableViewD
         }
     }
     
-    func logoutBtnAction() {
+    @objc func logoutBtnAction() {
         let alertVC = UIAlertController.init(title: "Warning", message: "Are You Want To Sign Out ?", preferredStyle: .alert)
         let confirmAlertAction = UIAlertAction.init(title: "Sign Out", style: .default) { (alertAction) in
             UserDefault.shared.setObject(object: "0", forKey: USER_DEFAULT_KEY_ISLOGIN)

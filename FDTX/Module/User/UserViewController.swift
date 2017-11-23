@@ -71,13 +71,13 @@ class UserViewController: BaseViewController {
         }
     }
     
-    func headerViewBtnAction() {
+    @objc func headerViewBtnAction() {
         let userInfoVC = UserInfoViewController.init(nibName: nil, bundle: nil)
         userInfoVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(userInfoVC, animated: true)
     }
     
-    func settingBtnAction() {
+    @objc func settingBtnAction() {
         let settingVC = SettingViewController()
         settingVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(settingVC, animated: true)

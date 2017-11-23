@@ -84,7 +84,7 @@ class VideoViewController: BaseViewController,ChatInputDelegate,UITableViewDeleg
         NotificationCenter.default.removeObserver(self)
     }
     
-    func keyboardWillChangeFrame(_ note: Notification) {
+    @objc func keyboardWillChangeFrame(_ note: Notification) {
         let keyboardAnimationDetail = note.userInfo!
         let duration = keyboardAnimationDetail[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         var keyboardFrame = (keyboardAnimationDetail[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue

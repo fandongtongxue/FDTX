@@ -32,7 +32,7 @@ class ChannelViewController: BaseViewController,UITableViewDelegate,UITableViewD
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func requestData() {
+    @objc func requestData() {
         if !refreshControl.isRefreshing {
             let size = CGSize.init(width: 30, height: 30)
             startAnimating(size, message: "Loading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)

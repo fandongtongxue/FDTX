@@ -37,7 +37,7 @@ class UnsplashViewController: BaseViewController,UITableViewDelegate,UITableView
         self.requestFirstPageData()
     }
     
-    func requestFirstPageData(){
+    @objc func requestFirstPageData(){
         
         if !self.refreshControl.isRefreshing {
             let size = CGSize.init(width: 30, height: 30)

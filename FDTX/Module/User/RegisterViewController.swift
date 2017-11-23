@@ -15,7 +15,7 @@ import NightNight
 class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         self.title = "Sign up"
         self.initSubviews()
     }
@@ -35,7 +35,7 @@ class RegisterViewController: BaseViewController {
         self.view.addSubview(self.userNameTextField)
         self.view.addSubview(self.passWordTextField)
         self.view.addSubview(self.registerBtn)
-        self.view.addSubview(self.cancelBtn)
+//        self.view.addSubview(self.cancelBtn)
         
         self.backView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -62,15 +62,15 @@ class RegisterViewController: BaseViewController {
             make.height.equalTo(NAVIGATIONBAR_HEIGHT)
         }
         
-        self.cancelBtn.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
-            make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
-            make.top.equalTo(self.registerBtn.snp.bottom).offset(20)
-            make.height.equalTo(STATUSBAR_HEIGHT)
-        }
+//        self.cancelBtn.snp.makeConstraints { (make) in
+//            make.left.equalToSuperview().offset(STATUSBAR_HEIGHT)
+//            make.right.equalToSuperview().offset(-STATUSBAR_HEIGHT)
+//            make.top.equalTo(self.registerBtn.snp.bottom).offset(20)
+//            make.height.equalTo(STATUSBAR_HEIGHT)
+//        }
     }
     
-    func register() {
+    @objc func register() {
         self.view.endEditing(true)
         //Loading
         let size = CGSize.init(width: 30, height: 30)
@@ -90,13 +90,16 @@ class RegisterViewController: BaseViewController {
             let keychain: Keychain
             keychain = Keychain(service: "fandongtongxue")
             keychain[self.userNameTextField.text!] = self.passWordTextField.text!
+            
+            let containerVC = ContainViewController.init(nibName: nil, bundle: nil)
+            appDelegate.window?.rootViewController = containerVC
         }) { (error) in
             self.stopAnimating()
             HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
         }
     }
     
-    func cancel() {
+    @objc func cancel() {
         let containerVC = UIApplication.shared.keyWindow?.rootViewController as! ContainViewController
         containerVC.tabBarVC.selectedIndex = 0
         self.dismiss(animated: true) {

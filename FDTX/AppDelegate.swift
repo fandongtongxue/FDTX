@@ -126,9 +126,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Unable to start notifier")
         }
         
-        let containerVC = ContainViewController.init(nibName: nil, bundle: nil)
-        self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-        self.window?.rootViewController = containerVC
+        if AppTool.shared.isLogin() {
+            let containerVC = ContainViewController.init(nibName: nil, bundle: nil)
+            self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+            self.window?.rootViewController = containerVC
+        }else{
+            let loginVC = LoginViewController()
+            let loginNav = RootNavigationController.init(rootViewController: loginVC)
+            self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+            self.window?.rootViewController = loginNav
+        }
         return true
     }
 

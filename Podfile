@@ -21,6 +21,15 @@ target 'FDTX' do
   pod 'KeychainAccess'
   pod 'SwiftWebVC'
   pod 'Hue'
-  pod 'MediaBrowser'
+  pod 'MediaBrowser', '~>0.4.6'
   pod 'Socket.IO-Client-Swift', '~> 11.1.3'
+  pod 'Chatto', '= 3.2.0'
+  pod 'ChattoAdditions', '= 3.2.0' # if you want to use the cells or the input component
+  post_install do |installer|
+      installer.pods_project.targets.each do |target|
+          target.build_configurations.each do |config|
+              config.build_settings['SWIFT_VERSION'] = '3.2'
+          end
+      end
+  end
 end

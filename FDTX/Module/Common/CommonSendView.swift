@@ -151,7 +151,7 @@ class ChatInput : UIView, StretchyTextViewDelegate {
     
     // MARK: Button Presses
     
-    func sendButtonPressed(_ sender: UIButton) {
+    @objc func sendButtonPressed(_ sender: UIButton) {
         if self.textView.text.characters.count > 0 {
             self.delegate?.chatInput(self, didSendMessage: self.textView.text)
             self.textView.text = ""
