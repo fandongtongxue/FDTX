@@ -54,11 +54,7 @@ public class FakeMessageSender {
         case .sending:
             switch arc4random_uniform(100) % 5 {
             case 0:
-                if arc4random_uniform(100) % 2 == 0 {
-                    self.updateMessage(message, status: .failed)
-                } else {
-                    self.updateMessage(message, status: .success)
-                }
+                self.updateMessage(message, status: .success)
             default:
                 let delaySeconds: Double = Double(arc4random_uniform(1200)) / 1000.0
                 let delayTime = DispatchTime.now() + Double(Int64(delaySeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)

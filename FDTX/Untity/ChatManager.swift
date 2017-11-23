@@ -13,7 +13,7 @@ private let defaultManager = ChatManager()
 
 class ChatManager {
     
-    let socket = SocketIOClient.init(socketURL: URL.init(string: "http://112.74.33.82:3000")!, config: SocketIOClientConfiguration.init(arrayLiteral: .log(true),.forcePolling(true)))
+    let socket = SocketIOClient.init(socketURL: URL.init(string: "http://112.74.33.82:3000")!, config: SocketIOClientConfiguration.init(arrayLiteral: .log(true)))
     
     class var manager : ChatManager {
         return defaultManager

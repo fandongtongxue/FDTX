@@ -23,17 +23,13 @@ class ChatViewController: BaseViewController {
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         navigationItem.title = "Chat Selected"
         
-        connect()
+        ChatManager.manager.connect()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //如果Socket断开连接,就重新连接
-    }
-    
-    func connect() {
-        ChatManager.manager.connect()
-        ChatManager.manager.socket.emit("add user", UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_NICKNAME))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

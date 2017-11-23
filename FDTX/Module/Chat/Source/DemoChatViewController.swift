@@ -27,6 +27,8 @@ import Chatto
 import ChattoAdditions
 
 class DemoChatViewController: BaseChatViewController {
+    
+    var connected = false;
 
     var messageSender: FakeMessageSender!
     var dataSource: FakeDataSource! {
@@ -45,7 +47,15 @@ class DemoChatViewController: BaseChatViewController {
         super.chatItemsDecorator = ChatItemsDemoDecorator()
         let addIncomingMessageButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(DemoChatViewController.addRandomIncomingMessage))
         self.navigationItem.rightBarButtonItem = addIncomingMessageButton
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         addHandler()
+        if !connected {
+            join()
+        }
     }
     
     func addHandler() {
@@ -63,6 +73,7 @@ class DemoChatViewController: BaseChatViewController {
         
         ChatManager.manager.socket.on("login") { (data, SocketAckEmitter) in
             log.info("login")
+            self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
         }
@@ -72,7 +83,7 @@ class DemoChatViewController: BaseChatViewController {
             log.info(data)
             log.info(SocketAckEmitter)
             
-            self.dataSource.addTextMessage(String.init(format: "%@", data))
+            self.dataSource.addIncomingTextMessage(String.init(format: "%@", data))
         }
         
         ChatManager.manager.socket.on("user left") { (data, SocketAckEmitter) in
@@ -101,9 +112,14 @@ class DemoChatViewController: BaseChatViewController {
         
         ChatManager.manager.socket.on("reconnect_error") { (data, SocketAckEmitter) in
             log.info("reconnect_error")
+            self.connected = false
             log.info(data)
             log.info(SocketAckEmitter)
         }
+    }
+    
+    func join() {
+        ChatManager.manager.socket.emit("add user", "范东同学")
     }
 
     @objc
