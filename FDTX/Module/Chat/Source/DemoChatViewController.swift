@@ -79,7 +79,6 @@ class DemoChatViewController: BaseChatViewController {
             
             let jsonString = String.init(format: "%@", data)
             HUD.flash(.label(jsonString), delay: 2.0)
-            
         }
         
         ChatManager.manager.socket.on("new message") { (data, SocketAckEmitter) in
@@ -99,6 +98,9 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
+            
+            let jsonString = String.init(format: "%@", data)
+            HUD.flash(.label(jsonString), delay: 2.0)
         }
         
         ChatManager.manager.socket.on("typing") { (data, SocketAckEmitter) in
