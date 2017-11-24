@@ -25,6 +25,7 @@
 import UIKit
 import Chatto
 import ChattoAdditions
+import PKHUD
 
 class DemoChatViewController: BaseChatViewController {
     
@@ -65,6 +66,9 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
+            
+            let jsonString = String.init(format: "%@", data)
+            HUD.flash(.label(jsonString), delay: 2.0)
         }
         
         ChatManager.manager.socket.on("login") { (data, SocketAckEmitter) in
@@ -74,7 +78,7 @@ class DemoChatViewController: BaseChatViewController {
             log.info(SocketAckEmitter)
             
             let jsonString = String.init(format: "%@", data)
-            self.title = jsonString
+            HUD.flash(.label(jsonString), delay: 2.0)
             
         }
         
