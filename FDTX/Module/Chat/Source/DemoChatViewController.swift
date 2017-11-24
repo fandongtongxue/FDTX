@@ -59,6 +59,7 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = false
             log.info(data)
             log.info(SocketAckEmitter)
+            HUD.flash(.label("你已经断开连接了"), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("user joined") { (data, SocketAckEmitter) in
@@ -66,9 +67,7 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            
-            let jsonString = String.init(format: "%@", data)
-            HUD.flash(.label(jsonString), delay: 2.0)
+            HUD.flash(.label("有用户加入了"), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("login") { (data, SocketAckEmitter) in
@@ -76,9 +75,7 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            
-            let jsonString = String.init(format: "%@", data)
-            HUD.flash(.label(jsonString), delay: 2.0)
+            HUD.flash(.label("登陆成功"), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("new message") { (data, SocketAckEmitter) in
@@ -86,10 +83,7 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            
             let jsonString = String.init(format: "%@", data)
-            let jsonData = jsonString.data(using: String.Encoding.utf8)
-            
             self.dataSource.addIncomingTextMessage(jsonString)
         }
         
@@ -98,9 +92,7 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            
-            let jsonString = String.init(format: "%@", data)
-            HUD.flash(.label(jsonString), delay: 2.0)
+            HUD.flash(.label("有用户离开了"), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("typing") { (data, SocketAckEmitter) in
@@ -122,6 +114,7 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
+            HUD.flash(.label("正在重新连接"), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("reconnect_error") { (data, SocketAckEmitter) in
@@ -129,6 +122,7 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = false
             log.info(data)
             log.info(SocketAckEmitter)
+            HUD.flash(.label("重新连接失败"), delay: HUD_DELAY_TIME)
         }
     }
     
