@@ -48,25 +48,21 @@ class DemoChatViewController: BaseChatViewController {
         let addIncomingMessageButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(DemoChatViewController.addRandomIncomingMessage))
         self.navigationItem.rightBarButtonItem = addIncomingMessageButton
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         addHandler()
-        if !connected {
-            join()
-        }
+        join()
     }
     
     func addHandler() {
         ChatManager.manager.socket.on("disconnect") { (data, SocketAckEmitter) in
             log.info("disconnect")
+            self.connected = false
             log.info(data)
             log.info(SocketAckEmitter)
         }
         
         ChatManager.manager.socket.on("user joined") { (data, SocketAckEmitter) in
             log.info("user joined")
+            self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
         }
@@ -76,36 +72,48 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
+            
+            let jsonString = String.init(format: "%@", data)
+            self.title = jsonString
+            
         }
         
         ChatManager.manager.socket.on("new message") { (data, SocketAckEmitter) in
             log.info("new message")
+            self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
             
-            self.dataSource.addIncomingTextMessage(String.init(format: "%@", data))
+            let jsonString = String.init(format: "%@", data)
+            let jsonData = jsonString.data(using: String.Encoding.utf8)
+            
+            self.dataSource.addIncomingTextMessage(jsonString)
         }
         
         ChatManager.manager.socket.on("user left") { (data, SocketAckEmitter) in
             log.info("user left")
+            self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
         }
         
         ChatManager.manager.socket.on("typing") { (data, SocketAckEmitter) in
             log.info("typing")
+            self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
         }
         
         ChatManager.manager.socket.on("stop typing") { (data, SocketAckEmitter) in
             log.info("stop typing")
+            self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
         }
         
         ChatManager.manager.socket.on("reconnect") { (data, SocketAckEmitter) in
             log.info("reconnect")
+            self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
         }
@@ -119,7 +127,7 @@ class DemoChatViewController: BaseChatViewController {
     }
     
     func join() {
-        ChatManager.manager.socket.emit("add user", "范东同学")
+        ChatManager.manager.socket.emit("add user", "范东同学-iPhone")
     }
 
     @objc
