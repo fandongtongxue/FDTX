@@ -44,10 +44,9 @@ class DemoChatViewController: BaseChatViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let image = UIImage(named: "bubble-incoming-tail-border", in: Bundle(for: DemoChatViewController.self), compatibleWith: nil)?.bma_tintWithColor(.blue)
         super.chatItemsDecorator = ChatItemsDemoDecorator()
-        let addIncomingMessageButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(DemoChatViewController.addRandomIncomingMessage))
-        self.navigationItem.rightBarButtonItem = addIncomingMessageButton
+        
+        title = "Group"
         
         addHandler()
         join()
@@ -67,7 +66,12 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            HUD.flash(.label("有用户加入了"), delay: HUD_DELAY_TIME)
+            let jsonArray = data
+            let jsonDict = jsonArray.last as! NSDictionary
+            let numUsers = jsonDict["numUsers"]
+            let username = jsonDict["username"]
+            self.title = String.init(format: "Group(%@)", numUsers as! CVarArg)
+            HUD.flash(.label(String.init(format: "%@加入了", username as! CVarArg)), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("login") { (data, SocketAckEmitter) in
@@ -75,7 +79,11 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            HUD.flash(.label("登陆成功"), delay: HUD_DELAY_TIME)
+            let jsonArray = data
+            let jsonDict = jsonArray.last as! NSDictionary
+            let numUsers = jsonDict["numUsers"]
+            self.title = String.init(format: "Group(%@)", numUsers as! CVarArg)
+            HUD.flash(.label("连接聊天服务器成功"), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("new message") { (data, SocketAckEmitter) in
@@ -83,8 +91,10 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            let jsonString = String.init(format: "%@", data)
-            self.dataSource.addIncomingTextMessage(jsonString)
+            let jsonArray = data
+            let jsonDict = jsonArray.last as! NSDictionary
+            let message = jsonDict["message"]
+            self.dataSource.addIncomingTextMessage(message as! String)
         }
         
         ChatManager.manager.socket.on("user left") { (data, SocketAckEmitter) in
@@ -92,7 +102,12 @@ class DemoChatViewController: BaseChatViewController {
             self.connected = true
             log.info(data)
             log.info(SocketAckEmitter)
-            HUD.flash(.label("有用户离开了"), delay: HUD_DELAY_TIME)
+            let jsonArray = data
+            let jsonDict = jsonArray.last as! NSDictionary
+            let numUsers = jsonDict["numUsers"]
+            let username = jsonDict["username"]
+            self.title = String.init(format: "Group(%@)", numUsers as! CVarArg)
+            HUD.flash(.label(String.init(format: "%@离开了", username as! CVarArg)), delay: HUD_DELAY_TIME)
         }
         
         ChatManager.manager.socket.on("typing") { (data, SocketAckEmitter) in
@@ -127,7 +142,7 @@ class DemoChatViewController: BaseChatViewController {
     }
     
     func join() {
-        ChatManager.manager.socket.emit("add user", "范东同学-iPhone")
+        ChatManager.manager.socket.emit("add user", AppTool.shared.nickName())
     }
 
     @objc
@@ -175,7 +190,7 @@ class DemoChatViewController: BaseChatViewController {
     func createChatInputItems() -> [ChatInputItemProtocol] {
         var items = [ChatInputItemProtocol]()
         items.append(self.createTextInputItem())
-        items.append(self.createPhotoInputItem())
+//        items.append(self.createPhotoInputItem())
         return items
     }
 
@@ -192,6 +207,7 @@ class DemoChatViewController: BaseChatViewController {
         let item = PhotosChatInputItem(presentingController: self)
         item.photoInputHandler = { [weak self] image in
             self?.dataSource.addPhotoMessage(image)
+            ChatManager.manager.socket.emit("new message", UIImageJPEGRepresentation(image, 1.0)!)
         }
         return item
     }
