@@ -31,7 +31,7 @@ class ChatViewController: BaseViewController,UITableViewDelegate,UITableViewData
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        dataArray = NSMutableArray.init(array: ["欢迎来到范东同学的 Socket.IO 聊天室"])
+        dataArray = NSMutableArray.init(array: ["Group"])
     }
     
     override func viewWillAppear(_ animated: Bool) {
