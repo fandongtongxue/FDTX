@@ -22,11 +22,4 @@ class UserInfoViewController: BaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func updateUserIcon(imageData:Data) {
-        BaseNetwoking.manager.UPLOAD(url: "userChangeUserIcon", parameters: ["uid":AppTool.shared.uid()], data:[imageData], success: { (result) in
-            log.info(result)
-        }) { (error) in
-            //do nothing
-        }
-    }
 }

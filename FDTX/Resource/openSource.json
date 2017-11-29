@@ -60,9 +60,17 @@
                        {
                        "name":"MediaBrowser",
                        "url":"https://github.com/younatics/MediaBrowser"
+                       },
+                       {
+                       "name":"SocketIO",
+                       "url":"https://github.com/socketio/socket.io-client-swift"
+                       },
+                       {
+                       "name":"Chatto",
+                       "url":"https://github.com/badoo/Chatto"
                        }
                        ]
     },
     "status": 1,
-    "msg": "获取用户信息成功"
+    "msg": "获取开源软件列表成功"
 }

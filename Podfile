@@ -5,6 +5,9 @@
 use_frameworks!
 
 target 'FDTX' do
+    
+  #
+  pod "Qiniu", "~> 7.0"
 
   # Pods for FDTX
   pod 'Alamofire'
