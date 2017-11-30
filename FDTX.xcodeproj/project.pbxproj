@@ -13,6 +13,7 @@
 		262BEE5F1FA8B3D2004B517A /* ChannelCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */; };
 		265CA7C31FBB3431005B47D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CA7C21FBB3431005B47D6 /* ChatViewController.swift */; };
 		26B8A57A1FA39A0500A414C8 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8A5791FA39A0500A414C8 /* ChannelCell.swift */; };
+		26BA15CE1FD02AEB003173B1 /* UserInfoChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA15CD1FD02AEB003173B1 /* UserInfoChangeViewController.swift */; };
 		26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE4591F9B43AE0018D395 /* DemoData.swift */; };
 		26BFE45D1F9B48060018D395 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45C1F9B48060018D395 /* ChannelViewController.swift */; };
 		26BFE4601F9B4F750018D395 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE45F1F9B4F750018D395 /* ChannelModel.swift */; };
@@ -94,6 +95,7 @@
 		262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentCell.swift; sourceTree = "<group>"; };
 		265CA7C21FBB3431005B47D6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		26B8A5791FA39A0500A414C8 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		26BA15CD1FD02AEB003173B1 /* UserInfoChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoChangeViewController.swift; sourceTree = "<group>"; };
 		26BFE4591F9B43AE0018D395 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		26BFE45C1F9B48060018D395 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		26BFE45F1F9B4F750018D395 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */,
 				CB7153731F66332D00826616 /* SettingViewController.swift */,
 				CB9721841F7A5E71006D03B1 /* UserInfoViewController.swift */,
+				26BA15CD1FD02AEB003173B1 /* UserInfoChangeViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -693,7 +696,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF873DF48E6ECDE5FB61C68D /* [CP] Copy Pods Resources */ = {
@@ -768,6 +771,7 @@
 				CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */,
 				CB5761B51FC6B85500843A35 /* TimeSeparatorCollectionViewCell.swift in Sources */,
 				CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */,
+				26BA15CE1FD02AEB003173B1 /* UserInfoChangeViewController.swift in Sources */,
 				CB8445E31FBEECC5000921D4 /* ChatDetailViewController.swift in Sources */,
 				CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */,
 				CB5761A81FC6B85500843A35 /* FakeDataSource.swift in Sources */,

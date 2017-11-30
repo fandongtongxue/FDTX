@@ -22,7 +22,6 @@ class UserInfoCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
-        self.initSubview()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,6 +29,11 @@ class UserInfoCell: UITableViewCell {
     }
     
     func setType(type:UserInfoCellType) {
+        self.contentView.addSubview(self.leftLabel)
+        self.leftLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(10)
+            make.centerY.equalToSuperview()
+        }
         switch type {
         case .icon:
             leftLabel.text = "Icon"
@@ -46,6 +50,7 @@ class UserInfoCell: UITableViewCell {
             self.rightLabel.snp.makeConstraints { (make) in
                 make.right.equalToSuperview().offset(-10)
                 make.centerY.equalToSuperview()
+                make.left.equalToSuperview().offset(100)
             }
             break
         case .introduce:
@@ -54,6 +59,7 @@ class UserInfoCell: UITableViewCell {
             self.rightLabel.snp.makeConstraints { (make) in
                 make.right.equalToSuperview().offset(-10)
                 make.centerY.equalToSuperview()
+                make.left.equalToSuperview().offset(100)
             }
             break
         default:
@@ -65,14 +71,6 @@ class UserInfoCell: UITableViewCell {
     func setValue(value:String) {
         rightLabel.text = value
         rightImageView.kf.setImage(with: URL.init(string: value))
-    }
-    
-    func initSubview() {
-        self.contentView.addSubview(self.leftLabel)
-        self.leftLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
-            make.centerY.equalToSuperview()
-        }
     }
     
     lazy var rightImageView : UIImageView = {

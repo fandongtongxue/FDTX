@@ -108,7 +108,7 @@ class LoginViewController: BaseViewController {
             
         }) { (error) in
             self.stopAnimating()
-            HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
+            HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
         }
     }
     

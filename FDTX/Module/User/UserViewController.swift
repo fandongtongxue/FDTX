@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import NightNight
+import PKHUD
 
 class UserViewController: BaseViewController {
     override func viewDidLoad() {
@@ -39,8 +40,10 @@ class UserViewController: BaseViewController {
         }
         self.view.addSubview(self.headerViewBtn)
         self.headerViewBtn.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
+            make.top.equalToSuperview()
             make.height.equalTo(200)
+            make.left.equalToSuperview().offset(( SCREEN_WIDTH - 70 ) / 2)
+            make.right.equalToSuperview().offset(-( SCREEN_WIDTH - 70 ) / 2)
         }
         self.view.addSubview(self.settingBtn)
         self.settingBtn.snp.makeConstraints { (make) in
@@ -68,7 +71,7 @@ class UserViewController: BaseViewController {
                 UserDefault.shared.setObject(object: (model?.introduce)!, forKey: USER_DEFAULT_KEY_INTRODUCE)
                 UserDefault.shared.setObject(object: (model?.icon)!, forKey: USER_DEFAULT_KEY_ICON)
             }) { (error) in
-                
+                HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
             }
         }else{
             let loginVC = LoginViewController()

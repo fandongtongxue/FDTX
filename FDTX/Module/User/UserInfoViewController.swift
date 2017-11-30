@@ -24,6 +24,7 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        tableView.reloadData()
     }
     
     func initSubview() {
@@ -93,8 +94,14 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
             present(alert, animated: true, completion: nil)
             break
         case 1:
+            let userInfoChangeVC = UserInfoChangeViewController()
+            userInfoChangeVC.setType(type: .nickName)
+            navigationController?.pushViewController(userInfoChangeVC, animated: true)
             break
         case 2:
+            let userInfoChangeVC = UserInfoChangeViewController()
+            userInfoChangeVC.setType(type: .introduce)
+            navigationController?.pushViewController(userInfoChangeVC, animated: true)
             break
         default:
             break
@@ -111,14 +118,15 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
             QiniuUploadManager.default().upload(data, key:key , token: token, successBlock: { (result) in
                 log.info(result)
                 let params = ["uid":AppTool.shared.uid(),
-                              "icon":String.init(format: "%@%@", QINIU_URL,key),
+                              "icon":String.init(format: "%@%@", QINIU_URL,key),                     
                               "nickName":AppTool.shared.nickName(),
                               "introduce":AppTool.shared.introduce()]
                 BaseNetwoking.manager.POST(url: "userChangeUserInfo", parameters:params , success: { (response) in
                     UserDefault.shared.setObject(object: String.init(format: "%@%@", QINIU_URL,key), forKey: USER_DEFAULT_KEY_ICON)
                     self.tableView.reloadRows(at: [IndexPath.init(row: 0, section: 0)], with: .fade)
+                    HUD.flash(.label("Update UserIcon Success"), delay: HUD_DELAY_TIME)
                 }, failure: { (error) in
-                    HUD.flash(.label(error.localizedDescription), delay: HUD_DELAY_TIME)
+                    HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
                 })
             }, fail: { (error) in
                 log.error("error:\(String(describing: error))")
