@@ -42,8 +42,8 @@ public class FakeMessageSender {
 
     public func sendMessage(_ message: DemoMessageModelProtocol) {
         self.updateMessage(message, status: .success)
-        return
-        self.fakeMessageStatus(message)
+//        return
+//        self.fakeMessageStatus(message)
     }
 
     private func fakeMessageStatus(_ message: DemoMessageModelProtocol) {

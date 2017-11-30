@@ -37,6 +37,11 @@ class UserViewController: BaseViewController {
             make.top.left.right.equalToSuperview()
             make.height.equalTo(200)
         }
+        self.view.addSubview(self.headerViewBtn)
+        self.headerViewBtn.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(200)
+        }
         self.view.addSubview(self.settingBtn)
         self.settingBtn.snp.makeConstraints { (make) in
             make.height.equalTo(20)
@@ -60,6 +65,8 @@ class UserViewController: BaseViewController {
                 let model = UserInfoModel.deserialize(from: userInfoDict as? NSDictionary)
                 self.headerView.setModel(model: model!)
                 UserDefault.shared.setObject(object: (model?.nickName)!, forKey: USER_DEFAULT_KEY_NICKNAME)
+                UserDefault.shared.setObject(object: (model?.introduce)!, forKey: USER_DEFAULT_KEY_INTRODUCE)
+                UserDefault.shared.setObject(object: (model?.icon)!, forKey: USER_DEFAULT_KEY_ICON)
             }) { (error) in
                 
             }
@@ -85,8 +92,13 @@ class UserViewController: BaseViewController {
 
     lazy var headerView : UserHeaderView = {
         let headerView = UserHeaderView.init(frame: .zero)
-        headerView.addTarget(self, action: #selector(headerViewBtnAction), for: .touchUpInside)
         return headerView
+    }()
+    
+    lazy var headerViewBtn : UIButton = {
+        let headerViewBtn = UIButton.init(frame: .zero)
+        headerViewBtn.addTarget(self, action: #selector(headerViewBtnAction), for: .touchUpInside)
+        return headerViewBtn
     }()
     
     lazy var settingBtn : UIButton = {

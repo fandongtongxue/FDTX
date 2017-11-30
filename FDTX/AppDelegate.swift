@@ -105,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // this is called on a background thread, but UI updates must
             // be on the main thread, like this:
             DispatchQueue.main.async {
-                if reachability.isReachableViaWiFi {
+                if reachability.connection == .wifi {
                     print("Reachable via WiFi")
                 } else {
                     print("Reachable via Cellular")

@@ -19,3 +19,6 @@ let WORDPRESS_URL = "http://video.fandong.me/jsonapi/"
 //GitHub Page URL
 let GITHUB_URL = "http://blog.fandong.me/"
 
+//Qiniu URL
+let QINIU_URL = "http://ov2uvg3mg.bkt.clouddn.com/"
+

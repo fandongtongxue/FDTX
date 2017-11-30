@@ -41,4 +41,20 @@ extension AppTool {
         }
         return ""
     }
+    
+    func introduce() -> String {
+        if AppTool.shared.isLogin() {
+            let introduce = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_INTRODUCE)
+            return introduce
+        }
+        return ""
+    }
+    
+    func icon() -> String {
+        if AppTool.shared.isLogin() {
+            let icon = UserDefault.shared.objectFor(key: USER_DEFAULT_KEY_ICON)
+            return icon
+        }
+        return ""
+    }
 }
