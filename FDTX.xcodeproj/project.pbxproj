@@ -12,6 +12,7 @@
 		262BEE5D1FA8B35B004B517A /* ChannelCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */; };
 		262BEE5F1FA8B3D2004B517A /* ChannelCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */; };
 		265CA7C31FBB3431005B47D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CA7C21FBB3431005B47D6 /* ChatViewController.swift */; };
+		26AC92D71FD28F7600F8F38F /* StatusPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC92D61FD28F7600F8F38F /* StatusPublishViewController.swift */; };
 		26B8A57A1FA39A0500A414C8 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8A5791FA39A0500A414C8 /* ChannelCell.swift */; };
 		26BA15CE1FD02AEB003173B1 /* UserInfoChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA15CD1FD02AEB003173B1 /* UserInfoChangeViewController.swift */; };
 		26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFE4591F9B43AE0018D395 /* DemoData.swift */; };
@@ -77,7 +78,6 @@
 		CBE54D3F1F33700B00FF4CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D3D1F33700B00FF4CA0 /* Main.storyboard */; };
 		CBE54D411F33700B00FF4CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D401F33700B00FF4CA0 /* Assets.xcassets */; };
 		CBE54D441F33700B00FF4CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE54D421F33700B00FF4CA0 /* LaunchScreen.storyboard */; };
-		CBF9714E1FCF9FAA0083556D /* StatusPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9714D1FCF9FAA0083556D /* StatusPublishViewController.swift */; };
 		CBF971521FCFE28B0083556D /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF971511FCFE28B0083556D /* UserInfoCell.swift */; };
 		CBFC94651F8B540C00A9EE2E /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC94641F8B540C00A9EE2E /* CommentModel.swift */; };
 		CBFDCE3D1F61214E001422F5 /* OpenSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */; };
@@ -94,6 +94,7 @@
 		262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentModel.swift; sourceTree = "<group>"; };
 		262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentCell.swift; sourceTree = "<group>"; };
 		265CA7C21FBB3431005B47D6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		26AC92D61FD28F7600F8F38F /* StatusPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPublishViewController.swift; sourceTree = "<group>"; };
 		26B8A5791FA39A0500A414C8 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		26BA15CD1FD02AEB003173B1 /* UserInfoChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoChangeViewController.swift; sourceTree = "<group>"; };
 		26BFE4591F9B43AE0018D395 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
@@ -161,7 +162,6 @@
 		CBE54D401F33700B00FF4CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE54D431F33700B00FF4CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBE54D451F33700B00FF4CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBF9714D1FCF9FAA0083556D /* StatusPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPublishViewController.swift; sourceTree = "<group>"; };
 		CBF971511FCFE28B0083556D /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		CBFC94641F8B540C00A9EE2E /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		CBFDCE3C1F61214D001422F5 /* OpenSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				CB8445E51FBEF12B000921D4 /* StatusViewController.swift */,
-				CBF9714D1FCF9FAA0083556D /* StatusPublishViewController.swift */,
+				26AC92D61FD28F7600F8F38F /* StatusPublishViewController.swift */,
 			);
 			path = Status;
 			sourceTree = "<group>";
@@ -737,7 +737,6 @@
 				CB7320EF1F4037C000F2F7BA /* BaseNetworking.swift in Sources */,
 				CB3484371F7F79A70062BF84 /* GitHubPageArticleCell.swift in Sources */,
 				CBE54D3C1F33700B00FF4CA0 /* ViewController.swift in Sources */,
-				CBF9714E1FCF9FAA0083556D /* StatusPublishViewController.swift in Sources */,
 				CB542A771F47169C00BCB90F /* UnsplashUserModel.swift in Sources */,
 				CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */,
 				26BFE45A1F9B43AE0018D395 /* DemoData.swift in Sources */,
@@ -771,6 +770,7 @@
 				CB542A781F47169C00BCB90F /* UnsplashUserProfileModel.swift in Sources */,
 				CB5761B51FC6B85500843A35 /* TimeSeparatorCollectionViewCell.swift in Sources */,
 				CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */,
+				26AC92D71FD28F7600F8F38F /* StatusPublishViewController.swift in Sources */,
 				26BA15CE1FD02AEB003173B1 /* UserInfoChangeViewController.swift in Sources */,
 				CB8445E31FBEECC5000921D4 /* ChatDetailViewController.swift in Sources */,
 				CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */,

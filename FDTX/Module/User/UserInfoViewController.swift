@@ -118,7 +118,7 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
             QiniuUploadManager.default().upload(data, key:key , token: token, successBlock: { (result) in
                 log.info(result)
                 let params = ["uid":AppTool.shared.uid(),
-                              "icon":String.init(format: "%@%@", QINIU_URL,key),                     
+                              "icon":String.init(format: "%@%@", QINIU_URL,key),
                               "nickName":AppTool.shared.nickName(),
                               "introduce":AppTool.shared.introduce()]
                 BaseNetwoking.manager.POST(url: "userChangeUserInfo", parameters:params , success: { (response) in

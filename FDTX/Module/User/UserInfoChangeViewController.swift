@@ -95,6 +95,8 @@ class UserInfoChangeViewController: BaseViewController {
                 make.right.equalToSuperview().offset(-10)
                 make.height.equalTo(44)
             })
+            textField.text = AppTool.shared.nickName()
+            textField.becomeFirstResponder()
             break
         case .introduce:
             view.addSubview(textView)
@@ -103,6 +105,8 @@ class UserInfoChangeViewController: BaseViewController {
                 make.right.equalToSuperview().offset(-10)
                 make.height.equalTo(132)
             })
+            textView.text = AppTool.shared.introduce()
+            textView.becomeFirstResponder()
             break
         default:
             //do nothing

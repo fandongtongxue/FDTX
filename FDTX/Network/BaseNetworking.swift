@@ -38,9 +38,15 @@ extension BaseNetwoking {
                     if result["status"]?.int64Value == 1{
                         success(result)
                     }else{
-                        let errorResult = NSError.init(domain: SERVER_HOST, code: result["status"] as! Int, userInfo: ["msg":result["msg"]!])
-                        log.error("error:\(errorResult)")
-                        failure(errorResult as Error)
+                        if (result["msg"] != nil) {
+                            let errorResult = NSError.init(domain: SERVER_HOST, code: result["status"] as! Int, userInfo: ["msg":result["msg"]!])
+                            log.error("error:\(errorResult)")
+                            failure(errorResult as Error)
+                        }else{
+                            let errorResult = NSError.init(domain: SERVER_HOST, code: result["error"] as! Int, userInfo: ["msg":result["reason"]!])
+                            log.error("error:\(errorResult)")
+                            failure(errorResult as Error)
+                        }
                     }
                 case .failure(let error):
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
