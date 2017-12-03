@@ -57,4 +57,11 @@ extension AppTool {
         }
         return ""
     }
+    
+    func translateDateToString(originDate:Date) -> String {
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy-MM-dd-HH:mm:ss"
+        let dateString = formatter.string(from: originDate)
+        return dateString
+    }
 }

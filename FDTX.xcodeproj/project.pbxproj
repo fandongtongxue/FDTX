@@ -624,11 +624,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FDTX/Pods-FDTX-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BMPlayer/BMPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
+				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/HappyDNS/HappyDNS.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
@@ -646,16 +646,17 @@
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/StarscreamSocketIO/StarscreamSocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftWebVC/SwiftWebVC.framework",
+				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HappyDNS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
@@ -673,6 +674,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StarscreamSocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebVC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);

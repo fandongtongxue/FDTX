@@ -1,19 +1,4 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
   - Alamofire (4.5.1)
   - BMPlayer (0.9.1):
     - BMPlayer/Full (= 0.9.1)
@@ -25,6 +10,8 @@ PODS:
   - Chatto (3.2.0)
   - ChattoAdditions (3.2.0):
     - Chatto
+  - CropViewController (2.3.4):
+    - TOCropViewController
   - HandyJSON (1.7.2)
   - HappyDNS (0.3.12)
   - Hue (2.0.1)
@@ -39,8 +26,7 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
   - PKHUD (4.2.3)
-  - Qiniu (7.1.8):
-    - AFNetworking (~> 3)
+  - Qiniu (7.2.0):
     - HappyDNS (~> 0.3)
   - ReachabilitySwift (4.1.0)
   - SDWebImage (4.0.0):
@@ -51,6 +37,7 @@ PODS:
     - StarscreamSocketIO (~> 8.0.5)
   - StarscreamSocketIO (8.0.7)
   - SwiftWebVC (0.4.1)
+  - TOCropViewController (2.3.4)
   - UICircularProgressRing (1.7.4)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -61,6 +48,7 @@ DEPENDENCIES:
   - BMPlayer
   - Chatto (= 3.2.0)
   - ChattoAdditions (= 3.2.0)
+  - CropViewController
   - HandyJSON (~> 1.7.2)
   - Hue
   - IQKeyboardManagerSwift
@@ -78,11 +66,11 @@ DEPENDENCIES:
   - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BMPlayer: e68ba160d9c05ea5fffc31d37448aa02433418ab
   Chatto: c5d1d9bfea49618bd55946e903b54d6503f8883f
   ChattoAdditions: af8f01388821c0ceb6a45654ab6b38dbee6c8836
+  CropViewController: b5ecd6625fb6bbefaacc19fe42ecee719f81f75e
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   HappyDNS: 691a3041128055d09866f86e6e9ca90f24da1f18
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
@@ -93,16 +81,17 @@ SPEC CHECKSUMS:
   NightNight: f6efd4faf72320f5b035f67ae158b80e96a39f37
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
-  Qiniu: 2f1b9d13904b6a7608a66a2d02c5b7b24575622a
+  Qiniu: 41a3261629a60cc990687aeb1009b48a9cc81ed0
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Socket.IO-Client-Swift: b8e59ddc16bc3609ca2f49a4b50253f095d535c8
   StarscreamSocketIO: 00b54e4208481ca5cef089545353aaf126bae16d
   SwiftWebVC: 17ad75e1fac143d421e0498fb40d7e37532f26d1
+  TOCropViewController: 808c9724904be931dd2de5f97fcccf4cc8f8b03f
   UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: cb1e96201abc8a51b0367f49825855c053fb1c24
+PODFILE CHECKSUM: 6a94057102d95e4603ab8c165d26333a0222ed18
 
 COCOAPODS: 1.4.0.beta.2
