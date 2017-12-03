@@ -86,6 +86,7 @@ class UserHeaderView: UIControl {
     lazy var iconView : UIImageView = {
         let iconView = UIImageView.init()
         iconView.layer.cornerRadius = 35
+        iconView.contentMode = .scaleAspectFill
         iconView.clipsToBounds = true
         return iconView;
     }()
