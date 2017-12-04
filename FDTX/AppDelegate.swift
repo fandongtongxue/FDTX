@@ -11,6 +11,7 @@ import XCGLogger
 import Reachability
 import NightNight
 import IQKeyboardManagerSwift
+import PKHUD
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -106,9 +107,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // be on the main thread, like this:
             DispatchQueue.main.async {
                 if reachability.connection == .wifi {
-                    print("Reachable via WiFi")
+                    HUD.flash(.label("WiFi Connected"), delay: HUD_DELAY_TIME)
                 } else {
-                    print("Reachable via Cellular")
+                    HUD.flash(.label("Cellular Connected"), delay: HUD_DELAY_TIME)
                 }
             }
         }
@@ -116,14 +117,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // this is called on a background thread, but UI updates must
             // be on the main thread, like this:
             DispatchQueue.main.async {
-                print("Not reachable")
+                HUD.flash(.label("No NetWork"), delay: HUD_DELAY_TIME)
             }
         }
         
         do {
             try reachability.startNotifier()
         } catch {
-            print("Unable to start notifier")
+            HUD.flash(.label("Can't Start Notifier"), delay: HUD_DELAY_TIME)
         }
         
         if AppTool.shared.isLogin() {

@@ -111,19 +111,15 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        log.info(info)
         picker.dismiss(animated: true, completion: nil)
-        let originImage = info["UIImagePickerControllerOriginalImage"] as! UIImage
+        let originImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         let cropVC = TOCropViewController.init(croppingStyle: .default, image: originImage)
         cropVC.delegate = self
         present(cropVC, animated: true, completion: nil)
-        
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        log.info("You Clicked Cancel")
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -135,10 +131,8 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
             self.startAnimating(size, message: "Uploading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
             
             TokenManager.manager.getUploadToken(success: { (token) in
-                let data = UIImageJPEGRepresentation(image, 0.25)
                 let key = String.init(format: "USER_ICON_UID_%@_DATE_%@.jpg", AppTool.shared.uid(), AppTool.shared.translateDateToString(originDate: Date.init(timeIntervalSinceNow: 0)))
-                QiniuUploadManager.default().upload(data, key:key , token: token, successBlock: { (result) in
-                    log.info(result)
+                QiniuUploadManager.default().uploadImage(image, key: key, token: token, successBlock: { (result) in
                     let params = ["uid":AppTool.shared.uid(),
                                   "icon":String.init(format: "%@%@", QINIU_URL,key),
                                   "nickName":AppTool.shared.nickName(),
@@ -156,8 +150,9 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
                     self.stopAnimating()
                     HUD.flash(.label(String.init(format: "%@", error! as CVarArg)), delay: HUD_DELAY_TIME)
                 }, progressBlock: { (progress) in
-                    log.info(progress)
+                    log.info("Upload Progress"+String.init(format: "%f", progress))
                 })
+                
             }) { (error) in
                 self.stopAnimating()
                 HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)

@@ -22,3 +22,7 @@ let GITHUB_URL = "http://blog.fandong.me/"
 //Qiniu URL
 let QINIU_URL = "http://ov2uvg3mg.bkt.clouddn.com/"
 
+//Image Thumb
+let THUMB_URL = "?imageView2/0/q/75|imageslim"
+
+

@@ -20,19 +20,41 @@
     return manager;
 }
 
-- (void)upload:(NSData *)data Key:(NSString *)key Token:(NSString *)token SuccessBlock:(void(^)(NSDictionary *info))successBlock failBlock:(void(^)(NSError *error))failBlock ProgressBlock:(void(^)(float percent))progressBlock{
+- (void)uploadImage:(UIImage *)image Key:(NSString *)key Token:(NSString *)token SuccessBlock:(void(^)(NSDictionary *info))successBlock failBlock:(void(^)(NSError *error))failBlock ProgressBlock:(void(^)(float percent))progressBlock{
     QNUploadOption *option = [[QNUploadOption alloc]initWithProgressHandler:^(NSString *key, float percent) {
         progressBlock(percent);
     }];
     QNUploadManager *manager = [[QNUploadManager alloc]init];
+    NSData *data = UIImageJPEGRepresentation(image, 0.5);
     [manager putData:data key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-        NSLog(@"七牛上传完成后字典:%@",resp);
         if (resp) {
             successBlock(resp);
         }else{
-            failBlock([NSError errorWithDomain:@"com.QiniuCloudStorge" code:1 userInfo:@{@"info":@"上传失败"}]);
+            failBlock([NSError errorWithDomain:@"com.QiniuCloudStorge" code:1 userInfo:@{@"info":@"Upload Failed"}]);
         }
     } option:option];
+}
+
+- (void)uploadMutiImage:(NSArray *)imageArray Key:(NSString *)key Token:(NSString *)token SuccessBlock:(void(^)(NSArray *imgUrlArray))successBlock failBlock:(void(^)(NSError *error))failBlock ProgressBlock:(void(^)(float percent))progressBlock{
+    QNUploadOption *option = [[QNUploadOption alloc]initWithProgressHandler:^(NSString *key, float percent) {
+        progressBlock(percent);
+    }];
+    QNUploadManager *manager = [[QNUploadManager alloc]init];
+    NSMutableArray *imgUrlArray = [NSMutableArray array];
+    for (UIImage *image in imageArray) {
+        NSData *data = UIImageJPEGRepresentation(image, 0.5);
+        [manager putData:data key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+            if (resp) {
+                NSString *imgUrl = [NSString stringWithFormat:@"http://ov2uvg3mg.bkt.clouddn.com/%@",key];
+                [imgUrlArray addObject:imgUrl];
+                if (imgUrlArray.count == imageArray.count) {
+                    successBlock(imgUrlArray);
+                }
+            }else{
+                failBlock([NSError errorWithDomain:@"com.QiniuCloudStorge" code:1 userInfo:@{@"info":@"Upload Failed"}]);
+            }
+        } option:option];
+    }
 }
 
 @end
