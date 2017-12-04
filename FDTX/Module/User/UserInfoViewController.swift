@@ -11,10 +11,11 @@ import UIKit
 import NightNight
 import PKHUD
 import CropViewController
+import TOCropViewController
 
 let UserInfoViewControllerCellId = "UserInfoViewControllerCellId"
 
-class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CropViewControllerDelegate {
+class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TOCropViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
@@ -114,37 +115,11 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
         picker.dismiss(animated: true, completion: nil)
         let originImage = info["UIImagePickerControllerOriginalImage"] as! UIImage
         
-        let size = CGSize.init(width: 30, height: 30)
-        startAnimating(size, message: "Uploading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
+        let cropVC = TOCropViewController.init(croppingStyle: .default, image: originImage)
+        cropVC.delegate = self
+        present(cropVC, animated: true, completion: nil)
         
-        TokenManager.manager.getUploadToken(success: { (token) in
-            let data = UIImageJPEGRepresentation(originImage, 0.25)
-            let key = String.init(format: "USER_ICON_UID_%@_DATE_%@.jpg", AppTool.shared.uid(), AppTool.shared.translateDateToString(originDate: Date.init(timeIntervalSinceNow: 0)))
-            QiniuUploadManager.default().upload(data, key:key , token: token, successBlock: { (result) in
-                log.info(result)
-                let params = ["uid":AppTool.shared.uid(),
-                              "icon":String.init(format: "%@%@", QINIU_URL,key),
-                              "nickName":AppTool.shared.nickName(),
-                              "introduce":AppTool.shared.introduce()]
-                BaseNetwoking.manager.POST(url: "userChangeUserInfo", parameters:params , success: { (response) in
-                    self.stopAnimating()
-                    UserDefault.shared.setObject(object: String.init(format: "%@%@", QINIU_URL,key), forKey: USER_DEFAULT_KEY_ICON)
-                    self.tableView.reloadRows(at: [IndexPath.init(row: 0, section: 0)], with: .fade)
-                    HUD.flash(.label("Update UserIcon Success"), delay: HUD_DELAY_TIME)
-                }, failure: { (error) in
-                    self.stopAnimating()
-                    HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
-                })
-            }, fail: { (error) in
-                self.stopAnimating()
-                HUD.flash(.label(String.init(format: "%@", error! as CVarArg)), delay: HUD_DELAY_TIME)
-            }, progressBlock: { (progress) in
-                log.info(progress)
-            })
-        }) { (error) in
-            self.stopAnimating()
-            HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
-        }
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -152,10 +127,50 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
         picker.dismiss(animated: true, completion: nil)
     }
     
-    //CropViewControllerDelegate
-    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
-        // 'image' is the newly cropped version of the original image
+    //TOCropViewControllerDelegate
+    func cropViewController(_ cropViewController: TOCropViewController, didCropToImage image: UIImage, rect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true) {
+            // 'image' is the newly cropped version of the original image
+            let size = CGSize.init(width: 30, height: 30)
+            self.startAnimating(size, message: "Uploading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
+            
+            TokenManager.manager.getUploadToken(success: { (token) in
+                let data = UIImageJPEGRepresentation(image, 0.25)
+                let key = String.init(format: "USER_ICON_UID_%@_DATE_%@.jpg", AppTool.shared.uid(), AppTool.shared.translateDateToString(originDate: Date.init(timeIntervalSinceNow: 0)))
+                QiniuUploadManager.default().upload(data, key:key , token: token, successBlock: { (result) in
+                    log.info(result)
+                    let params = ["uid":AppTool.shared.uid(),
+                                  "icon":String.init(format: "%@%@", QINIU_URL,key),
+                                  "nickName":AppTool.shared.nickName(),
+                                  "introduce":AppTool.shared.introduce()]
+                    BaseNetwoking.manager.POST(url: "userChangeUserInfo", parameters:params , success: { (response) in
+                        self.stopAnimating()
+                        UserDefault.shared.setObject(object: String.init(format: "%@%@", QINIU_URL,key), forKey: USER_DEFAULT_KEY_ICON)
+                        self.tableView.reloadRows(at: [IndexPath.init(row: 0, section: 0)], with: .fade)
+                        HUD.flash(.label("Update UserIcon Success"), delay: HUD_DELAY_TIME)
+                    }, failure: { (error) in
+                        self.stopAnimating()
+                        HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
+                    })
+                }, fail: { (error) in
+                    self.stopAnimating()
+                    HUD.flash(.label(String.init(format: "%@", error! as CVarArg)), delay: HUD_DELAY_TIME)
+                }, progressBlock: { (progress) in
+                    log.info(progress)
+                })
+            }) { (error) in
+                self.stopAnimating()
+                HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
+            }
+        }
+    }
+    
+    func cropViewController(_ cropViewController: TOCropViewController, didCropImageToRect cropRect: CGRect, angle: Int) {
         
+    }
+    
+    func cropViewController(_ cropViewController: TOCropViewController, didFinishCancelled cancelled: Bool) {
+        cropViewController.dismiss(animated: true, completion: nil)
     }
     
     lazy var tableView : UITableView = {
