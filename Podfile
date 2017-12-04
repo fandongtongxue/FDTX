@@ -29,6 +29,7 @@ target 'FDTX' do
   pod 'Chatto', '= 3.2.0'
   pod 'ChattoAdditions', '= 3.2.0' # if you want to use the cells or the input component
   pod 'CropViewController'
+  pod 'TGPhotoPicker'
   post_install do |installer|
       installer.pods_project.targets.each do |target|
           target.build_configurations.each do |config|

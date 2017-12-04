@@ -10,14 +10,17 @@ import Foundation
 import UIKit
 import NightNight
 import PKHUD
+import TGPhotoPicker
 
 class StatusPublishViewController: BaseViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.mixedBackgroundColor = MixedColor.init(normal: .black, night: .white)
         title = "Publish Status"
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "common_btn_dismiss"), style: .plain, target: self, action: #selector(back))
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "status_btn_publish"), style: .plain, target: self, action: #selector(publish))
+        
     }
     
     @objc func back() {
@@ -35,4 +38,9 @@ class StatusPublishViewController: BaseViewController {
             HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
 }
