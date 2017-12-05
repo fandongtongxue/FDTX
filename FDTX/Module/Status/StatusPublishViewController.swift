@@ -52,6 +52,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
         present(picker, animated: true, completion: nil)
     }
     
+    //AssetsPickerViewControllerDelegate
     func assetsPickerCannotAccessPhotoLibrary(controller: AssetsPickerViewController) {
         
     }
@@ -61,6 +62,10 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
     }
     
     func assetsPicker(controller: AssetsPickerViewController, didDismissByCancelling byCancel: Bool) {
+        
+        let size = CGSize.init(width: 30, height: 30)
+        self.startAnimating(size, message: "Uploading", messageFont: UIFont.systemFont(ofSize: 15), type: .lineScalePulseOut, color: UIColor.white, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 1, backgroundColor: UIColor.black, textColor: UIColor.white)
+        
         let assetArray = controller.selectedAssets
         var keyArray:[String] = []
         for asset in assetArray.enumerated() {
@@ -69,14 +74,18 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
         }
         TokenManager.manager.getUploadToken(success: { (token) in
             QiniuUploadManager.default().uploadMutiPHAsset(assetArray, keyArray: keyArray, token: token, successBlock: { (result) in
+                self.stopAnimating()
+                HUD.flash(.label("Update Image Success"), delay: HUD_DELAY_TIME)
                 self.imgUrlArray = result as! [String]
             }, fail: { (error) in
-                log.info(error)
+                self.stopAnimating()
+                HUD.flash(.label(String.init(format: "%@", error! as CVarArg)), delay: HUD_DELAY_TIME)
             }, progressBlock: { (progress) in
                 log.info(progress)
             })
         }) { (error) in
-            log.info(error)
+            self.stopAnimating()
+            HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)
         }
         
     }
@@ -87,7 +96,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
     }
     
     func assetsPicker(controller: AssetsPickerViewController, shouldSelect asset: PHAsset, at indexPath: IndexPath) -> Bool {
-        if controller.selectedAssets.count == 9 {
+        if controller.selectedAssets.count == 1 {
             return false
         }
         return true
@@ -104,5 +113,11 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
     func assetsPicker(controller: AssetsPickerViewController, didDeselect asset: PHAsset, at indexPath: IndexPath) {
         
     }
+    
+    //Lazy Load
+    lazy var textView:UITextView = {
+        let textView = UITextView.init(frame: .zero)
+        return textView
+    }()
     
 }

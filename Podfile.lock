@@ -56,6 +56,7 @@ PODS:
   - TinyLog (1.0.1)
   - TOCropViewController (2.3.4)
   - UICircularProgressRing (1.7.4)
+  - UITableView+FDTemplateLayoutCell (1.6)
   - UIViewKVO (2.0.0)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - SnapKit (~> 3.2.0)
   - Socket.IO-Client-Swift (~> 11.1.3)
   - SwiftWebVC
+  - UITableView+FDTemplateLayoutCell
   - XCGLogger (~> 4.0.0)
 
 EXTERNAL SOURCES:
@@ -126,9 +128,10 @@ SPEC CHECKSUMS:
   TinyLog: 6c3ecbc348d10dc242ebb506f684fc9ae6aff533
   TOCropViewController: 808c9724904be931dd2de5f97fcccf4cc8f8b03f
   UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
+  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   UIViewKVO: 091f9e020d69e73c4bf5e5ef61cde7bff1c24bbf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 03167adcaa288dbbc799ff70aaca9dc8714f6a39
+PODFILE CHECKSUM: b2b3d60cb05a0b5ea0e4ed05cf8295aa1cfd895b
 
 COCOAPODS: 1.4.0.beta.2

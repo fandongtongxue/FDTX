@@ -53,6 +53,8 @@
 		CB58D36E1F7159CE0003A01D /* GitHubPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */; };
 		CB58D3761F7161620003A01D /* GitHubPageArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58D3751F7161620003A01D /* GitHubPageArticleModel.swift */; };
 		CB6DBFCC1F657E9100461F9B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DBFCB1F657E9100461F9B /* UserDefault.swift */; };
+		CB6E39461FD68B1E00A0D8AF /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6E39451FD68B1E00A0D8AF /* StatusModel.swift */; };
+		CB6E39481FD68F6A00A0D8AF /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6E39471FD68F6A00A0D8AF /* StatusCell.swift */; };
 		CB7141E01F5F7F1100E3085C /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */; };
 		CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7141FD1F5FA4C600E3085C /* AppTool.swift */; };
 		CB71536A1F66183100826616 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7153691F66183100826616 /* ServerConfig.swift */; };
@@ -135,6 +137,8 @@
 		CB58D36D1F7159CE0003A01D /* GitHubPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageViewController.swift; sourceTree = "<group>"; };
 		CB58D3751F7161620003A01D /* GitHubPageArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageArticleModel.swift; sourceTree = "<group>"; };
 		CB6DBFCB1F657E9100461F9B /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		CB6E39451FD68B1E00A0D8AF /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
+		CB6E39471FD68F6A00A0D8AF /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		CB7141DF1F5F7F1100E3085C /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		CB7141FD1F5FA4C600E3085C /* AppTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTool.swift; sourceTree = "<group>"; };
 		CB7153691F66183100826616 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
@@ -412,6 +416,22 @@
 			path = ThirdPart;
 			sourceTree = "<group>";
 		};
+		CB6E39431FD68B0B00A0D8AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB6E39451FD68B1E00A0D8AF /* StatusModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB6E39441FD68B0B00A0D8AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB6E39471FD68F6A00A0D8AF /* StatusCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CB7141DE1F5F7EFC00E3085C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +505,8 @@
 		CB8445E41FBEF11B000921D4 /* Status */ = {
 			isa = PBXGroup;
 			children = (
+				CB6E39431FD68B0B00A0D8AF /* Model */,
+				CB6E39441FD68B0B00A0D8AF /* View */,
 				CB8445E51FBEF12B000921D4 /* StatusViewController.swift */,
 				26AC92D61FD28F7600F8F38F /* StatusPublishViewController.swift */,
 			);
@@ -663,6 +685,7 @@
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyLog/TinyLog.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
 				"${BUILT_PRODUCTS_DIR}/UIViewKVO/UIViewKVO.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
@@ -699,6 +722,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyLog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIViewKVO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);
@@ -772,6 +796,7 @@
 				CB15537C1FA30E3000CDBE49 /* VideoViewController.swift in Sources */,
 				CB5761B71FC6B85500843A35 /* TimeSeparatorPresenter.swift in Sources */,
 				CB8445E11FBED37A000921D4 /* ChatManager.swift in Sources */,
+				CB6E39461FD68B1E00A0D8AF /* StatusModel.swift in Sources */,
 				262BEE5D1FA8B35B004B517A /* ChannelCommentModel.swift in Sources */,
 				CBE54D3A1F33700B00FF4CA0 /* AppDelegate.swift in Sources */,
 				CB8920FF1F5D55C700BAB22B /* RegisterViewController.swift in Sources */,
@@ -797,6 +822,7 @@
 				CB5761B51FC6B85500843A35 /* TimeSeparatorCollectionViewCell.swift in Sources */,
 				CB542A761F47169C00BCB90F /* UnsplashUrlModel.swift in Sources */,
 				26AC92D71FD28F7600F8F38F /* StatusPublishViewController.swift in Sources */,
+				CB6E39481FD68F6A00A0D8AF /* StatusCell.swift in Sources */,
 				26BA15CE1FD02AEB003173B1 /* UserInfoChangeViewController.swift in Sources */,
 				CB8445E31FBEECC5000921D4 /* ChatDetailViewController.swift in Sources */,
 				CB7141FE1F5FA4C600E3085C /* AppTool.swift in Sources */,

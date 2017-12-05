@@ -10,5 +10,6 @@
 #define bridge_h
 
 #import "QiniuUploadManager.h"
+#import <UITableView_FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 
 #endif /* bridge_h */
