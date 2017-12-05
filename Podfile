@@ -6,10 +6,11 @@ use_frameworks!
 
 target 'FDTX' do
     
-  #
+# Pods for FDTX
+# Objective-C
   pod "Qiniu", "~> 7.0"
-
-  # Pods for FDTX
+  pod 'UITableView+FDTemplateLayoutCell'
+  # Swift
   pod 'Alamofire'
   pod 'HandyJSON', '~> 1.7.2'
   pod 'Kingfisher', '~> 3.0'
@@ -30,8 +31,7 @@ target 'FDTX' do
   pod 'ChattoAdditions', '= 3.2.0' # if you want to use the cells or the input component
   pod 'CropViewController'
   pod 'AssetsPickerViewController', :git => 'https://github.com/DragonCherry/AssetsPickerViewController', :branch => 'swift3'
-  pod 'UITableView+FDTemplateLayoutCell'
-
+  
   post_install do |installer|
       installer.pods_project.targets.each do |target|
           target.build_configurations.each do |config|
