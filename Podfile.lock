@@ -1,5 +1,11 @@
 PODS:
   - Alamofire (4.5.1)
+  - AssetsPickerViewController (2.2.1):
+    - Dimmer (~> 1.0)
+    - FadeView (~> 1.0)
+    - PureLayout
+    - SwiftARGB (< 2.0)
+    - TinyLog (~> 1.0)
   - BMPlayer (0.9.1):
     - BMPlayer/Full (= 0.9.1)
   - BMPlayer/Core (0.9.1)
@@ -12,6 +18,13 @@ PODS:
     - Chatto
   - CropViewController (2.3.4):
     - TOCropViewController
+  - Dimmer (1.1.2):
+    - FadeView
+    - OptionalTypes
+    - PureLayout
+    - TinyLog
+    - UIViewKVO
+  - FadeView (1.0.2)
   - HandyJSON (1.7.2)
   - HappyDNS (0.3.12)
   - Hue (2.0.1)
@@ -25,7 +38,9 @@ PODS:
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
+  - OptionalTypes (1.0.4)
   - PKHUD (4.2.3)
+  - PureLayout (3.0.2)
   - Qiniu (7.2.0):
     - HappyDNS (~> 0.3)
   - ReachabilitySwift (4.1.0)
@@ -36,16 +51,19 @@ PODS:
   - Socket.IO-Client-Swift (11.1.3):
     - StarscreamSocketIO (~> 8.0.5)
   - StarscreamSocketIO (8.0.7)
+  - SwiftARGB (0.9.3)
   - SwiftWebVC (0.4.1)
-  - TGPhotoPicker (0.0.5)
+  - TinyLog (1.0.1)
   - TOCropViewController (2.3.4)
   - UICircularProgressRing (1.7.4)
+  - UIViewKVO (2.0.0)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AssetsPickerViewController (from `https://github.com/DragonCherry/AssetsPickerViewController`, branch `swift3`)
   - BMPlayer
   - Chatto (= 3.2.0)
   - ChattoAdditions (= 3.2.0)
@@ -64,15 +82,27 @@ DEPENDENCIES:
   - SnapKit (~> 3.2.0)
   - Socket.IO-Client-Swift (~> 11.1.3)
   - SwiftWebVC
-  - TGPhotoPicker
   - XCGLogger (~> 4.0.0)
+
+EXTERNAL SOURCES:
+  AssetsPickerViewController:
+    :branch: swift3
+    :git: https://github.com/DragonCherry/AssetsPickerViewController
+
+CHECKOUT OPTIONS:
+  AssetsPickerViewController:
+    :commit: 99cdd225514278f1afa0681198a68d593f2c94a6
+    :git: https://github.com/DragonCherry/AssetsPickerViewController
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AssetsPickerViewController: ba566156e4056dd333bd6c34371235743ccc0eaf
   BMPlayer: e68ba160d9c05ea5fffc31d37448aa02433418ab
   Chatto: c5d1d9bfea49618bd55946e903b54d6503f8883f
   ChattoAdditions: af8f01388821c0ceb6a45654ab6b38dbee6c8836
   CropViewController: b5ecd6625fb6bbefaacc19fe42ecee719f81f75e
+  Dimmer: d69bad35b7e4545c3d36b64737b2623b59fac55c
+  FadeView: 7d4cdefa83ac9c17782613e9068c9fac0457285e
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   HappyDNS: 691a3041128055d09866f86e6e9ca90f24da1f18
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
@@ -82,19 +112,23 @@ SPEC CHECKSUMS:
   MediaBrowser: 30366497b725beed8b69722148c7d559c049e356
   NightNight: f6efd4faf72320f5b035f67ae158b80e96a39f37
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
+  OptionalTypes: 2c7ee4d718fec7933fb9d55793eced4789cc6089
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   Qiniu: 41a3261629a60cc990687aeb1009b48a9cc81ed0
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Socket.IO-Client-Swift: b8e59ddc16bc3609ca2f49a4b50253f095d535c8
   StarscreamSocketIO: 00b54e4208481ca5cef089545353aaf126bae16d
+  SwiftARGB: 37a0aeaed8e99ed691e7e574af1ae3f85c731286
   SwiftWebVC: 17ad75e1fac143d421e0498fb40d7e37532f26d1
-  TGPhotoPicker: b39995f4bfaa486066e3d172078c61c3977471ff
+  TinyLog: 6c3ecbc348d10dc242ebb506f684fc9ae6aff533
   TOCropViewController: 808c9724904be931dd2de5f97fcccf4cc8f8b03f
   UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
+  UIViewKVO: 091f9e020d69e73c4bf5e5ef61cde7bff1c24bbf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: a87f29c8ff0e3684c19b0bd9e37dce117956b489
+PODFILE CHECKSUM: 03167adcaa288dbbc799ff70aaca9dc8714f6a39
 
 COCOAPODS: 1.4.0.beta.2

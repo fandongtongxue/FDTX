@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 import NightNight
 import PKHUD
-import TGPhotoPicker
+import AssetsPickerViewController
+import Photos
 
-class StatusPublishViewController: BaseViewController {
+class StatusPublishViewController: BaseViewController,AssetsPickerViewControllerDelegate {
+    
+    var selectedAssets:[PHAsset] = []
+    var imgUrlArray:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,7 @@ class StatusPublishViewController: BaseViewController {
     
     @objc func publish() {
         let params = ["uid":AppTool.shared.uid(),
-                      "imgUrls":"https://wx2.sinaimg.cn/mw690/686a3ea1gy1ff9175ftbjj22ds1sge81.jpg,https://wx3.sinaimg.cn/mw690/686a3ea1gy1ff917jo0wxj23402c0u0x.jpg",
+                      "imgUrls":imgUrlArray.joined(separator: ","),
                       "content":"和你们在一起很开心！",
                       "location":"北京市石景山区古城路小区"]
         BaseNetwoking.manager.POST(url: "statusPublish", parameters: params, success: { (response) in
@@ -40,6 +44,64 @@ class StatusPublishViewController: BaseViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let config = AssetsPickerConfig.init()
+        config.albumIsShowEmptyAlbum = false
+        config.selectedAssets = self.selectedAssets
+        let picker = AssetsPickerViewController.init(pickerConfig: config)
+        picker.pickerDelegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func assetsPickerCannotAccessPhotoLibrary(controller: AssetsPickerViewController) {
+        
+    }
+    
+    func assetsPickerDidCancel(controller: AssetsPickerViewController) {
+        
+    }
+    
+    func assetsPicker(controller: AssetsPickerViewController, didDismissByCancelling byCancel: Bool) {
+        let assetArray = controller.selectedAssets
+        var keyArray:[String] = []
+        for asset in assetArray.enumerated() {
+            let key = String.init(format: "USER_STATUS_UID_%@_DATE_%@.jpg", AppTool.shared.uid(),AppTool.shared.translateDateToString(originDate: Date.init(timeIntervalSinceNow: TimeInterval(asset.offset))));
+            keyArray.append(key)
+        }
+        TokenManager.manager.getUploadToken(success: { (token) in
+            QiniuUploadManager.default().uploadMutiPHAsset(assetArray, keyArray: keyArray, token: token, successBlock: { (result) in
+                self.imgUrlArray = result as! [String]
+            }, fail: { (error) in
+                log.info(error)
+            }, progressBlock: { (progress) in
+                log.info(progress)
+            })
+        }) { (error) in
+            log.info(error)
+        }
+        
+    }
+    
+    func assetsPicker(controller: AssetsPickerViewController, selected assets: [PHAsset]) {
+        // do your job with selected assets
+        selectedAssets = assets
+    }
+    
+    func assetsPicker(controller: AssetsPickerViewController, shouldSelect asset: PHAsset, at indexPath: IndexPath) -> Bool {
+        if controller.selectedAssets.count == 9 {
+            return false
+        }
+        return true
+    }
+    
+    func assetsPicker(controller: AssetsPickerViewController, didSelect asset: PHAsset, at indexPath: IndexPath) {
+        
+    }
+    
+    func assetsPicker(controller: AssetsPickerViewController, shouldDeselect asset: PHAsset, at indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func assetsPicker(controller: AssetsPickerViewController, didDeselect asset: PHAsset, at indexPath: IndexPath) {
         
     }
     

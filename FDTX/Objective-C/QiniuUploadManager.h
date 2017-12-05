@@ -31,12 +31,24 @@
  Upload Muti Image
 
  @param imageArray imageArray
- @param key key
+ @param keyArray keyArray
  @param token token
  @param successBlock successBlock
  @param failBlock failBlock
  @param progressBlock progressBlock
  */
-- (void)uploadMutiImage:(NSArray *)imageArray Key:(NSString *)key Token:(NSString *)token SuccessBlock:(void(^)(NSArray *imgUrlArray))successBlock failBlock:(void(^)(NSError *error))failBlock ProgressBlock:(void(^)(float percent))progressBlock;
+- (void)uploadMutiImage:(NSArray *)imageArray KeyArray:(NSArray *)keyArray Token:(NSString *)token SuccessBlock:(void(^)(NSArray *imgUrlArray))successBlock failBlock:(void(^)(NSError *error))failBlock ProgressBlock:(void(^)(float percent))progressBlock;
+
+/**
+ MutiPHAsset
+
+ @param PHAssetArray PHAssetArray
+ @param keyArray keysArray
+ @param token token
+ @param successBlock successBlock
+ @param failBlock failBlock
+ @param progressBlock progressBlock
+ */
+- (void)uploadMutiPHAsset:(NSArray *)PHAssetArray KeyArray:(NSArray *)keyArray Token:(NSString *)token SuccessBlock:(void(^)(NSArray *imgUrlArray))successBlock failBlock:(void(^)(NSError *error))failBlock ProgressBlock:(void(^)(float percent))progressBlock;
 
 @end
