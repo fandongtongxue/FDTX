@@ -63,6 +63,7 @@
 		CB7153701F66195000826616 /* TimeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71536F1F66195000826616 /* TimeConfig.swift */; };
 		CB7153741F66332D00826616 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7153731F66332D00826616 /* SettingViewController.swift */; };
 		CB725FB51FD7AB9B0063B4EB /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB725FB41FD7AB9B0063B4EB /* MapManager.m */; };
+		CB725FB81FD7EBBC0063B4EB /* FDString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB725FB71FD7EBBC0063B4EB /* FDString.swift */; };
 		CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E11F40376D00F2F7BA /* BaseViewController.swift */; };
 		CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */; };
 		CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */; };
@@ -149,6 +150,7 @@
 		CB7153731F66332D00826616 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CB725FB31FD7AB9B0063B4EB /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
 		CB725FB41FD7AB9B0063B4EB /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
+		CB725FB71FD7EBBC0063B4EB /* FDString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDString.swift; sourceTree = "<group>"; };
 		CB7320E11F40376D00F2F7BA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
@@ -457,6 +459,14 @@
 			path = Untity;
 			sourceTree = "<group>";
 		};
+		CB725FB61FD7EBA70063B4EB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB725FB71FD7EBBC0063B4EB /* FDString.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		CB7320DE1F40376D00F2F7BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +549,7 @@
 		CBE54D381F33700B00FF4CA0 /* FDTX */ = {
 			isa = PBXGroup;
 			children = (
+				CB725FB61FD7EBA70063B4EB /* Extension */,
 				26070BFC1FCEE08F007B8A85 /* Objective-C */,
 				CBE54D391F33700B00FF4CA0 /* AppDelegate.swift */,
 				CB1EDA101F47C89300821092 /* Config */,
@@ -778,6 +789,7 @@
 			files = (
 				CB5761AC1FC6B85500843A35 /* DemoPhotoMessageModel.swift in Sources */,
 				CB2C22FB1F4D775B00820C48 /* UserViewController.swift in Sources */,
+				CB725FB81FD7EBBC0063B4EB /* FDString.swift in Sources */,
 				CB5761A41FC6B85500843A35 /* BaseMessageHandler.swift in Sources */,
 				26BFE4601F9B4F750018D395 /* ChannelModel.swift in Sources */,
 				CB5761B41FC6B85500843A35 /* DemoTextMessageViewModel.swift in Sources */,

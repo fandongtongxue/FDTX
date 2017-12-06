@@ -89,7 +89,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
     }
     
     func publishSecond() {
-        let location = locationBtn.titleLabel?.text == "Where are you?" ? "Mars" : locationBtn.titleLabel?.text
+        let location = locationBtn.titleLabel?.text == " where are you?" ? "Mars" : locationBtn.titleLabel?.text
         let params = ["uid":AppTool.shared.uid(),
                       "imgUrls":imgUrl,
                       "content":textView.text!,
@@ -246,7 +246,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
         locationBtn.setImage(UIImage.init(named: "status_btn_location"), for: .normal)
         locationBtn.setImage(UIImage.init(named: "status_btn_location"), for: .highlighted)
         locationBtn.addTarget(self, action: #selector(locationBtnAction), for: .touchUpInside)
-        locationBtn.setTitle("Where are you?", for: .normal)
+        locationBtn.setTitle(" where are you?", for: .normal)
         locationBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         locationBtn.setTitleColor(UIColor.black, for: .normal)
         return locationBtn

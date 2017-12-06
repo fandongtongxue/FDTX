@@ -139,9 +139,19 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
                                   "introduce":AppTool.shared.introduce()]
                     BaseNetwoking.manager.POST(url: "userChangeUserInfo", parameters:params , success: { (response) in
                         self.stopAnimating()
+                        HUD.flash(.label("Update UserIcon Success"), delay: HUD_DELAY_TIME)
+                        //Delete Old Image
+                        let icon = AppTool.shared.icon()
+                        let oldKey = icon.subString(start: 33, length: icon.count - 33)
+                        let param = ["key":oldKey,
+                                     "uuid":UUID]
+                        BaseNetwoking.manager.GET(url: DELETE_URL, parameters: param, success: { (result) in
+                            log.info("Delete Success")
+                        }, failure: { (error) in
+                            log.info(error)
+                        })
                         UserDefault.shared.setObject(object: String.init(format: "%@%@", QINIU_URL,key), forKey: USER_DEFAULT_KEY_ICON)
                         self.tableView.reloadRows(at: [IndexPath.init(row: 0, section: 0)], with: .fade)
-                        HUD.flash(.label("Update UserIcon Success"), delay: HUD_DELAY_TIME)
                     }, failure: { (error) in
                         self.stopAnimating()
                         HUD.flash(.label(String.init(format: "%@", error as CVarArg)), delay: HUD_DELAY_TIME)

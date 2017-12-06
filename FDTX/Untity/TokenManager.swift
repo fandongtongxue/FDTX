@@ -20,7 +20,7 @@ class TokenManager {
 extension TokenManager {
     func getUploadToken(success : @escaping (_ response : String)->(), failure : @escaping (_ error : Error)->()) {
         //do nothing
-        BaseNetwoking.manager.GET(url: "http://api.fandong.me/api/qiniucloudstorge/php-sdk-master/examples/upload_token.php", parameters: ["uuid":"9bd757fa5d3c40e482daa7fa2b2be1ed"], success: { (response) in
+        BaseNetwoking.manager.GET(url: TOKEN_URL, parameters: ["uuid":UUID], success: { (response) in
             if response["status"] as! NSNumber == NSNumber.init(value: 1){
                 let data = response["data"] as! NSDictionary
                 let token = data["token"] as! String
