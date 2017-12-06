@@ -127,6 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             HUD.flash(.label("Can't Start Notifier"), delay: HUD_DELAY_TIME)
         }
         
+        MapManager.default().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         if AppTool.shared.isLogin() {
             let containerVC = ContainViewController.init(nibName: nil, bundle: nil)
             self.window = UIWindow.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))

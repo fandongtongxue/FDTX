@@ -11,5 +11,6 @@
 
 #import "QiniuUploadManager.h"
 #import <UITableView_FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import "MapManager.h"
 
 #endif /* bridge_h */

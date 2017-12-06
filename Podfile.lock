@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.5.1)
+  - AMapFoundation-NO-IDFA (1.4.2)
+  - AMapLocation-NO-IDFA (2.5.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
   - AssetsPickerViewController (2.2.1):
     - Dimmer (~> 1.0)
     - FadeView (~> 1.0)
@@ -64,6 +67,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AMapLocation-NO-IDFA
   - AssetsPickerViewController (from `https://github.com/DragonCherry/AssetsPickerViewController`, branch `swift3`)
   - BMPlayer
   - Chatto (= 3.2.0)
@@ -98,6 +102,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AMapFoundation-NO-IDFA: 3b9ce87abc6a37c718cc320687469d0b74d5c953
+  AMapLocation-NO-IDFA: be669085a8cc0d22820022fc61d58811d24b4e3a
   AssetsPickerViewController: ba566156e4056dd333bd6c34371235743ccc0eaf
   BMPlayer: e68ba160d9c05ea5fffc31d37448aa02433418ab
   Chatto: c5d1d9bfea49618bd55946e903b54d6503f8883f
@@ -132,6 +138,6 @@ SPEC CHECKSUMS:
   UIViewKVO: 091f9e020d69e73c4bf5e5ef61cde7bff1c24bbf
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: b2b3d60cb05a0b5ea0e4ed05cf8295aa1cfd895b
+PODFILE CHECKSUM: c5d50282c293fa30cc995e87312c6693bc031ad5
 
 COCOAPODS: 1.4.0.beta.2

@@ -31,6 +31,7 @@ target 'FDTX' do
   pod 'ChattoAdditions', '= 3.2.0' # if you want to use the cells or the input component
   pod 'CropViewController'
   pod 'AssetsPickerViewController', :git => 'https://github.com/DragonCherry/AssetsPickerViewController', :branch => 'swift3'
+  pod 'AMapLocation-NO-IDFA'
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|

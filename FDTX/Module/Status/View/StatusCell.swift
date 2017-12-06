@@ -39,20 +39,25 @@ class StatusCell: UITableViewCell {
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.top.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
         }
         contentLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.nameLabel.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
         }
         
         contentImageView.snp.makeConstraints { (make) in
             make.top.equalTo(self.contentLabel.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(10)
+//            make.right.equalToSuperview().offset(-10)
+            make.width.lessThanOrEqualTo(SCREEN_WIDTH - 20)
         }
         
         locationLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.contentImageView.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
         }
     }
     

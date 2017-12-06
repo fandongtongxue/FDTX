@@ -62,6 +62,7 @@
 		CB71536E1F66184500826616 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71536D1F66184500826616 /* UserDefaultKey.swift */; };
 		CB7153701F66195000826616 /* TimeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71536F1F66195000826616 /* TimeConfig.swift */; };
 		CB7153741F66332D00826616 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7153731F66332D00826616 /* SettingViewController.swift */; };
+		CB725FB51FD7AB9B0063B4EB /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB725FB41FD7AB9B0063B4EB /* MapManager.m */; };
 		CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E11F40376D00F2F7BA /* BaseViewController.swift */; };
 		CB7320EA1F40376D00F2F7BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */; };
 		CB7320EC1F40376D00F2F7BA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */; };
@@ -146,6 +147,8 @@
 		CB71536D1F66184500826616 /* UserDefaultKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		CB71536F1F66195000826616 /* TimeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConfig.swift; sourceTree = "<group>"; };
 		CB7153731F66332D00826616 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CB725FB31FD7AB9B0063B4EB /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		CB725FB41FD7AB9B0063B4EB /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
 		CB7320E11F40376D00F2F7BA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CB7320E31F40376D00F2F7BA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CB7320E71F40376D00F2F7BA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 		26070BFC1FCEE08F007B8A85 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				CB725FB31FD7AB9B0063B4EB /* MapManager.h */,
+				CB725FB41FD7AB9B0063B4EB /* MapManager.m */,
 				26070BFD1FCEE08F007B8A85 /* QiniuUploadManager.h */,
 				26070BFE1FCEE08F007B8A85 /* QiniuUploadManager.m */,
 			);
@@ -811,6 +816,7 @@
 				CB7153701F66195000826616 /* TimeConfig.swift in Sources */,
 				CB5761AA1FC6B85500843A35 /* FakeMessageSender.swift in Sources */,
 				CB542A751F47169C00BCB90F /* UnsplashPictureModel.swift in Sources */,
+				CB725FB51FD7AB9B0063B4EB /* MapManager.m in Sources */,
 				CB9150461F6195F200AE85CA /* OpenSourceModel.swift in Sources */,
 				CB5761B11FC6B85500843A35 /* SlidingDatasSource.swift in Sources */,
 				26B8A57A1FA39A0500A414C8 /* ChannelCell.swift in Sources */,
@@ -980,10 +986,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9N98X7P4L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FDTX/ThirdPart/AMap",
+				);
 				INFOPLIST_FILE = FDTX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.FDTX;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.one;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = $SRCROOT/FDTX/Resource/bridge.h;
@@ -1000,10 +1010,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9N98X7P4L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FDTX/ThirdPart/AMap",
+				);
 				INFOPLIST_FILE = FDTX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.FDTX;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.one;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
