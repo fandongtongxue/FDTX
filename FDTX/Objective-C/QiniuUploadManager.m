@@ -27,7 +27,7 @@
         progressBlock(percent);
     }];
     QNUploadManager *manager = [[QNUploadManager alloc]init];
-    NSData *data = UIImageJPEGRepresentation(image, 0.5);
+    NSData *data = UIImageJPEGRepresentation(image, 1);
     [manager putData:data key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
         if (resp) {
             successBlock(resp);
@@ -46,7 +46,7 @@
     for (NSInteger i = 0; i<imageArray.count; i++){
         UIImage *image = imageArray[i];
         NSString *key = keyArray[i];
-        NSData *data = UIImageJPEGRepresentation(image, 0.5);
+        NSData *data = UIImageJPEGRepresentation(image, 1);
         [manager putData:data key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
             if (resp) {
                 NSString *imgUrl = [NSString stringWithFormat:@"%@%@",IMAGEURL_PREFIX,key];
