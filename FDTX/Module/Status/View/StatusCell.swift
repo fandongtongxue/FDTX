@@ -35,6 +35,7 @@ class StatusCell: UITableViewCell {
         contentView.addSubview(contentLabel)
         contentView.addSubview(contentImageView)
         contentView.addSubview(locationLabel)
+        contentView.addSubview(lineView)
         
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
@@ -58,6 +59,12 @@ class StatusCell: UITableViewCell {
             make.top.equalTo(self.contentImageView.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
+        }
+        
+        lineView.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.height.equalTo(0.5)
         }
     }
     
@@ -100,5 +107,11 @@ class StatusCell: UITableViewCell {
         locationLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .lightGray)
         locationLabel.numberOfLines = 0
         return locationLabel
+    }()
+    
+    lazy var lineView : UIView = {
+        let lineView = UIView.init(frame: .zero)
+        lineView.backgroundColor = UIColor(hex:"cccccc")
+        return lineView
     }()
 }

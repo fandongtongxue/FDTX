@@ -49,6 +49,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
         locationBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.top.equalTo(self.addImgBtn.snp.bottom).offset(10)
+            make.right.equalToSuperview().offset(-10)
         }
         scrollView.contentSize = CGSize.init(width: SCREEN_WIDTH, height: 100 + 10 + 64 + 10 + 22 + 10)
     }

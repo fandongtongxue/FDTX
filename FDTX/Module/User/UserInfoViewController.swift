@@ -146,7 +146,7 @@ class UserInfoViewController: BaseViewController,UITableViewDelegate,UITableView
                         let param = ["key":oldKey,
                                      "uuid":UUID]
                         BaseNetwoking.manager.GET(url: DELETE_URL, parameters: param, success: { (result) in
-                            log.info("Delete Success")
+                            log.info("Delete OldIcon Success")
                         }, failure: { (error) in
                             log.info(error)
                         })

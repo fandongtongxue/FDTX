@@ -68,6 +68,26 @@
                        {
                        "name":"Chatto",
                        "url":"https://github.com/badoo/Chatto"
+                       },
+                       {
+                       "name":"TOCropViewController",
+                       "url":"https://github.com/TimOliver/TOCropViewController"
+                       },
+                       {
+                       "name":"AssetsPickerViewController",
+                       "url":"https://github.com/DragonCherry/AssetsPickerViewController"
+                       },
+                       {
+                       "name":"AMapLocation",
+                       "url":""
+                       },
+                       {
+                       "name":"Qiniu",
+                       "url":"https://github.com/qiniu/objc-sdk"
+                       },
+                       {
+                       "name":"UITableView+FDTemplateLayoutCell",
+                       "url":"https://github.com/forkingdog/UITableView-FDTemplateLayoutCell"
                        }
                        ]
     },
