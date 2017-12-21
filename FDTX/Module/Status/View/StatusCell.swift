@@ -39,6 +39,10 @@ class StatusCell: UITableViewCell {
         contentView.addSubview(locationLabel)
         contentView.addSubview(lineView)
         
+        contentView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
         iconImageView.snp.makeConstraints { (make) in
             make.left.top.equalToSuperview().offset(10)
             make.size.equalTo(CGSize.init(width: 44, height: 44))
