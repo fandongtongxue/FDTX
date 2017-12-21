@@ -12,5 +12,7 @@
 #import "QiniuUploadManager.h"
 #import <UITableView_FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 #import "MapManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "CrashHandler.h"
 
 #endif /* bridge_h */

@@ -44,6 +44,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
         addImgBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.top.equalTo(self.textView.snp.bottom).offset(10)
+            make.size.equalTo(CGSize.init(width: (( SCREEN_WIDTH - 20 ) / 3), height: (( SCREEN_WIDTH - 20 ) / 3)))
         }
         scrollView.addSubview(locationBtn)
         locationBtn.snp.makeConstraints { (make) in
@@ -51,7 +52,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
             make.top.equalTo(self.addImgBtn.snp.bottom).offset(10)
             make.right.equalToSuperview().offset(-10)
         }
-        scrollView.contentSize = CGSize.init(width: SCREEN_WIDTH, height: 100 + 10 + 64 + 10 + 22 + 10)
+        scrollView.contentSize = CGSize.init(width: SCREEN_WIDTH, height: 100 + 10 + (( SCREEN_WIDTH - 20 ) / 3) + 10 + 22 + 10)
     }
     
     //Action
@@ -131,6 +132,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
             self.locationBtn.setTitle(address, for: .normal)
         }) { (error) in
             self.stopAnimating()
+            self.locationBtn.setTitle("Mars", for: .normal)
             HUD.flash(.label(String.init(format: "%@", error! as CVarArg)), delay: HUD_DELAY_TIME)
         }
     }
@@ -157,13 +159,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
                 let manager = PHImageManager.default()
                 let options = PHImageRequestOptions()
                 let PHImageRequestID = manager.requestImage(for: asset.element, targetSize: CGSize.init(width: SCREEN_WIDTH - 20, height: CGFloat(MAXFLOAT)), contentMode: .aspectFill, options: options, resultHandler: { (image, info) in
-                    if (image?.size.width)! > SCREEN_WIDTH - 20{
-                        let newSize = CGSize.init(width: SCREEN_WIDTH - 20, height: (image?.size.height)! * (SCREEN_WIDTH - 20) / (image?.size.width)!)
-                        let newImage = AppTool.shared.resizeImage(image: image!, newSize: newSize)
-                        imageArray.append(newImage)
-                    }else{
-                        imageArray.append(image!)
-                    }
+                    imageArray.append(image!)
                     if imageArray.count == 2{
                         self.addImgBtn.setBackgroundImage(imageArray.last, for: .normal)
                         self.addImgBtn.setBackgroundImage(imageArray.last, for: .highlighted)
@@ -177,7 +173,7 @@ class StatusPublishViewController: BaseViewController,AssetsPickerViewController
                         }else{
                             self.navigationItem.rightBarButtonItem?.isEnabled = false
                         }
-                        self.scrollView.contentSize = CGSize.init(width: SCREEN_WIDTH, height: 100 + 10 + (imageArray.last?.size.height)! + 10 + 22 + 10)
+                        self.scrollView.contentSize = CGSize.init(width: SCREEN_WIDTH, height: 100 + 10 + (( SCREEN_WIDTH - 20 ) / 3) + 10 + 22 + 10)
                     }
                 })
                 log.info(PHImageRequestID)

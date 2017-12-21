@@ -12,6 +12,7 @@
 		262BEE5D1FA8B35B004B517A /* ChannelCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */; };
 		262BEE5F1FA8B3D2004B517A /* ChannelCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */; };
 		265CA7C31FBB3431005B47D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CA7C21FBB3431005B47D6 /* ChatViewController.swift */; };
+		268996221FE692DB00A19D85 /* CrashHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 268996201FE692DB00A19D85 /* CrashHandler.m */; };
 		26AC92D71FD28F7600F8F38F /* StatusPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC92D61FD28F7600F8F38F /* StatusPublishViewController.swift */; };
 		26B8A57A1FA39A0500A414C8 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8A5791FA39A0500A414C8 /* ChannelCell.swift */; };
 		26BA15CE1FD02AEB003173B1 /* UserInfoChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA15CD1FD02AEB003173B1 /* UserInfoChangeViewController.swift */; };
@@ -98,6 +99,8 @@
 		262BEE5C1FA8B35B004B517A /* ChannelCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentModel.swift; sourceTree = "<group>"; };
 		262BEE5E1FA8B3D2004B517A /* ChannelCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCommentCell.swift; sourceTree = "<group>"; };
 		265CA7C21FBB3431005B47D6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		268996201FE692DB00A19D85 /* CrashHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashHandler.m; sourceTree = "<group>"; };
+		268996211FE692DB00A19D85 /* CrashHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashHandler.h; sourceTree = "<group>"; };
 		26AC92D61FD28F7600F8F38F /* StatusPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPublishViewController.swift; sourceTree = "<group>"; };
 		26B8A5791FA39A0500A414C8 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		26BA15CD1FD02AEB003173B1 /* UserInfoChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoChangeViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 		26070BFC1FCEE08F007B8A85 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				268996211FE692DB00A19D85 /* CrashHandler.h */,
+				268996201FE692DB00A19D85 /* CrashHandler.m */,
 				CB725FB31FD7AB9B0063B4EB /* MapManager.h */,
 				CB725FB41FD7AB9B0063B4EB /* MapManager.m */,
 				26070BFD1FCEE08F007B8A85 /* QiniuUploadManager.h */,
@@ -849,6 +854,7 @@
 				26070BFF1FCEE08F007B8A85 /* QiniuUploadManager.m in Sources */,
 				CB5761B31FC6B85500843A35 /* DemoTextMessageModel.swift in Sources */,
 				CB7320E91F40376D00F2F7BA /* BaseViewController.swift in Sources */,
+				268996221FE692DB00A19D85 /* CrashHandler.m in Sources */,
 				CB5761AE1FC6B85500843A35 /* SendingStatusCollectionViewCell.swift in Sources */,
 				CB71536E1F66184500826616 /* UserDefaultKey.swift in Sources */,
 				CB5761B21FC6B85500843A35 /* DemoTextMessageHandler.swift in Sources */,

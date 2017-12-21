@@ -24,26 +24,33 @@ class StatusCell: UITableViewCell {
     }
     
     func setModel(model:StatusModel) {
-        nameLabel.text = "uid:" + model.uid
+        iconImageView.kf.setImage(with: URL.init(string: model.userIcon))
+        nameLabel.text = model.userNickName
         contentLabel.text = model.content
         contentImageView.kf.setImage(with: URL.init(string: model.imgUrls))
         locationLabel.text = model.location
     }
     
     func initSubview() {
+        contentView.addSubview(iconImageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(contentLabel)
         contentView.addSubview(contentImageView)
         contentView.addSubview(locationLabel)
         contentView.addSubview(lineView)
         
+        iconImageView.snp.makeConstraints { (make) in
+            make.left.top.equalToSuperview().offset(10)
+            make.size.equalTo(CGSize.init(width: 44, height: 44))
+        }
+        
         nameLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(10)
+            make.left.equalTo(self.iconImageView.snp.right).offset(10)
+            make.top.equalTo(self.iconImageView.snp.top).offset(5)
             make.right.equalToSuperview().offset(-10)
         }
         contentLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.nameLabel.snp.bottom).offset(10)
+            make.top.equalTo(self.iconImageView.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
         }
@@ -51,8 +58,8 @@ class StatusCell: UITableViewCell {
         contentImageView.snp.makeConstraints { (make) in
             make.top.equalTo(self.contentLabel.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(10)
-//            make.right.equalToSuperview().offset(-10)
             make.width.lessThanOrEqualTo(SCREEN_WIDTH - 20)
+            make.height.lessThanOrEqualTo(SCREEN_WIDTH - 20)
         }
         
         locationLabel.snp.makeConstraints { (make) in
@@ -70,13 +77,21 @@ class StatusCell: UITableViewCell {
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var totalHeight:CGFloat = 0
-        totalHeight += nameLabel.sizeThatFits(size).height
+        totalHeight += 44
         totalHeight += contentLabel.sizeThatFits(size).height
-        totalHeight += contentImageView.sizeThatFits(size).height
+        totalHeight += contentImageView.sizeThatFits(size).height < SCREEN_WIDTH - 20 ? contentImageView.sizeThatFits(size).height : SCREEN_WIDTH - 20
         totalHeight += locationLabel.sizeThatFits(size).height
         totalHeight += 50.0
         return CGSize.init(width: size.width, height: totalHeight)
     }
+    
+    lazy var iconImageView : UIImageView = {
+        let iconImageView = UIImageView.init(frame: CGRect.zero)
+        iconImageView.contentMode = .scaleAspectFill
+        iconImageView.layer.cornerRadius = 22
+        iconImageView.clipsToBounds = true
+        return iconImageView
+    }()
     
     lazy var nameLabel : UILabel = {
         let nameLabel = UILabel.init(frame: CGRect.zero)
@@ -92,7 +107,7 @@ class StatusCell: UITableViewCell {
         contentLabel.mixedTextColor = MixedColor.init(normal: .lightGray, night: .black)
         contentLabel.numberOfLines = 0
         return contentLabel
-    }()
+    }() 
     
     lazy var contentImageView : UIImageView = {
         let contentImageView = UIImageView.init(frame: CGRect.zero)

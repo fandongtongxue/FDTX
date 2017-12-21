@@ -128,6 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         MapManager.default().application(application, didFinishLaunchingWithOptions: launchOptions)
+        CrashHandler.sharedInstance()
         
         if AppTool.shared.isLogin() {
             let containerVC = ContainViewController.init(nibName: nil, bundle: nil)

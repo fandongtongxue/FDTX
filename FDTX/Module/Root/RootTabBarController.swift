@@ -24,10 +24,10 @@ class RootTabBarController: UITabBarController{
 //        let unsplashItem = UITabBarItem.init(title: "Picture", image: UIImage.init(named: "nav_img_nor"), selectedImage: UIImage.init(named: "nav_img_sel"))
 //        unsplashNav.tabBarItem = unsplashItem
         
-        let chatVC = ChatViewController.init(nibName: nil, bundle: nil)
-        let chatNav = RootNavigationController.init(rootViewController: chatVC)
-        let chatItem = UITabBarItem.init(title: "Chat", image: UIImage.init(named: "nav_chat_nor"), selectedImage: UIImage.init(named: "nav_chat_sel"))
-        chatNav.tabBarItem = chatItem
+//        let chatVC = ChatViewController.init(nibName: nil, bundle: nil)
+//        let chatNav = RootNavigationController.init(rootViewController: chatVC)
+//        let chatItem = UITabBarItem.init(title: "Chat", image: UIImage.init(named: "nav_chat_nor"), selectedImage: UIImage.init(named: "nav_chat_sel"))
+//        chatNav.tabBarItem = chatItem
         
         let statusVC = StatusViewController.init(nibName: nil, bundle: nil)
         let statusNav = RootNavigationController.init(rootViewController: statusVC)
@@ -49,7 +49,7 @@ class RootTabBarController: UITabBarController{
         let userItem = UITabBarItem.init(title: "User", image: UIImage.init(named: "nav_user_nor"), selectedImage: UIImage.init(named: "nav_user_sel"))
         userNav.tabBarItem = userItem
         
-        self.viewControllers = [chatNav,statusNav,userNav]
+        self.viewControllers = [statusNav,userNav]
     }
     
     override func didReceiveMemoryWarning() {

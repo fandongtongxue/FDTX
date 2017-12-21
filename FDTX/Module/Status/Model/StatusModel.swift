@@ -18,6 +18,8 @@ class StatusModel: HandyJSON {
     var likeCount : String!
     var commentCount : String!
     var shareCount : String!
+    var userIcon : String!
+    var userNickName : String!
     
     required init() {
         
